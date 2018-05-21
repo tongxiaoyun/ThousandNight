@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tong="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.risenb.thousandnight.views.MyScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.risenb.thousandnight.views.banner.MZBannerView
+                    android:id="@+id/mzb_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm310"
+                    tong:canLoop="true"
+                    tong:indicatorAlign="center"
+                    tong:open_mz_mode="false" />
+
+                <LinearLayout
+                    android:id="@+id/ll_home_video_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm090"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020">
+
+                    <TextView
+                        android:layout_width="@dimen/dm000"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="热播视频"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm030" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="@dimen/dm020"
+                        android:drawableRight="@drawable/next"
+                        android:gravity="center"
+                        android:text="更多"
+                        android:textColor="@color/gray666"
+                        android:textSize="@dimen/dm022" />
+
+                </LinearLayout>
+
+                <com.risenb.thousandnight.views.MyRecyclerView
+                    android:id="@+id/mrv_home_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dm020"></com.risenb.thousandnight.views.MyRecyclerView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm001"
+                    android:layout_marginLeft="@dimen/dm020"
+                    android:layout_marginRight="@dimen/dm020"
+                    android:background="@color/line" />
+
+                <TextView
+                    android:id="@+id/tv_home_video_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dm080"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/dm020"
+                    android:drawableRight="@drawable/home_refresh"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020"
+                    android:text="换一换"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm022" />
+
+                <include layout="@layout/line_20" />
+
+                <LinearLayout
+                    android:id="@+id/ll_home_music_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm090"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020">
+
+                    <TextView
+                        android:layout_width="@dimen/dm000"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="推荐歌单"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm030" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="@dimen/dm020"
+                        android:drawableRight="@drawable/next"
+                        android:gravity="center"
+                        android:text="更多"
+                        android:textColor="@color/gray666"
+                        android:textSize="@dimen/dm022" />
+
+                </LinearLayout>
+
+                <com.risenb.thousandnight.views.MyRecyclerView
+                    android:id="@+id/mrv_home_music"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dm020"></com.risenb.thousandnight.views.MyRecyclerView>
+
+                <include layout="@layout/line_20" />
+
+                <LinearLayout
+                    android:id="@+id/ll_home_course_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm090"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020">
+
+                    <TextView
+                        android:layout_width="@dimen/dm000"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="精选课程"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm030" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="@dimen/dm020"
+                        android:drawableRight="@drawable/next"
+                        android:gravity="center"
+                        android:text="更多"
+                        android:textColor="@color/gray666"
+                        android:textSize="@dimen/dm022" />
+
+                </LinearLayout>
+
+                <com.risenb.thousandnight.views.MyRecyclerView
+                    android:id="@+id/mrv_home_course"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dm020"></com.risenb.thousandnight.views.MyRecyclerView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm001"
+                    android:layout_marginLeft="@dimen/dm020"
+                    android:layout_marginRight="@dimen/dm020"
+                    android:background="@color/line" />
+
+                <TextView
+                    android:id="@+id/tv_home_course_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dm080"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/dm020"
+                    android:drawableRight="@drawable/home_refresh"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020"
+                    android:text="换一换"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm022" />
+
+            </LinearLayout>
+
+        </com.risenb.thousandnight.views.MyScrollView>
+
+        <ImageView
+            android:id="@+id/iv_home_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dm150"
+            android:layout_marginRight="@dimen/dm030"
+            android:src="@drawable/home_music" />
+
+    </RelativeLayout>
+
+</LinearLayout>

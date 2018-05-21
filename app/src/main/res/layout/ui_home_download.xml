@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <include layout="@layout/line_1" />
+
+    <com.risenb.expand.xrecyclerview.XRecyclerView
+        android:id="@+id/xrv_download"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm000"
+        android:layout_weight="1"
+        android:scrollbars="none"></com.risenb.expand.xrecyclerview.XRecyclerView>
+
+    <LinearLayout
+        android:id="@+id/ll_download_delete"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm098"
+        android:background="@color/gray"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="@dimen/dm000"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="全选"
+            android:textColor="@color/gray333"
+            android:textSize="@dimen/dm026" />
+
+        <View
+            android:layout_width="@dimen/dm001"
+            android:layout_height="@dimen/dm060"
+            android:background="@color/line" />
+
+        <TextView
+            android:layout_width="@dimen/dm000"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/tab_color"
+            android:textSize="@dimen/dm026" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_chat_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm138"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dm020"
+        android:paddingRight="@dimen/dm020">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/chat_menu_1"
+            android:drawablePadding="@dimen/dm025"
+            android:gravity="center"
+            android:text="互动消息"
+            android:textColor="@color/gray333"
+            android:textSize="@dimen/dm026" />
+
+    </LinearLayout>
+
+    <include layout="@layout/line_1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm138"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dm020"
+        android:paddingRight="@dimen/dm020">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/chat_menu_2"
+            android:drawablePadding="@dimen/dm025"
+            android:gravity="center"
+            android:text="新的朋友"
+            android:textColor="@color/gray333"
+            android:textSize="@dimen/dm026" />
+
+    </LinearLayout>
+
+    <include layout="@layout/line_1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm138"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dm020"
+        android:paddingRight="@dimen/dm020">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/chat_menu_3"
+            android:drawablePadding="@dimen/dm025"
+            android:gravity="center"
+            android:text="我的@"
+            android:textColor="@color/gray333"
+            android:textSize="@dimen/dm026" />
+
+    </LinearLayout>
+
+    <include layout="@layout/line_20" />
+
+</LinearLayout>

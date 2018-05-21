@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm088">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm088"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dm180"
+            android:layout_marginRight="@dimen/dm180"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/rg_square"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm000"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_square_hot"
+                    style="@style/tab_top_2"
+                    android:checked="true"
+                    android:text="热门" />
+
+                <RadioButton
+                    android:id="@+id/rb_square_attention"
+                    style="@style/tab_top_2"
+                    android:text="关注" />
+
+                <RadioButton
+                    android:id="@+id/rb_square_nearby"
+                    style="@style/tab_top_2"
+                    android:text="附近" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/v_square_indicator"
+                android:layout_width="@dimen/dm055"
+                android:layout_height="@dimen/dm003"
+                android:background="@color/tab_color" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_square_take"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dm020"
+            android:src="@drawable/square_take" />
+
+    </RelativeLayout>
+
+    <include layout="@layout/line_1" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_square"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm000"
+        android:layout_weight="1" />
+
+</LinearLayout>

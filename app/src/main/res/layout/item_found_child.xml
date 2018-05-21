@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dm020"
+    android:paddingRight="@dimen/dm020">
+
+    <ImageView
+        android:layout_width="@dimen/dm230"
+        android:layout_height="@dimen/dm285"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_img" />
+
+</LinearLayout>

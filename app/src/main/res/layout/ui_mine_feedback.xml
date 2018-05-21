@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm400"
+        android:layout_marginLeft="@dimen/dm020"
+        android:layout_marginRight="@dimen/dm020"
+        android:layout_marginTop="@dimen/dm020"
+        android:padding="@dimen/dm020"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm000"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="top|left"
+            android:hint="请告诉我们您的想法和意见."
+            android:textColor="@color/gray333"
+            android:textColorHint="@color/gray999"
+            android:textSize="@dimen/dm024" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm020"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40"
+                android:textColor="@color/tab_color"
+                android:textSize="@dimen/dm020"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/300"
+                android:textColor="@color/gray999"
+                android:textSize="@dimen/dm020"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_style"
+        android:layout_marginLeft="@dimen/dm020"
+        android:layout_marginRight="@dimen/dm020"
+        android:layout_marginTop="@dimen/dm030"
+        android:text="提交" />
+
+</LinearLayout>

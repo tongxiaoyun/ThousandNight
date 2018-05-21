@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm010"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm085"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_course_buy"
+            android:layout_width="@dimen/dm000"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_course_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/dm010"
+                android:drawableRight="@drawable/home_video_down"
+                android:text="购买量"
+                android:textColor="@color/gray666"
+                android:textSize="@dimen/dm026" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_course_price"
+            android:layout_width="@dimen/dm000"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_course_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/dm010"
+                android:drawableRight="@drawable/home_video_down"
+                android:text="价格"
+                android:textColor="@color/gray666"
+                android:textSize="@dimen/dm026" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_course_filter"
+            android:layout_width="@dimen/dm000"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_course_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/dm010"
+                android:drawableRight="@drawable/home_course_filter"
+                android:text="筛选"
+                android:textColor="@color/gray666"
+                android:textSize="@dimen/dm026" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/line_1" />
+
+    <com.risenb.expand.xrecyclerview.XRecyclerView
+        android:id="@+id/xrv_course_child"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm000"
+        android:layout_weight="1" />
+
+</LinearLayout>

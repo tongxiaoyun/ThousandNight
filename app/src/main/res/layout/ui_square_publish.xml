@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <include layout="@layout/line_1" />
+
+    <com.risenb.thousandnight.views.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm175"
+                android:layout_margin="@dimen/dm020"
+                android:background="@drawable/sp_gray_bg_cor"
+                android:gravity="top|left"
+                android:hint="发出你的动态让大家认识你吧！"
+                android:padding="@dimen/dm020"
+                android:textColor="@color/gray333"
+                android:textColorHint="@color/gray999"
+                android:textSize="@dimen/dm026" />
+
+            <com.risenb.thousandnight.views.MyRecyclerView
+                android:id="@+id/rv_publish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dm030"
+                android:layout_marginLeft="@dimen/dm020"
+                android:layout_marginRight="@dimen/dm020"></com.risenb.thousandnight.views.MyRecyclerView>
+
+            <include layout="@layout/line_20" />
+
+            <LinearLayout
+                android:id="@+id/ll_publish_secret"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="隐私："
+                    android:layout_marginRight="@dimen/dm020"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/next"
+                    android:drawablePadding="@dimen/dm020"
+                    android:text="公开"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="谁看@："
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+        </LinearLayout>
+
+    </com.risenb.thousandnight.views.MyScrollView>
+
+</LinearLayout>

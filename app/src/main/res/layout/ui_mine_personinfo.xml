@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm100"
+                android:layout_marginTop="@dimen/dm020"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <View
+                    android:layout_width="@dimen/dm005"
+                    android:layout_height="@dimen/dm028"
+                    android:background="@color/tab_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm005"
+                    android:text="基本资料"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm028"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_personinfo_icon"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm118"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="头像"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <ImageView
+                    android:id="@+id/iv_personinfo_icon"
+                    android:layout_width="@dimen/dm085"
+                    android:layout_height="@dimen/dm085"
+                    android:layout_marginRight="@dimen/dm020"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_icon" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_personinfo_account"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账号"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:id="@+id/tv_personinfo_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dm020"
+                    android:drawableRight="@drawable/next"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="未设置"
+                    android:textColor="@color/gray999"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_personinfo_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="昵称"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <EditText
+                    android:id="@+id/et_personinfo_nickname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm120"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:hint="请输入昵称"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020"
+                    android:textColor="@color/gray999"
+                    android:textColorHint="@color/gray999"
+                    android:textSize="@dimen/dm024" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_personinfo_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="生日"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:id="@+id/tv_personinfo_birthday"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dm020"
+                    android:drawableRight="@drawable/next"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="未设置"
+                    android:textColor="@color/gray999"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_personinfo_sex"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:id="@+id/tv_personinfo_sex"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dm020"
+                    android:drawableRight="@drawable/next"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="未设置"
+                    android:textColor="@color/gray999"
+                    android:textSize="@dimen/dm024" />
+
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_personinfo_pcd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="地区"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:id="@+id/tv_personinfo_pcd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dm020"
+                    android:drawableRight="@drawable/next"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="未设置"
+                    android:textColor="@color/gray999"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm100"
+                android:layout_marginTop="@dimen/dm020"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <View
+                    android:layout_width="@dimen/dm005"
+                    android:layout_height="@dimen/dm028"
+                    android:background="@color/tab_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm005"
+                    android:text="个性签名"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm028"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm140"
+                android:background="@color/white"
+                android:hint="给自己签个名吧。比如兴趣爱好，个人观念..."
+                android:padding="@dimen/dm030"
+                android:textColor="@color/gray333"
+                android:textColorHint="@color/gray999"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="@dimen/dm024" />
+
+            <LinearLayout
+                android:id="@+id/ll_personinfo_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dm020"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll_personinfo_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm098"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm030">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="上课地址"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm026" />
+
+                    <EditText
+                        android:id="@+id/et_personinfo_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dm120"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:hint="千夜机构北京市朝阳小区"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dm020"
+                        android:paddingRight="@dimen/dm020"
+                        android:textColor="@color/gray999"
+                        android:textColorHint="@color/gray999"
+                        android:textSize="@dimen/dm024" />
+
+
+                </LinearLayout>
+
+                <include layout="@layout/line_1" />
+
+                <LinearLayout
+                    android:id="@+id/ll_personinfo_feature"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm098"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm030"
+                    android:paddingRight="@dimen/dm020">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="老师特点"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm026" />
+
+                    <LinearLayout
+                        android:layout_width="@dimen/dm000"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dm030"
+                        android:layout_marginRight="@dimen/dm020"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|right"
+                        android:orientation="horizontal">
+
+                        <com.zhy.view.flowlayout.TagFlowLayout
+                            android:id="@+id/tfl_personinfo_feature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            zhy:max_select="1"></com.zhy.view.flowlayout.TagFlowLayout>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/next" />
+
+                </LinearLayout>
+
+                <include layout="@layout/line_1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm100"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm030"
+                    android:paddingRight="@dimen/dm020">
+
+                    <View
+                        android:layout_width="@dimen/dm005"
+                        android:layout_height="@dimen/dm028"
+                        android:background="@color/tab_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dm005"
+                        android:text="介绍"
+                        android:textColor="@color/tab_color"
+                        android:textSize="@dimen/dm028"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <include layout="@layout/line_1" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm140"
+                    android:background="@color/white"
+                    android:hint="介绍下自己吧..."
+                    android:padding="@dimen/dm030"
+                    android:textColor="@color/gray333"
+                    android:textColorHint="@color/gray999"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

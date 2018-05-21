@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top_2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm490"
+        android:background="@drawable/home_sign_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm088"
+            android:background="@android:color/transparent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="标题"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dm030" />
+
+            <RelativeLayout
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm030">
+
+                <ImageView
+                    android:layout_width="@dimen/dm018"
+                    android:layout_height="@dimen/dm032"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/back_white" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm030"
+            android:text="已连续签到"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dm026" />
+
+        <LinearLayout
+            android:layout_width="@dimen/dm221"
+            android:layout_height="@dimen/dm205"
+            android:layout_marginTop="@dimen/dm010"
+            android:background="@drawable/home_sign_day"
+            android:gravity="center|bottom"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dm025">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dm080"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm005"
+                android:text="天"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dm026" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm025"
+            android:text="明日签到可领取10个千夜币"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dm026" />
+
+    </LinearLayout>
+
+    <com.risenb.thousandnight.views.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm112"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/home_sign_clock"
+                    android:drawablePadding="@dimen/dm020"
+                    android:gravity="center"
+                    android:text="当前时间：2018-03-22"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm024" />
+
+                <View
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="@dimen/dm001"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="今日已签到"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dm030"
+                    android:src="@drawable/home_sign_left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2018-03-22"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm022" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dm030"
+                    android:src="@drawable/home_sign_right" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+            <include layout="@layout/line_20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm112"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/home_sign_rule"
+                    android:drawablePadding="@dimen/dm020"
+                    android:gravity="center"
+                    android:text="签到规则"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm020"
+                android:layout_marginRight="@dimen/dm020"
+                android:layout_marginTop="@dimen/dm030"
+                android:lineSpacingExtra="@dimen/dm005"
+                android:text="1.签到时间为规定到达时间至之后半小时。签到时间按实际情况再定。"
+                android:textColor="@color/gray666"
+                android:textSize="@dimen/dm022" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm020"
+                android:layout_marginRight="@dimen/dm020"
+                android:lineSpacingExtra="@dimen/dm005"
+                android:text="2.调研部共9个委员负责干部及各部门签到，超过签到时间，各部门委员到后要找相应签到委员进行签到。"
+                android:textColor="@color/gray666"
+                android:textSize="@dimen/dm022" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dm050"
+                android:layout_marginLeft="@dimen/dm020"
+                android:layout_marginRight="@dimen/dm020"
+                android:lineSpacingExtra="@dimen/dm005"
+                android:text="3.若各个部门签到以及备注人数少于各部门委员队员人数，调研部负责各个部门的委员负责找到相应的纪检干部说明情况，若纪检干部不负责，则采取后果自负原则。"
+                android:textColor="@color/gray666"
+                android:textSize="@dimen/dm022" />
+
+        </LinearLayout>
+
+    </com.risenb.thousandnight.views.MyScrollView>
+
+</LinearLayout>

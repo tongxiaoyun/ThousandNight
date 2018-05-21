@@ -1,0 +1,122 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MyAppTheme" parent="Base.Theme.AppCompat.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textSize">@dimen/dm028</item>
+        <item name="android:textColor">#333</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- 底端tab -->
+    <style name="tab">
+        <item name="android:layout_width">@dimen/dm000</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/dm015</item>
+        <item name="android:paddingBottom">@dimen/dm010</item>
+        <item name="android:drawablePadding">@dimen/dm005</item>
+        <item name="android:textSize">@dimen/dm024</item>
+        <item name="android:textColor">@color/tab_text</item>
+    </style>
+
+    <!-- 顶部tab -->
+    <style name="tab_top">
+        <item name="android:layout_width">@dimen/dm000</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center|bottom</item>
+        <item name="android:textSize">@dimen/dm028</item>
+        <item name="android:textColor">@color/tab_text_2</item>
+    </style>
+
+    <!-- 顶部tab -->
+    <style name="tab_top_2">
+        <item name="android:layout_width">@dimen/dm000</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/dm028</item>
+        <item name="android:textColor">@color/tab_text_2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 顶部tab -->
+    <style name="tab_top_3">
+        <item name="android:layout_width">@dimen/dm000</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/dm028</item>
+        <item name="android:textColor">@color/tab_text_3</item>
+    </style>
+
+    <!-- 登录EditText -->
+    <style name="login_edit_style">
+        <item name="android:layout_width">@dimen/dm000</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingLeft">@dimen/dm110</item>
+        <item name="android:paddingRight">@dimen/dm030</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/gray333</item>
+        <item name="android:textColorHint">@color/gray999</item>
+        <item name="android:textSize">@dimen/dm026</item>
+        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- 登录TextView -->
+    <style name="login_text_style">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">@dimen/dm080</item>
+    <item name="android:background">@drawable/sp_purple_bg_cor40</item>
+    <item name="android:gravity">center</item>
+    <item name="android:textSize">@dimen/dm028</item>
+    <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- 通用EditText -->
+    <style name="edit_style">
+        <item name="android:layout_width">@dimen/dm000</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingLeft">@dimen/dm035</item>
+        <item name="android:paddingRight">@dimen/dm030</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/gray333</item>
+        <item name="android:textColorHint">@color/gray999</item>
+        <item name="android:textSize">@dimen/dm026</item>
+        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- 通用TextView -->
+    <style name="text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dm088</item>
+        <item name="android:background">@drawable/sp_purple_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/dm028</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <include layout="@layout/line_1" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_found_live_video"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm152"></android.support.v7.widget.RecyclerView>
+
+    <include layout="@layout/line_1" />
+
+    <com.risenb.expand.xrecyclerview.XRecyclerView
+        android:id="@+id/xrv_found_live_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dm020"
+        android:scrollbars="none"></com.risenb.expand.xrecyclerview.XRecyclerView>
+
+</LinearLayout>

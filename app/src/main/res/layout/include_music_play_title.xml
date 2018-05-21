@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_view"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dm088"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm088">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="标题"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dm030" />
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dm030"
+            android:paddingRight="@dimen/dm030">
+
+            <ImageView
+                android:layout_width="@dimen/dm018"
+                android:layout_height="@dimen/dm032"
+                android:scaleType="fitXY"
+                android:src="@drawable/back_white" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dm030"
+            android:paddingRight="@dimen/dm030">
+
+            <ImageView
+                android:id="@+id/iv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/found_share_2"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

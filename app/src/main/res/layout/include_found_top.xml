@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_found_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dm020"
+        android:layout_marginRight="@dimen/dm020"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_found_livevideo"
+            android:layout_width="@dimen/dm000"
+            android:layout_height="@dimen/dm230"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/found_menu_1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/found_menu_1_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="直播"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dm034"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_found_dance"
+            android:layout_width="@dimen/dm000"
+            android:layout_height="@dimen/dm230"
+            android:layout_marginLeft="@dimen/dm010"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/found_menu_2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/found_menu_2_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="舞伴大厅"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dm034"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dm020"
+        android:layout_marginRight="@dimen/dm020"
+        android:layout_marginTop="@dimen/dm010"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_found_job"
+            android:layout_width="@dimen/dm000"
+            android:layout_height="@dimen/dm230"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/found_menu_3" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/found_menu_3_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="求职招聘"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dm034"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_found_mall"
+            android:layout_width="@dimen/dm000"
+            android:layout_height="@dimen/dm230"
+            android:layout_marginLeft="@dimen/dm010"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/found_menu_4" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/found_menu_4_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="周边商城"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dm034"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm120"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_found_news"
+            android:layout_width="@dimen/dm000"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/found_menu_5"
+                android:drawablePadding="@dimen/dm030"
+                android:gravity="center"
+                android:text="千夜新闻"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_found_album"
+            android:layout_width="@dimen/dm000"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/found_menu_6"
+                android:drawablePadding="@dimen/dm030"
+                android:gravity="center"
+                android:text="千夜相册"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/line_20" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm100"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dm020"
+        android:paddingRight="@dimen/dm020">
+
+        <TextView
+            android:layout_width="@dimen/dm000"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="活动标题"
+            android:textColor="@color/gray333"
+            android:textSize="@dimen/dm028" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dm020"
+            android:drawableRight="@drawable/next"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="220"
+            android:textColor="@color/gray666"
+            android:textSize="@dimen/dm020" />
+
+    </LinearLayout>
+
+    <include layout="@layout/line_1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dm030"
+        android:paddingLeft="@dimen/dm020"
+        android:paddingRight="@dimen/dm020"
+        android:paddingTop="@dimen/dm050">
+
+        <TextView
+            android:id="@+id/tv_found_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@drawable/found_join"
+            android:drawablePadding="@dimen/dm050"
+            android:text="还没有人报名参加，赶快去参与该活动吧！"
+            android:textColor="@color/gray666"
+            android:textSize="@dimen/dm026" />
+
+        <TextView
+            android:id="@+id/tv_found_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dm020"
+            android:text="查看活动详情 >>"
+            android:textColor="@color/tab_color"
+            android:textSize="@dimen/dm024" />
+
+    </LinearLayout>
+
+    <include layout="@layout/line_20" />
+
+</LinearLayout>

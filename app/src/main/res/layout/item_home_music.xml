@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dm040"
+    android:paddingRight="@dimen/dm020">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dm200"
+        android:layout_height="@dimen/dm200">
+
+        <ImageView
+            android:layout_width="@dimen/dm200"
+            android:layout_height="@dimen/dm200"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/home_headphone"
+            android:drawablePadding="@dimen/dm010"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/dm030"
+            android:paddingLeft="@dimen/dm030"
+            android:paddingRight="@dimen/dm030"
+            android:text="666.6万"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dm018"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="@dimen/dm200"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dm015"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="我们不一样"
+        android:textColor="@color/gray333"
+        android:textSize="@dimen/dm024" />
+
+    <TextView
+        android:layout_width="@dimen/dm200"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dm010"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="大壮"
+        android:textColor="@color/gray999"
+        android:textSize="@dimen/dm022" />
+
+</LinearLayout>

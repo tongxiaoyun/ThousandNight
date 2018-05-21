@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_setting_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dm020"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手机号"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:id="@+id/tv_setting_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dm020"
+                    android:drawableRight="@drawable/next"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="135****4345"
+                    android:textColor="@color/gray999"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_setting_login_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="修改密码"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_setting_pay_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:layout_marginTop="@dimen/dm020"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="支付密码修改"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_setting_bind"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="绑定账号"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_setting_version"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:layout_marginTop="@dimen/dm020"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前版本"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:id="@+id/tv_setting_version"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dm020"
+                    android:drawableRight="@drawable/next"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="V1.0已经是最新版本"
+                    android:textColor="@color/gray999"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_setting_comment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="评个分吧"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_setting_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="意见反馈"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_setting_aboutus"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="关于我们"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_setting_cache"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:layout_marginTop="@dimen/dm020"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="清除缓存"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:id="@+id/tv_setting_cache"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dm020"
+                    android:drawableRight="@drawable/next"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="0.00M"
+                    android:textColor="@color/gray999"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_setting_exit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dm020"
+                android:gravity="center"
+                android:text="退出登录"
+                android:textColor="@color/tab_color"
+                android:textSize="@dimen/dm028" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

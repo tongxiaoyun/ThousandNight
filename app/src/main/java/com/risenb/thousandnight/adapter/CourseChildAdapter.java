@@ -18,6 +18,7 @@ import butterknife.ButterKnife;
 
 public class CourseChildAdapter<T extends Object> extends BaseRecyclerAdapter {
 
+
     @Override
     public int getItemCount() {
         return 5;

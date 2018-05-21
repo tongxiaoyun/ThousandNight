@@ -1,6 +1,7 @@
 package com.risenb.thousandnight.ui.home.fragment.video;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -27,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * 视频
@@ -203,6 +205,24 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
                 System.out.println("Catch the NullPointerException in FragmentPagerAdapter.finishUpdate");
             }
         }
+    }
+
+    @OnClick(R.id.tv_home_video_menu1)
+    void toMenu1() {
+        Intent intent = new Intent(getActivity(), NewsVideoUI.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.tv_home_video_menu2)
+    void toMenu2() {
+        Intent intent = new Intent(getActivity(), NewsVideoUI.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.tv_home_video_menu3)
+    void toMenu3() {
+        Intent intent = new Intent(getActivity(), NewsVideoUI.class);
+        startActivity(intent);
     }
 
 }

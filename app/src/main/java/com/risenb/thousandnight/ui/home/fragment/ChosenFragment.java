@@ -17,7 +17,9 @@ import com.risenb.thousandnight.adapter.HomeMusicAdapter;
 import com.risenb.thousandnight.adapter.HomeVideoAdapter;
 import com.risenb.thousandnight.beans.BannerBean;
 import com.risenb.thousandnight.ui.BaseFragment;
+import com.risenb.thousandnight.ui.home.fragment.course.ChoiceCourseUI;
 import com.risenb.thousandnight.ui.home.fragment.music.MusicPlayUI;
+import com.risenb.thousandnight.ui.home.fragment.video.NewsVideoUI;
 import com.risenb.thousandnight.views.MyRecyclerView;
 import com.risenb.thousandnight.views.banner.MZBannerView;
 import com.risenb.thousandnight.views.banner.holder.MZHolderCreator;
@@ -150,6 +152,20 @@ public class ChosenFragment extends BaseFragment {
             Glide.with(context).load("").error(R.drawable.default_banner).placeholder(R.drawable.default_banner).into(iv_home_banner);
 
         }
+    }
+
+
+    @OnClick(R.id.ll_home_video_more)
+    void toNews() {
+        Intent intent = new Intent(getActivity(), NewsVideoUI.class);
+        startActivity(intent);
+    }
+
+
+    @OnClick(R.id.tv_home_choice_more)
+    void toChoice(){
+        Intent intent = new Intent(getActivity(), ChoiceCourseUI.class);
+        startActivity(intent);
     }
 
 }

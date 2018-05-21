@@ -1,6 +1,7 @@
 package com.risenb.thousandnight.ui.home.fragment.course;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -27,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * 课程
@@ -203,6 +205,25 @@ public class CourseFragment extends BaseFragment implements ViewPager.OnPageChan
                 System.out.println("Catch the NullPointerException in FragmentPagerAdapter.finishUpdate");
             }
         }
+    }
+
+
+    @OnClick(R.id.tv_home_course_menu_1)
+    void toMenu1() {
+        Intent intent = new Intent(getActivity(), ChoiceCourseUI.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.tv_home_course_menu_2)
+    void toMenu2() {
+        Intent intent = new Intent(getActivity(), ChoiceCourseUI.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.tv_home_course_menu_3)
+    void toMenu3() {
+        Intent intent = new Intent(getActivity(), ChoiceCourseUI.class);
+        startActivity(intent);
     }
 
 }

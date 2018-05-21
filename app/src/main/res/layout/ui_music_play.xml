@@ -5,7 +5,6 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/include_top" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,6 +28,8 @@
             android:layout_alignParentTop="true"
             android:orientation="vertical">
 
+            <include layout="@layout/include_top_3" />
+
             <include layout="@layout/include_music_play_title" />
 
             <LinearLayout
@@ -40,6 +41,7 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/iv_music_play_cover"
                     android:layout_width="@dimen/dm610"
                     android:layout_height="@dimen/dm610"
                     android:scaleType="centerCrop"
@@ -255,6 +257,7 @@
                     android:padding="@dimen/dm020">
 
                     <ImageView
+                        android:id="@+id/iv_music_play_show"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/home_music_list" />
@@ -262,6 +265,8 @@
                 </LinearLayout>
 
             </RelativeLayout>
+
+            <include layout="@layout/include_bottom" />
 
         </LinearLayout>
 

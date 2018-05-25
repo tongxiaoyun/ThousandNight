@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dm100"
+    android:background="#f2f2f2"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/dm020"
+    android:paddingRight="@dimen/dm020">
+
+    <ImageView
+        android:layout_width="@dimen/dm072"
+        android:layout_height="@dimen/dm072"
+        android:layout_gravity="center_vertical"
+        android:adjustViewBounds="true"
+        android:src="@drawable/music_cd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm012"
+            android:maxHeight="@dimen/dm003"
+            android:minHeight="@dimen/dm003"
+            android:progress="20"
+            android:progressDrawable="@drawable/seekbar"
+            android:thumb="@null" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dm030"
+            android:layout_marginTop="@dimen/dm010"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dm000"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="我们都一样"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dm010"
+                    android:singleLine="true"
+                    android:text="大壮"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm022" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dm068"
+                    android:layout_height="@dimen/dm068"
+                    android:adjustViewBounds="true"
+                    android:paddingBottom="@dimen/dm020"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020"
+                    android:paddingTop="@dimen/dm020"
+                    android:src="@drawable/home_music_last" />
+
+                <ImageView
+                    android:layout_width="@dimen/dm090"
+                    android:layout_height="@dimen/dm050"
+                    android:layout_marginLeft="@dimen/dm020"
+                    android:layout_marginRight="@dimen/dm020"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020"
+                    android:src="@drawable/home_music_play" />
+
+                <ImageView
+                    android:layout_width="@dimen/dm068"
+                    android:layout_height="@dimen/dm068"
+                    android:adjustViewBounds="true"
+                    android:paddingBottom="@dimen/dm020"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020"
+                    android:paddingTop="@dimen/dm020"
+                    android:src="@drawable/home_music_next" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dm050"
+                android:src="@drawable/home_music_list_gray" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

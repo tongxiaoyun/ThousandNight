@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <com.risenb.thousandnight.views.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_my_music_local"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:drawableLeft="@drawable/local_music"
+                android:drawablePadding="@dimen/dm030"
+                android:drawableRight="@drawable/music_more"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:text="本地音乐"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <include layout="@layout/line_1" />
+
+            <TextView
+                android:id="@+id/tv_my_music_late"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:drawableLeft="@drawable/lately_music"
+                android:drawablePadding="@dimen/dm030"
+                android:drawableRight="@drawable/music_more"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:text="最近播放"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <include layout="@layout/line_1" />
+
+            <TextView
+                android:id="@+id/tv_my_music_collect"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:drawableLeft="@drawable/collect_music"
+                android:drawablePadding="@dimen/dm030"
+                android:drawableRight="@drawable/music_more"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:text="我的收藏"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <include layout="@layout/line_1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm085"
+                android:background="#f2f2f2"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:text="我的音乐（100）"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <include layout="@layout/line_1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm098"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:text="新建歌单"
+                android:textColor="@color/tab_color"
+                android:textSize="@dimen/dm028" />
+
+            <include layout="@layout/line_1" />
+
+            <com.risenb.thousandnight.views.MyRecyclerView
+                android:id="@+id/mrv_my_music"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+    </com.risenb.thousandnight.views.MyScrollView>
+
+    <include layout="@layout/include_bottom" />
+</LinearLayout>

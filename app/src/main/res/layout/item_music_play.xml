@@ -37,17 +37,19 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:text="我们都一样"
             android:textColor="@color/gray333"
-            android:textSize="@dimen/dm028"
-            android:text="我们都一样"/>
+            android:textSize="@dimen/dm028" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="@dimen/dm020"
-            android:src="@drawable/music_cancle"/>
+            android:src="@drawable/music_cancle" />
 
     </LinearLayout>
+
+    <include layout="@layout/line_1" />
 
 </LinearLayout>

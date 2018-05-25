@@ -1,6 +1,7 @@
 package com.risenb.thousandnight.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.risenb.expand.xrecyclerview.adapter.BaseViewHolder;
 import com.risenb.expand.xrecyclerview.bean.BaseFootBean;
 import com.risenb.expand.xrecyclerview.bean.BaseHeadBean;
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.ui.home.fragment.music.SongSheetUI;
 import com.risenb.thousandnight.views.MyRecyclerView;
 
 import butterknife.BindView;
@@ -68,6 +70,13 @@ public class MusicAdapter<T extends Object> extends BaseRecyclerAdapter {
             mrv_music.setLayoutManager(linearLayoutManager);
             homeMusicAdapter = new HomeMusicAdapter<>();
             homeMusicAdapter.setActivity(getActivity());
+            homeMusicAdapter.setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, int i) {
+                    Intent intent = new Intent(getActivity(), SongSheetUI.class);
+                    getActivity().startActivity(intent);
+                }
+            });
             mrv_music.setAdapter(homeMusicAdapter);
         }
 

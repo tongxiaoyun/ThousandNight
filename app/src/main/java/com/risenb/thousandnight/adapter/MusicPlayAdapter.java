@@ -35,12 +35,12 @@ public class MusicPlayAdapter<T extends Object> extends BaseRecyclerAdapter<T> {
 
     @Override
     protected BaseViewHolder loadView(Context context, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.aaa, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_music_play, null);
         view.setLayoutParams(new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         return new ViewHolder(view);
     }
 
-    private class ViewHolder extends BaseViewHolder<T> {
+     class ViewHolder extends BaseViewHolder<T> {
         public ViewHolder(View itemView) {
             super(itemView);
         }

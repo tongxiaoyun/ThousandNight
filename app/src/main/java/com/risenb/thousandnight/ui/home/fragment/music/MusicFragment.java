@@ -1,6 +1,7 @@
 package com.risenb.thousandnight.ui.home.fragment.music;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.MusicAdapter;
 import com.risenb.thousandnight.adapter.MusicClassifyAdapter;
@@ -22,6 +24,7 @@ import com.risenb.thousandnight.views.banner.holder.MZViewHolder;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * 音乐
@@ -105,6 +108,14 @@ public class MusicFragment extends BaseFragment {
         musicClassifyAdapter = new MusicClassifyAdapter<>();
         musicClassifyAdapter.setActivity(getActivity());
         mrv_music_classify.setAdapter(musicClassifyAdapter);
+
+        musicClassifyAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int i) {
+                Intent intent = new Intent(getActivity(), SongSheetUI.class);
+                getActivity().startActivity(intent);
+            }
+        });
     }
 
     public static final class ViewPagerHolder implements MZViewHolder<BannerBean> {
@@ -123,5 +134,27 @@ public class MusicFragment extends BaseFragment {
             Glide.with(context).load("").error(R.drawable.default_banner).placeholder(R.drawable.default_banner).into(iv_home_banner);
 
         }
+    }
+
+
+    @OnClick(R.id.tv_home_music_mine)
+    void toMine() {
+        Intent intent = new Intent(getActivity(), MyMusicUI.class);
+        startActivity(intent);
+    }
+
+
+    @OnClick(R.id.tv_home_music_news)
+    void toNews() {
+        Intent intent = new Intent(getActivity(), MusicSecondUI.class);
+        intent.putExtra("title", "最新");
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.tv_home_music_hot)
+    void toHot() {
+        Intent intent = new Intent(getActivity(), MusicSecondUI.class);
+        intent.putExtra("title", "最热");
+        startActivity(intent);
     }
 }

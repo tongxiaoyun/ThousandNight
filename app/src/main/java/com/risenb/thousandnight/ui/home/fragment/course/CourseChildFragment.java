@@ -1,10 +1,13 @@
 package com.risenb.thousandnight.ui.home.fragment.course;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.risenb.expand.xrecyclerview.XRecyclerView;
+import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.CourseChildAdapter;
 import com.risenb.thousandnight.ui.BaseFragment;
@@ -45,5 +48,12 @@ public class CourseChildFragment extends BaseFragment {
         courseChildAdapter = new CourseChildAdapter<>();
         courseChildAdapter.setActivity(getActivity());
         xrv_course_child.setAdapter(courseChildAdapter);
+        courseChildAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int i) {
+                Intent intent = new Intent(getActivity(), CourseDetialUI.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -40,5 +40,6 @@ public class MusicPlayPopUtils extends CommentPopUtils {
         musicPlayAdapter.setActivity((FragmentActivity) context);
         rv_pop_music_play.setLayoutManager(linearLayoutManager);
         rv_pop_music_play.setAdapter(musicPlayAdapter);
+        popupWindow.setAnimationStyle(R.style.take_photo_anim);
     }
 }

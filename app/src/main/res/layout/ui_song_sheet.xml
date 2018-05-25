@@ -1,0 +1,191 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <com.risenb.thousandnight.views.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm280"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dm030"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:paddingTop="@dimen/dm030">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dm220"
+                    android:layout_height="@dimen/dm220"
+                    android:background="@color/white"
+                    android:padding="@dimen/dm008">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/default_img" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm040"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dm020"
+                        android:lineSpacingExtra="@dimen/dm005"
+                        android:lines="2"
+                        android:text="存在你深深的脑海里的网络歌曲网络歌曲"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm028" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dm030"
+                        android:drawableLeft="@drawable/music_headset"
+                        android:drawablePadding="@dimen/dm010"
+                        android:text="6.666万"
+                        android:textColor="@color/gray999"
+                        android:textSize="@dimen/dm020" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm140"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_song_sheet_collect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="@dimen/dm012"
+                        android:drawableTop="@drawable/song_collect"
+                        android:text="收藏(258)"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm024" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_song_sheet_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="@dimen/dm012"
+                        android:drawableTop="@drawable/song_add"
+                        android:text="添加歌单"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm024" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="@dimen/dm012"
+                        android:drawableTop="@drawable/song_down"
+                        android:text="批量下载"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm024" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <include layout="@layout/line_20" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm100"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/music_play_gray" />
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm020"
+                    android:layout_weight="1"
+                    android:text="播放全部（共20首）"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm028" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm020"
+                    android:text="多选"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm026" />
+
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <com.risenb.thousandnight.views.MyRecyclerView
+                android:id="@+id/rv_local_music"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm000"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+    </com.risenb.thousandnight.views.MyScrollView>
+
+    <include layout="@layout/include_music_bottom" />
+
+    <include layout="@layout/include_bottom" />
+</LinearLayout>

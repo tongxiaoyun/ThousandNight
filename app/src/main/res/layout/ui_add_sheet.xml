@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <com.risenb.thousandnight.views.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dm020">
+
+            <include layout="@layout/line_1" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm080"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:textColor="@color/gray333"
+                android:textColorHint="@color/gray333"
+                android:hint="请输入歌单名称"
+                android:textSize="@dimen/dm028" />
+
+            <include layout="@layout/line_1" />
+        </LinearLayout>
+    </com.risenb.thousandnight.views.MyScrollView>
+
+
+    <include layout="@layout/include_bottom" />
+</LinearLayout>

@@ -275,7 +275,50 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.home.fragment.music.MyMusicUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
 
+        <activity
+            android:name=".ui.home.fragment.music.MusicSecondUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name=".ui.home.fragment.music.LocalMusicUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.home.fragment.music.LatelyMusicUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name=".ui.home.fragment.music.MusicCollectUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.home.fragment.music.SongSheetUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name=".ui.home.fragment.music.AddSheetUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.home.fragment.course.CourseDetialUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dm005"
+    android:paddingLeft="@dimen/dm020"
+    android:paddingRight="@dimen/dm020"
+    android:paddingTop="@dimen/dm020">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm390">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm390"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_img" />
+
+        <TextView
+            android:id="@+id/tv_live_video_status"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dm030"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm020"
+            android:background="@drawable/sp_white_bd_cor"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dm010"
+            android:paddingRight="@dimen/dm010"
+            android:text="直播"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dm020" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tv_live_video_status"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm010"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="3000人在看"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dm020" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dm020"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="舞蹈教学视频"
+        android:textColor="@color/gray666"
+        android:textSize="@dimen/dm024" />
+
+</LinearLayout>

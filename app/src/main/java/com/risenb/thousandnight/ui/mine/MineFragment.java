@@ -11,9 +11,18 @@ import android.widget.RelativeLayout;
 
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.ui.BaseFragment;
+import com.risenb.thousandnight.ui.mine.attention.AttentionUI;
+import com.risenb.thousandnight.ui.mine.campaign.CampaignUI;
+import com.risenb.thousandnight.ui.mine.coin.CoinUI;
+import com.risenb.thousandnight.ui.mine.course.CourseUI;
+import com.risenb.thousandnight.ui.mine.dancepartner.DancePartnerUI;
+import com.risenb.thousandnight.ui.mine.dynamic.DynamicUI;
 import com.risenb.thousandnight.ui.mine.home.HomeUI;
 import com.risenb.thousandnight.ui.mine.info.PersonInfoUI;
+import com.risenb.thousandnight.ui.mine.livevideo.LiveVideoUI;
 import com.risenb.thousandnight.ui.mine.nearbyfriend.NearbyFriendUI;
+import com.risenb.thousandnight.ui.mine.order.OrderUI;
+import com.risenb.thousandnight.ui.mine.recruit.RecruitUI;
 import com.risenb.thousandnight.ui.mine.setting.SettingUI;
 import com.risenb.thousandnight.views.SScrollView;
 
@@ -55,10 +64,11 @@ public class MineFragment extends BaseFragment implements SScrollView.OnScroller
     }
 
     @OnClick({R.id.iv_mine_edit, R.id.iv_mine_icon, R.id.tv_mine_nickname, R.id.ll_mine_age,
-            R.id.tv_mine_signature, R.id.tv_mine_home, R.id.tv_mine_sign, R.id.rl_mine_menu_1,
-            R.id.rl_mine_menu_2, R.id.rl_mine_menu_3, R.id.rl_mine_menu_4, R.id.rl_mine_menu_5,
-            R.id.rl_mine_menu_6, R.id.rl_mine_menu_7, R.id.rl_mine_menu_8, R.id.rl_mine_menu_9,
-            R.id.rl_mine_menu_10, R.id.rl_mine_menu_11, R.id.rl_mine_menu_12})
+            R.id.tv_mine_signature, R.id.tv_mine_home, R.id.tv_mine_sign, R.id.ll_mine_coin,
+            R.id.rl_mine_menu_1, R.id.rl_mine_menu_2, R.id.rl_mine_menu_3, R.id.rl_mine_menu_4,
+            R.id.rl_mine_menu_5, R.id.rl_mine_menu_6, R.id.rl_mine_menu_7, R.id.rl_mine_menu_8,
+            R.id.rl_mine_menu_9, R.id.rl_mine_menu_10, R.id.rl_mine_menu_11, R.id.rl_mine_menu_12,
+            R.id.ll_mine_attention, R.id.ll_mine_fans})
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -73,10 +83,6 @@ public class MineFragment extends BaseFragment implements SScrollView.OnScroller
                 startActivity(intent);
                 break;
             //设置
-            case R.id.title:
-                intent = new Intent(getActivity(), SettingUI.class);
-                startActivity(intent);
-                break;
             //我的主页
             case R.id.tv_mine_home:
                 intent = new Intent(getActivity(), HomeUI.class);
@@ -87,64 +93,83 @@ public class MineFragment extends BaseFragment implements SScrollView.OnScroller
                 intent = new Intent(getActivity(), SettingUI.class);
                 startActivity(intent);
                 break;
-            //菜单1
+            //千夜币
+            case R.id.ll_mine_coin:
+                intent = new Intent(getActivity(), CoinUI.class);
+                startActivity(intent);
+                break;
+            //附近的舞友
             case R.id.rl_mine_menu_1:
                 intent = new Intent(getActivity(), NearbyFriendUI.class);
                 startActivity(intent);
                 break;
-            //菜单2
+            //会员中心
             case R.id.rl_mine_menu_2:
                 intent = new Intent(getActivity(), PersonInfoUI.class);
                 startActivity(intent);
                 break;
-            //菜单3
+            //我的课程
             case R.id.rl_mine_menu_3:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), CourseUI.class);
                 startActivity(intent);
                 break;
-            //菜单4
+            //我的订单
             case R.id.rl_mine_menu_4:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), OrderUI.class);
                 startActivity(intent);
                 break;
-            //菜单5
+            //机构认证
             case R.id.rl_mine_menu_5:
                 intent = new Intent(getActivity(), PersonInfoUI.class);
                 startActivity(intent);
                 break;
-            //菜单6
+            //我的动态
             case R.id.rl_mine_menu_6:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), DynamicUI.class);
                 startActivity(intent);
                 break;
-            //菜单7
+            //我的活动
             case R.id.rl_mine_menu_7:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), CampaignUI.class);
                 startActivity(intent);
                 break;
-            //菜单8
+            //舞伴寻找记录
             case R.id.rl_mine_menu_8:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), DancePartnerUI.class);
                 startActivity(intent);
                 break;
-            //菜单9
+            //我的直播
             case R.id.rl_mine_menu_9:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), LiveVideoUI.class);
                 startActivity(intent);
                 break;
-            //菜单10
+            //我的招聘
             case R.id.rl_mine_menu_10:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), RecruitUI.class);
+                intent.putExtra("ui", "招聘");
                 startActivity(intent);
                 break;
-            //菜单11
+            //我的投递
             case R.id.rl_mine_menu_11:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), RecruitUI.class);
+                intent.putExtra("ui", "投递");
                 startActivity(intent);
                 break;
-            //菜单12
+            //邀请好友
             case R.id.rl_mine_menu_12:
                 intent = new Intent(getActivity(), PersonInfoUI.class);
+                startActivity(intent);
+                break;
+            //关注
+            case R.id.ll_mine_attention:
+                intent = new Intent(getActivity(), AttentionUI.class);
+                intent.putExtra("ui", "我关注的");
+                startActivity(intent);
+                break;
+            //粉丝
+            case R.id.ll_mine_fans:
+                intent = new Intent(getActivity(), AttentionUI.class);
+                intent.putExtra("ui", "我的粉丝");
                 startActivity(intent);
                 break;
         }

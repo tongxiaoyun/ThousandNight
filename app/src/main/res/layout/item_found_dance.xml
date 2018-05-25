@@ -41,21 +41,32 @@
                     android:textColor="@color/gray333"
                     android:textSize="@dimen/dm026" />
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dm030"
                     android:layout_marginTop="@dimen/dm005"
                     android:background="@drawable/sp_pink_bg_cor"
-                    android:drawableLeft="@drawable/found_girl"
-                    android:drawablePadding="@dimen/dm005"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:maxLines="1"
+                    android:gravity="center_vertical"
                     android:paddingLeft="@dimen/dm015"
                     android:paddingRight="@dimen/dm015"
-                    android:text="27"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/dm020" />
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/found_girl" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dm005"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="27"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dm020" />
+
+                </LinearLayout>
 
             </LinearLayout>
 

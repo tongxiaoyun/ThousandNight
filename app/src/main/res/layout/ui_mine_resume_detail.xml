@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <include layout="@layout/line_1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm000"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm145"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <ImageView
+                    android:layout_width="@dimen/dm085"
+                    android:layout_height="@dimen/dm085"
+                    android:src="@drawable/default_icon" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm020"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="绿森林"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm028" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dm030"
+                        android:layout_marginTop="@dimen/dm005"
+                        android:background="@drawable/sp_pink_bg_cor"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/dm015"
+                        android:paddingRight="@dimen/dm015">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/found_girl" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dm005"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="27"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dm020" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/line_20" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm085"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:text="求职信息"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:text="本次舞蹈大赛专门为了热爱拉丁舞的爱好者设定，大赛分为3个阶段，每个阶段都会选出出众3组，每个阶段都会选出出众3组，每个阶段都会选出出众3组，每个阶段都会选出出众3组，每个阶段都会选出出众3组"
+                android:textColor="@color/gray666"
+                android:textSize="@dimen/dm024" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm460"
+                android:layout_marginLeft="@dimen/dm020"
+                android:layout_marginRight="@dimen/dm020"
+                android:layout_marginTop="@dimen/dm025">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm460"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_img" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/home_video_play" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm097"
+        android:background="@color/tab_color"
+        android:gravity="center"
+        android:text="立即沟通"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dm028" />
+
+</LinearLayout>

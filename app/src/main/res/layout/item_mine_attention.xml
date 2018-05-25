@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm150"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dm030"
+        android:paddingRight="@dimen/dm030">
+
+        <ImageView
+            android:layout_width="@dimen/dm090"
+            android:layout_height="@dimen/dm090"
+            android:src="@drawable/default_icon" />
+
+        <LinearLayout
+            android:layout_width="@dimen/dm000"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dm020"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="绿森林"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dm005"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/mine_boy" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm005"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="27岁"
+                    android:textColor="@color/gray999"
+                    android:textSize="@dimen/dm020" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dm020"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_attention_status"
+                android:layout_width="@dimen/dm145"
+                android:layout_height="@dimen/dm052"
+                android:background="@drawable/sp_purple_bg_cor"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="取消关注"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dm022" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dm010"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="2018-01-22"
+                android:textColor="@color/gray999"
+                android:textSize="@dimen/dm020" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/line_1" />
+
+</LinearLayout>

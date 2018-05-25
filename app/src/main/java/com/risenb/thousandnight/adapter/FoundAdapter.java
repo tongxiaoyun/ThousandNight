@@ -3,7 +3,6 @@ package com.risenb.thousandnight.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -15,10 +14,10 @@ import com.risenb.expand.xrecyclerview.bean.BaseHeadBean;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.ui.found.album.FoundAlbumUI;
 import com.risenb.thousandnight.ui.found.dance.FoundDanceUI;
-import com.risenb.thousandnight.ui.found.job.FoundJobUI;
 import com.risenb.thousandnight.ui.found.livevideo.FoundLiveVideoUI;
 import com.risenb.thousandnight.ui.found.mall.FoundMallUI;
 import com.risenb.thousandnight.ui.found.news.FoundNewsUI;
+import com.risenb.thousandnight.ui.found.recruit.FoundRecruitUI;
 import com.risenb.thousandnight.views.MyRecyclerView;
 
 import butterknife.BindView;
@@ -113,7 +112,7 @@ public class FoundAdapter<T extends Object> extends BaseRecyclerAdapter {
          */
         @OnClick(R.id.rl_found_job)
         void job() {
-            Intent intent = new Intent(getActivity(), FoundJobUI.class);
+            Intent intent = new Intent(getActivity(), FoundRecruitUI.class);
             getActivity().startActivity(intent);
         }
 

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm088"
+        android:layout_marginTop="@dimen/dm020"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/rg_order"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm000"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_order_1"
+                style="@style/tab_top_2"
+                android:checked="true"
+                android:text="全部" />
+
+            <RadioButton
+                android:id="@+id/rb_order_2"
+                style="@style/tab_top_2"
+                android:text="待支付" />
+
+            <RadioButton
+                android:id="@+id/rb_order_3"
+                style="@style/tab_top_2"
+                android:text="待评价" />
+
+            <RadioButton
+                android:id="@+id/rb_order_4"
+                style="@style/tab_top_2"
+                android:text="已完成" />
+
+        </RadioGroup>
+
+        <View
+            android:id="@+id/v_order_indicator"
+            android:layout_width="@dimen/dm055"
+            android:layout_height="@dimen/dm003"
+            android:background="@color/tab_color" />
+
+    </LinearLayout>
+
+    <include layout="@layout/line_1" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_order"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm000"
+        android:layout_weight="1" />
+
+</LinearLayout>

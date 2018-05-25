@@ -161,6 +161,7 @@
                         android:paddingTop="@dimen/dm020">
 
                         <LinearLayout
+                            android:id="@+id/ll_mine_attention"
                             android:layout_width="@dimen/dm000"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -193,6 +194,7 @@
                             android:background="@color/white" />
 
                         <LinearLayout
+                            android:id="@+id/ll_mine_fans"
                             android:layout_width="@dimen/dm000"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -225,6 +227,7 @@
                             android:background="@color/white" />
 
                         <LinearLayout
+                            android:id="@+id/ll_mine_zan"
                             android:layout_width="@dimen/dm000"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -257,6 +260,7 @@
                             android:background="@color/white" />
 
                         <LinearLayout
+                            android:id="@+id/ll_mine_criticism"
                             android:layout_width="@dimen/dm000"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"

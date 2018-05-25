@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <com.risenb.thousandnight.views.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm000"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dm020"
+                android:layout_marginLeft="@dimen/dm020"
+                android:layout_marginRight="@dimen/dm020"
+                android:layout_marginTop="@dimen/dm020"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm088"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm025">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dm020"
+                        android:text="机构名称"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm026" />
+
+                    <EditText
+                        style="@style/edit_style"
+                        android:hint="请输入入机构名称" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm088"
+                    android:layout_marginTop="@dimen/dm020"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm025">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dm020"
+                        android:text="所在地区"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm026" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dm035"
+                        android:layout_marginRight="@dimen/dm030"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="请选择所在地区"
+                        android:textColor="@color/gray999"
+                        android:textSize="@dimen/dm026" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm088"
+                    android:layout_marginTop="@dimen/dm020"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm025">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dm020"
+                        android:text="企业代码"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm026" />
+
+                    <EditText
+                        style="@style/edit_style"
+                        android:hint="请输入企业代码编号" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm088"
+                    android:layout_marginTop="@dimen/dm020"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm025">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dm020"
+                        android:text="联系人    "
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm026" />
+
+                    <EditText
+                        style="@style/edit_style"
+                        android:hint="请输入联系人名称" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm088"
+                    android:layout_marginTop="@dimen/dm020"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm025">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dm020"
+                        android:text="联系方式"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm026" />
+
+                    <EditText
+                        style="@style/edit_style"
+                        android:hint="请输入联系方式" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm035"
+                android:text="机构证件上传"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dm030"
+                android:paddingLeft="@dimen/dm035"
+                android:paddingRight="@dimen/dm030"
+                android:paddingTop="@dimen/dm030">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="企业营业执照"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm028" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dm150"
+                        android:layout_height="@dimen/dm150"
+                        android:layout_marginTop="@dimen/dm035"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/mine_add_photo" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm050"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开户许可证"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm028" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dm150"
+                        android:layout_height="@dimen/dm150"
+                        android:layout_marginTop="@dimen/dm035"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/mine_add_photo" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.risenb.thousandnight.views.MyScrollView>
+
+    <TextView
+        android:id="@+id/tv_organize_info_submit"
+        style="@style/text_style"
+        android:layout_marginBottom="@dimen/dm030"
+        android:layout_marginLeft="@dimen/dm020"
+        android:layout_marginRight="@dimen/dm020"
+        android:layout_marginTop="@dimen/dm020"
+        android:text="提交" />
+
+</LinearLayout>

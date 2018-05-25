@@ -19,11 +19,14 @@ import com.risenb.thousandnight.ui.mine.dancepartner.DancePartnerUI;
 import com.risenb.thousandnight.ui.mine.dynamic.DynamicUI;
 import com.risenb.thousandnight.ui.mine.home.HomeUI;
 import com.risenb.thousandnight.ui.mine.info.PersonInfoUI;
+import com.risenb.thousandnight.ui.mine.invite.InviteFriendUI;
 import com.risenb.thousandnight.ui.mine.livevideo.LiveVideoUI;
 import com.risenb.thousandnight.ui.mine.nearbyfriend.NearbyFriendUI;
 import com.risenb.thousandnight.ui.mine.order.OrderUI;
+import com.risenb.thousandnight.ui.mine.organizeattest.OrganizeAttestUI;
 import com.risenb.thousandnight.ui.mine.recruit.RecruitUI;
 import com.risenb.thousandnight.ui.mine.setting.SettingUI;
+import com.risenb.thousandnight.ui.mine.vip.VipUI;
 import com.risenb.thousandnight.views.SScrollView;
 
 import butterknife.BindView;
@@ -105,7 +108,7 @@ public class MineFragment extends BaseFragment implements SScrollView.OnScroller
                 break;
             //会员中心
             case R.id.rl_mine_menu_2:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), VipUI.class);
                 startActivity(intent);
                 break;
             //我的课程
@@ -120,7 +123,7 @@ public class MineFragment extends BaseFragment implements SScrollView.OnScroller
                 break;
             //机构认证
             case R.id.rl_mine_menu_5:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), OrganizeAttestUI.class);
                 startActivity(intent);
                 break;
             //我的动态
@@ -157,7 +160,7 @@ public class MineFragment extends BaseFragment implements SScrollView.OnScroller
                 break;
             //邀请好友
             case R.id.rl_mine_menu_12:
-                intent = new Intent(getActivity(), PersonInfoUI.class);
+                intent = new Intent(getActivity(), InviteFriendUI.class);
                 startActivity(intent);
                 break;
             //关注

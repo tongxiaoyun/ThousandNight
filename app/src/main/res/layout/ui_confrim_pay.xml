@@ -1,0 +1,240 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <com.risenb.thousandnight.views.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm085"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:text="订单号：1234567890"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <include layout="@layout/line_1" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm085"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:text="购买商品：Hebe现代舞小学视频"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm085"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dm085"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dm020"
+                    android:text="应支付："
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm028" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dm085"
+                    android:gravity="center_vertical"
+                    android:text="¥ 99.00"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm028" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_20" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm085"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:text="支付方式选择"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm030"
+                android:textStyle="bold" />
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dm040"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:paddingTop="@dimen/dm040">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/qianye_money" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/dm000"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="使用千夜币支付"
+                            android:textColor="@color/gray333"
+                            android:textSize="@dimen/dm026" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="可使用千夜币"
+                            android:textColor="@color/gray333"
+                            android:textSize="@dimen/dm024" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2000"
+                            android:textColor="@color/tab_color"
+                            android:textSize="@dimen/dm022" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dm072"
+                        android:layout_marginTop="@dimen/dm020"
+                        android:background="@drawable/sp_gray_bd_cor"
+                        android:gravity="center_vertical"
+                        android:hint="请使用输入千夜币的数量"
+                        android:padding="@dimen/dm020"
+                        android:textColor="@color/gray333"
+                        android:textColorHint="@color/gray999"
+                        android:textSize="@dimen/dm026" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm085"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dm085"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dm020"
+                    android:text="剩余支付金额："
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm028" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dm085"
+                    android:gravity="center_vertical"
+                    android:text="¥ 99.00"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm028" />
+
+            </LinearLayout>
+
+
+            <include layout="@layout/line_20" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm110"
+                    android:background="@color/white"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableLeft="@drawable/mine_weixin"
+                    android:drawablePadding="@dimen/dm030"
+                    android:drawableRight="@drawable/sl_mine_feature"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020"
+                    android:text="使用微信支付"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm028" />
+
+                <include layout="@layout/line_1" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm110"
+                    android:background="@color/white"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/mine_alipay"
+                    android:drawablePadding="@dimen/dm030"
+                    android:drawableRight="@drawable/sl_mine_feature"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dm020"
+                    android:paddingRight="@dimen/dm020"
+                    android:text="使用支付宝支付"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm028" />
+
+                <include layout="@layout/line_1" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+    </com.risenb.thousandnight.views.MyScrollView>
+
+    <TextView
+        android:id="@+id/tv_confirm_pay_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm100"
+        android:background="@color/tab_color"
+        android:gravity="center"
+        android:text="确认支付"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dm030" />
+
+
+    <include layout="@layout/include_bottom" />
+</LinearLayout>

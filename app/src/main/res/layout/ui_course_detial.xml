@@ -13,6 +13,81 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_img" />
+
+
+        <ImageView
+            android:layout_width="@dimen/dm095"
+            android:layout_height="@dimen/dm095"
+            android:layout_centerInParent="true"
+            android:src="@drawable/course_play" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_top_4" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088">
+
+                <RelativeLayout
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dm030"
+                    android:paddingRight="@dimen/dm030">
+
+                    <ImageView
+                        android:layout_width="@dimen/dm018"
+                        android:layout_height="@dimen/dm032"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/back_white" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm030"
+                    android:paddingRight="@dimen/dm030">
+
+                    <ImageView
+                        android:id="@+id/iv_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dm010"
+                        android:src="@drawable/course_share" />
+
+                    <TextView
+                        android:id="@+id/tv_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="标题"
+                        android:textColor="@color/tab_color"
+                        android:textSize="@dimen/dm026"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
     </RelativeLayout>
 
 
@@ -26,10 +101,332 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm140"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm150"
+                    android:layout_height="@dimen/dm064"
+                    android:background="@drawable/rate_short"
+                    android:gravity="center"
+                    android:text="减速"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm026" />
+
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="@dimen/dm064"
+                    android:layout_marginLeft="@dimen/dm010"
+                    android:layout_marginRight="@dimen/dm010"
+                    android:layout_weight="1"
+                    android:background="@drawable/rate_long"
+                    android:gravity="center"
+                    android:text="-15%"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="@dimen/dm150"
+                    android:layout_height="@dimen/dm064"
+                    android:background="@drawable/rate_short"
+                    android:gravity="center"
+                    android:text="减速"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm026" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm020"
+                android:layout_marginRight="@dimen/dm020"
+                android:layout_marginTop="@dimen/dm040"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="第一集 Hebe现代舞小学视频"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm030" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm020"
+                android:layout_marginRight="@dimen/dm020"
+                android:layout_marginTop="@dimen/dm020"
+                android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/dm010"
+                android:text="现代舞（英语：Modern dance），是20世纪初在西方兴起的一种与古典芭蕾相对立的舞蹈派别。其主要美学观点是反对古典芭蕾的因循守旧、脱离现实生活和单纯追求技巧的形式主义倾向。"
+                android:textColor="@color/gray666"
+                android:textSize="@dimen/dm024" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dm040"
+                android:layout_marginTop="@dimen/dm040"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/dm010"
+                    android:text="单集价格："
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/dm010"
+                    android:text="¥ 99.00"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm024" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/dm010"
+                    android:text="发布时间：2018-05-22"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:id="@+id/ll_course_detial_introduce"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm210"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <LinearLayout
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dm005"
+                            android:layout_marginTop="@dimen/dm005"
+                            android:background="@drawable/sp_purple_bd_cor"
+                            android:paddingBottom="@dimen/dm003"
+                            android:paddingLeft="@dimen/dm005"
+                            android:paddingRight="@dimen/dm005"
+                            android:paddingTop="@dimen/dm003"
+                            android:text="现代舞"
+                            android:textColor="@color/tab_color"
+                            android:textSize="@dimen/dm024" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dm020"
+                            android:text="第一集 Hebe现代舞小学视频"
+                            android:textColor="@color/gray333"
+                            android:textSize="@dimen/dm030" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dm030"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="共20集"
+                            android:textColor="@color/gray999"
+                            android:textSize="@dimen/dm024" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dm040"
+                            android:drawableLeft="@drawable/course_play_count"
+                            android:drawablePadding="@dimen/dm010"
+                            android:text="187.2万"
+                            android:textColor="@color/gray999"
+                            android:textSize="@dimen/dm024" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dm020"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lineSpacingExtra="@dimen/dm010"
+                            android:text="整套价格："
+                            android:textColor="@color/gray333"
+                            android:textSize="@dimen/dm026" />
+
+                        <TextView
+                            android:layout_width="@dimen/dm000"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:lineSpacingExtra="@dimen/dm010"
+                            android:text="¥ 99.00"
+                            android:textColor="@color/tab_color"
+                            android:textSize="@dimen/dm024" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/course_more" />
+            </LinearLayout>
+
+            <include layout="@layout/line_20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm100"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/course_record"
+                    android:drawablePadding="@dimen/dm010"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/dm010"
+                    android:text="课程目录"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:id="@+id/tv_course_detial_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dm010"
+                    android:drawableRight="@drawable/course_more"
+                    android:text="共20集"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_course_detial_record"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm250"
+                android:paddingLeft="@dimen/dm010"
+                android:paddingRight="@dimen/dm010" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm170"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/course_vip" />
+
+            <include layout="@layout/include_course_master" />
+
+            <include layout="@layout/line_20" />
+
+
+            <include layout="@layout/include_course_comment" />
 
         </LinearLayout>
     </com.risenb.thousandnight.views.MyScrollView>
 
+    <include layout="@layout/line_1" />
+
 
     <include layout="@layout/include_bottom" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm096"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dm060"
+            android:drawablePadding="@dimen/dm005"
+            android:drawableTop="@drawable/course_collect"
+            android:gravity="center_horizontal"
+            android:text="收藏"
+            android:textColor="@color/gray999"
+            android:textSize="@dimen/dm022" />
+
+        <TextView
+            android:id="@+id/tv_course_detial_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dm090"
+            android:drawablePadding="@dimen/dm005"
+            android:drawableTop="@drawable/course_down"
+            android:gravity="center_horizontal"
+            android:text="下载"
+            android:textColor="@color/gray999"
+            android:textSize="@dimen/dm022" />
+
+        <View
+            android:layout_width="@dimen/dm000"
+            android:layout_height="@dimen/dm000"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_course_detial_buy"
+            android:layout_width="@dimen/dm280"
+            android:layout_height="match_parent"
+            android:background="@color/tab_color"
+            android:gravity="center"
+            android:text="购买"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dm030" />
+
+    </LinearLayout>
 </LinearLayout>

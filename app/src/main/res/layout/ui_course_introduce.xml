@@ -1,0 +1,198 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <com.risenb.thousandnight.views.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm210"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <LinearLayout
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dm005"
+                            android:layout_marginTop="@dimen/dm005"
+                            android:background="@drawable/sp_purple_bd_cor"
+                            android:paddingBottom="@dimen/dm003"
+                            android:paddingLeft="@dimen/dm005"
+                            android:paddingRight="@dimen/dm005"
+                            android:paddingTop="@dimen/dm003"
+                            android:text="现代舞"
+                            android:textColor="@color/tab_color"
+                            android:textSize="@dimen/dm024" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dm020"
+                            android:text="第一集 Hebe现代舞小学视频"
+                            android:textColor="@color/gray333"
+                            android:textSize="@dimen/dm030" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dm030"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="共20集"
+                            android:textColor="@color/gray999"
+                            android:textSize="@dimen/dm024" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dm040"
+                            android:drawableLeft="@drawable/course_play_count"
+                            android:drawablePadding="@dimen/dm010"
+                            android:text="187.2万"
+                            android:textColor="@color/gray999"
+                            android:textSize="@dimen/dm024" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dm020"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lineSpacingExtra="@dimen/dm010"
+                            android:text="整套价格："
+                            android:textColor="@color/gray333"
+                            android:textSize="@dimen/dm026" />
+
+                        <TextView
+                            android:layout_width="@dimen/dm000"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:lineSpacingExtra="@dimen/dm010"
+                            android:text="¥ 99.00"
+                            android:textColor="@color/tab_color"
+                            android:textSize="@dimen/dm024" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <include layout="@layout/line_20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm100"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020">
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/course_record"
+                    android:drawablePadding="@dimen/dm010"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/dm010"
+                    android:text="课程目录"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dm010"
+                    android:drawableRight="@drawable/course_more"
+                    android:text="共20集"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_course_detial_record"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm250"
+                android:paddingLeft="@dimen/dm010"
+                android:paddingRight="@dimen/dm010" />
+
+            <include layout="@layout/line_20" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="@dimen/dm010"
+                android:paddingLeft="@dimen/dm020"
+                android:paddingRight="@dimen/dm020"
+                android:paddingTop="@dimen/dm040"
+                android:text="芭蕾（Ballet）一词，来源于意大利语的Ballare（即跳舞）和古拉丁语的Ballo，最后用法语的　Ballet确定下来，并一直沿用至今。
+芭蕾最初是欧洲的一种群众自娱或广场表演的舞蹈，在发展进程中形成了严格的规范和解构形式、其主要特征是女演员要穿上特制的足尖鞋立起脚尖舞。作为一门综合性的舞台艺术，芭蕾发源于意大利、17世纪在法国宫庭形成。法国宫廷芭蕾是在统一的主题下，把歌唱、舞蹈、音乐、朗诵和戏剧情节融为一体。1661年，法国国王路易十四下令在巴黎创办了世界第一所皇家舞蹈学校，确立了芭蕾的五个基本脚位和十二个手位，是芭蕾动作有了一套完整的动作和体系。这五个基本脚位一直沿用至今。无论在练功教室还是在舞台，舞蹈者穿的都是专美设计的服装练功服。虽然某些服装可能会随时尚变换样式，但对舞蹈者来说，练功服绝不仅仅是为了好看，它们中每一件都有其切实的作用。紧身衣和紧身裤袜是舞蹈者最基本的练习服。在古典芭蕾领域，女孩子通常穿黑色紧身衣，配上粉色的紧身裤袜。有的学校则喜欢让他们的姑娘穿短袜和各种带色的紧身衣。发式也是舞蹈服饰的一部分。古典芭蕾的姑娘们爱把他们的头发在脑后挽成一个髻，这样脖子和头部的线条就显得十分清晰。芭蕾软鞋是女孩子练足尖前，男女学生都穿的练功用柔软的薄皮革或帆布制成。女孩子穿粉色，男孩子穿黑色或白色。鞋子须以较紧的包住脚为易.
+如今的都市女性不仅注意美容，而且注意健身。芭蕾已经成为都市女性的新宠。舞台上洁白的纱裙，漂亮的足尖，高难度的旋转，优雅的谢幕，这些一直留存在心中的芭蕾印象，积淀成一种遥远的畅想。从来没有设想自己也能触摸芭蕾，感受她的美丽和高雅。但是，现在很多深圳白领女性都开始走入健身会，体验这种高雅的艺术带来的享受。继健美操后，芭蕾形体训练开始风靡都市，火爆异常。
+从运动学角度讲，芭蕾舞是一种无氧运动，其健美力度是一般健身运动无法比拟的，开、绷、直芭蕾三因素，具有收缩纤维的功能，使人练后身材更修长，在动静结合的运动中有效地消耗多余脂肪，造就形体美，因而吸引了众多爱好者。芭蕾训练班大多采用业余形式，利用晚上和周末时间开课。伴随着悠扬的乐曲声，身着各式练功服穿着舞鞋的学员们，一丝不苟地做着芭蕾基本动作，弯腰、踮脚、踢腿、一招一式十分认真，扬腿、旋转颇有几分芭蕾韵味，陶醉在高雅艺术氛围中。经过一段时间芭蕾形体训练的学员，大多身姿挺拔，形体健美，举手投足气质明显优于常人。以往的药物减肥、理疗减肥、减肥操虽有一定疗效，但代价较大。而芭蕾形体训练花费不大，又没有副作用，在健身的同时，使人形体优美，气质高雅，是一种极佳的健身方式。因而国内芭蕾形体训练开展得红红火火，日益大众化，成为现代女性追求的时尚。"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm024" />
+
+
+        </LinearLayout>
+    </com.risenb.thousandnight.views.MyScrollView>
+
+    <TextView
+        android:id="@+id/tv_course_introduce_buy"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm100"
+        android:background="@color/tab_color"
+        android:gravity="center"
+        android:text="购买"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dm030" />
+
+
+    <include layout="@layout/include_bottom" />
+</LinearLayout>

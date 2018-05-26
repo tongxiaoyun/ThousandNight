@@ -1,16 +1,22 @@
 package com.risenb.thousandnight.ui.home.fragment.course;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.adapter.CommentAdapter;
+import com.risenb.thousandnight.adapter.CourseRecordAdapter;
 import com.risenb.thousandnight.ui.BaseUI;
 import com.tencent.rtmp.TXLiveConstants;
 import com.tencent.rtmp.TXVodPlayer;
 import com.tencent.rtmp.ui.TXCloudVideoView;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * ================================================
@@ -28,7 +34,17 @@ public class CourseDetialUI extends BaseUI {
      */
     @BindView(R.id.video_view)
     TXCloudVideoView video_view;
+
+
+    @BindView(R.id.rv_course_detial_record)
+    RecyclerView rv_course_detial_record;
+
+    @BindView(R.id.rv_course_comment)
+    RecyclerView rv_course_comment;
+
     private TXVodPlayer mVodPlayer;
+    private CourseRecordAdapter<Object> courseRecordAdapter;
+    private CommentAdapter<Object> commentAdapter;
 
     @Override
 
@@ -44,11 +60,36 @@ public class CourseDetialUI extends BaseUI {
     @Override
     protected void setControlBasis() {
         initPlayer();
+        initAdapter();
     }
 
     @Override
     protected void prepareData() {
 
+    }
+
+    /**
+     * 初始化适配器
+     */
+    private void initAdapter() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        courseRecordAdapter = new CourseRecordAdapter<>();
+        courseRecordAdapter.setActivity(getActivity());
+        rv_course_detial_record.setLayoutManager(linearLayoutManager);
+        rv_course_detial_record.setAdapter(courseRecordAdapter);
+
+        LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(getActivity()) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
+        linearLayoutManager2.setOrientation(LinearLayoutManager.VERTICAL);
+        rv_course_comment.setLayoutManager(linearLayoutManager2);
+        commentAdapter = new CommentAdapter<>();
+        commentAdapter.setActivity(getActivity());
+        rv_course_comment.setAdapter(commentAdapter);
     }
 
     /**
@@ -73,5 +114,31 @@ public class CourseDetialUI extends BaseUI {
         video_view.onDestroy();
     }
 
+
+    @OnClick(R.id.ll_course_detial_introduce)
+    void toIntroduce() {
+        Intent intent = new Intent(getActivity(), CourseIntroduceUI.class);
+        startActivity(intent);
+    }
+
+
+    @OnClick(R.id.tv_course_detial_buy)
+    void toBuy() {
+        Intent intent = new Intent(getActivity(), ConfirmPayUI.class);
+        startActivity(intent);
+    }
+
+
+    @OnClick(R.id.tv_course_detial_down)
+    void toDown() {
+        Intent intent = new Intent(getActivity(), SelectCourseUI.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.tv_course_detial_select)
+    void toSelect() {
+        Intent intent = new Intent(getActivity(), SelectCourseUI.class);
+        startActivity(intent);
+    }
 
 }

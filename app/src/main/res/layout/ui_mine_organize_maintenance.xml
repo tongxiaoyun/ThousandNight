@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <com.risenb.thousandnight.views.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm000"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:layout_marginTop="@dimen/dm020"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030"
+                android:paddingRight="@dimen/dm030">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dm020"
+                    android:text="机构名称"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="北京因联科技有限公司"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <com.risenb.thousandnight.views.MyRecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dm030"></com.risenb.thousandnight.views.MyRecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:layout_marginTop="@dimen/dm020"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm030"
+                android:text="简介"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dm030">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系方式"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <EditText
+                    style="@style/edit_style"
+                    android:hint="请输入联系方式" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.risenb.thousandnight.views.MyScrollView>
+
+    <TextView
+        android:id="@+id/tv_maintenance_submit"
+        style="@style/text_style"
+        android:layout_marginBottom="@dimen/dm030"
+        android:layout_marginLeft="@dimen/dm020"
+        android:layout_marginRight="@dimen/dm020"
+        android:layout_marginTop="@dimen/dm020"
+        android:text="提交" />
+
+</LinearLayout>

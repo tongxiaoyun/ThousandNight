@@ -297,6 +297,21 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
+            android:name=".ui.mine.vip.VipUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.mine.vip.VipRecordUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.mine.vip.VipOpenUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
             android:name=".ui.mine.course.CourseUI"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
@@ -313,6 +328,41 @@
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name=".ui.mine.order.OrderCommentUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.mine.organizeattest.OrganizeAttestUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.mine.organizeattest.OrganizeInfoSubmitUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.mine.organizeattest.AttestingUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.mine.organizeattest.AttestSuccessUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.mine.organizeattest.AttestFailUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.mine.organizeattest.OrganizeUnmaintainedUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.mine.organizeattest.OrganizeMaintenanceUI"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"></activity>
@@ -353,6 +403,11 @@
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name=".ui.mine.recruit.DeliverDetailUI"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.mine.invite.InviteFriendUI"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"></activity>

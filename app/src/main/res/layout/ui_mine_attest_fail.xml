@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <include layout="@layout/line_20" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm000"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/dm045"
+                    android:layout_marginTop="@dimen/dm050"
+                    android:drawablePadding="@dimen/dm020"
+                    android:drawableTop="@drawable/mine_fail"
+                    android:gravity="center"
+                    android:text="认证失败"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm030" />
+
+                <include layout="@layout/line_1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm088"
+                    android:layout_marginLeft="@dimen/dm035"
+                    android:gravity="center_vertical"
+                    android:text="认证失败原因"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm028" />
+
+                <include layout="@layout/line_1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dm035"
+                    android:text="失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述，失败原因描述。"
+                    android:textColor="@color/gray666"
+                    android:textSize="@dimen/dm026" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        style="@style/text_style"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dm030"
+        android:layout_marginLeft="@dimen/dm020"
+        android:layout_marginRight="@dimen/dm020"
+        android:layout_marginTop="@dimen/dm020"
+        android:text="重新提交" />
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dm030"
+        android:layout_marginLeft="@dimen/dm030"
+        android:layout_marginRight="@dimen/dm020"
+        android:layout_marginTop="@dimen/dm030"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dm015"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="VIP会员1个月"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm030" />
+
+            <TextView
+                android:id="@+id/tv_vip_record_status"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dm030"
+                android:layout_marginLeft="@dimen/dm015"
+                android:background="@drawable/sp_green_bg_cor"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/dm010"
+                android:paddingRight="@dimen/dm010"
+                android:text="待使用"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dm020" />
+
+            <View
+                android:layout_width="@dimen/dm000"
+                android:layout_height="@dimen/dm001"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="¥ 112.00"
+                android:textColor="@color/tab_color"
+                android:textSize="@dimen/dm026" />
+
+        </LinearLayout>
+
+        <include layout="@layout/line_1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm020"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="会员有效时间：2018-01-03到2018-02-03"
+            android:textColor="@color/gray666"
+            android:textSize="@dimen/dm024" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm020"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="购买时间：2018-01-03"
+            android:textColor="@color/gray666"
+            android:textSize="@dimen/dm024" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm020"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="购买方式：支付宝"
+            android:textColor="@color/gray666"
+            android:textSize="@dimen/dm024" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm020"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="订单编号：1234567890987654321"
+            android:textColor="@color/gray666"
+            android:textSize="@dimen/dm024" />
+
+    </LinearLayout>
+
+    <include layout="@layout/line_20" />
+
+</LinearLayout>

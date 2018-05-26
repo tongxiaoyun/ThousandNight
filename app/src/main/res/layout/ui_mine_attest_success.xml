@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <include layout="@layout/line_20" />
+
+    <com.risenb.thousandnight.views.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dm045"
+                android:layout_marginTop="@dimen/dm050"
+                android:drawablePadding="@dimen/dm020"
+                android:drawableTop="@drawable/mine_success"
+                android:gravity="center"
+                android:text="认证成功"
+                android:textColor="@color/tab_color"
+                android:textSize="@dimen/dm030" />
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:layout_marginLeft="@dimen/dm035"
+                android:layout_marginRight="@dimen/dm030"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="机构名称"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="北京因联科技有限公司"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:layout_marginLeft="@dimen/dm035"
+                android:layout_marginRight="@dimen/dm030"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="所在地区"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="北京市朝阳区"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:layout_marginLeft="@dimen/dm035"
+                android:layout_marginRight="@dimen/dm030"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="企业代码"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="12345678909876k"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:layout_marginLeft="@dimen/dm035"
+                android:layout_marginRight="@dimen/dm030"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系人"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="高志韩"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:layout_marginLeft="@dimen/dm035"
+                android:layout_marginRight="@dimen/dm030"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系方式"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <TextView
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm030"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="13454545454"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_20" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:layout_marginLeft="@dimen/dm035"
+                android:gravity="center_vertical"
+                android:text="机构证件上传"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+            <include layout="@layout/line_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dm030"
+                android:layout_marginLeft="@dimen/dm035"
+                android:layout_marginRight="@dimen/dm030"
+                android:layout_marginTop="@dimen/dm030"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="企业营业执照"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm028" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dm150"
+                        android:layout_height="@dimen/dm150"
+                        android:layout_marginTop="@dimen/dm035"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/default_img" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm050"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开户许可证"
+                        android:textColor="@color/gray333"
+                        android:textSize="@dimen/dm028" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dm150"
+                        android:layout_height="@dimen/dm150"
+                        android:layout_marginTop="@dimen/dm035"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/default_img" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.risenb.thousandnight.views.MyScrollView>
+
+</LinearLayout>

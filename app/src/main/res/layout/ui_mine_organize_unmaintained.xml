@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top" />
+
+    <include layout="@layout/include_title" />
+
+    <include layout="@layout/line_20" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dm050"
+        android:drawablePadding="@dimen/dm030"
+        android:drawableTop="@drawable/mine_no"
+        android:text="机构简介还未维护，赶快去维护吧！"
+        android:textColor="@color/gray666"
+        android:textSize="@dimen/dm026" />
+
+    <TextView
+        android:id="@+id/tv_unmaintained_go"
+        android:layout_width="@dimen/dm284"
+        android:layout_height="@dimen/dm062"
+        android:layout_marginTop="@dimen/dm055"
+        android:background="@drawable/sp_purple_bd_cor"
+        android:gravity="center"
+        android:text="去维护企业简介"
+        android:textColor="@color/tab_color"
+        android:textSize="@dimen/dm024" />
+
+</LinearLayout>

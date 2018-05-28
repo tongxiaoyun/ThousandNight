@@ -168,7 +168,6 @@ public class ChosenFragment extends BaseFragment {
 
         @Override
         public void onBind(Context context, int position, BannerBean data) {
-            Glide.with(context).load("").error(R.drawable.default_banner).placeholder(R.drawable.default_banner).into(iv_home_banner);
 
         }
     }

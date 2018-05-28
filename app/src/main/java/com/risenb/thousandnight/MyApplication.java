@@ -2,11 +2,15 @@ package com.risenb.thousandnight;
 
 import android.app.Application;
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
+import com.alibaba.fastjson.JSONObject;
 import com.risenb.expand.loading.AVLoadingIndicatorView;
 import com.risenb.expand.m;
+import com.risenb.thousandnight.beans.UserBean;
+import com.risenb.thousandnight.utils.PreferencesUtil;
 
 /**
  * ================================================
@@ -26,6 +30,7 @@ public class MyApplication extends Application {
         m.getInstance().getLoadingM().setIndicatorId(AVLoadingIndicatorView.BallBeat);
         m.getInstance().initDebug(true).initNetWorkDefault(getApplicationContext()).setApplication(this);
         getAndroiodScreenProperty();
+        PreferencesUtil.init(getApplicationContext());
 
     }
 
@@ -42,4 +47,30 @@ public class MyApplication extends Application {
         int screenHeight = (int) (height / density);// 屏幕高度(dp)
 
     }
+
+
+    public String getC() {
+        return (String) PreferencesUtil.getInstance().getData("c", "");
+    }
+
+    public void setC(String c) {
+        PreferencesUtil.getInstance().saveData("c", c);
+    }
+
+    public void setUserBean(UserBean bean) {
+        PreferencesUtil.getInstance().saveData("UserBean", JSONObject.toJSONString(bean));
+    }
+
+    public UserBean getUserBean() {
+        String str = (String) PreferencesUtil.getInstance().getData("UserBean", "{}");
+        if (!TextUtils.isEmpty(str)) {
+            try {
+                return JSONObject.parseObject(str, UserBean.class);
+            } catch (Exception e) {
+
+            }
+        }
+        return null;
+    }
+
 }

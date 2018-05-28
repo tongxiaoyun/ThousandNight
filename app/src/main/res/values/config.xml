@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--服务器地址-->
+    <string name="service_host_address">http://47.104.72.136:5080</string>
+
+    <!--2.1.	登录注册-->
+    <!--2.1.1.	获取验证码-->
+    <string name="getCode">/validCode/getCode.do</string>
+    <!--2.1.2.	注册-->
+    <string name="register">/user/register.do</string>
+    <!--2.1.1.	登录-->
+    <string name="login">/user/login.do</string>
+    <!--2.1.1.	找回登录密码（通过手机号验证码）-->
+    <string name="findPwd">/user/findPwd.do</string>
+
+
+    <!--2.2.	个人中心-->
+    <!--2.2.1.	我的-->
+    <string name="home">/userCenter/home.do</string>
+    <!--2.2.2.	个人主页-->
+    <string name="index">/userCenter/index.do</string>
+    <!--2.2.3.	完善/修改用户信息-->
+    <string name="editInfo">/user/editInfo.do</string>
+    <!--2.2.4.	修改登录密码（通过旧密码）-->
+    <string name="changePwd">/user/changePwd.do</string>
+
+    <!--2.3.	广场-->
+    <!--2.3.1.	动态列表-->
+    <string name="momentList">/moment/list.do</string>
+    <!--2.3.2.	新增动态-->
+    <string name="momentAdd">/moment/add.do</string>
+    <!--2.3.3.	删除动态-->
+    <string name="momentDel">/moment/del.do</string>
+    <!--2.3.4.	动态详情-->
+    <string name="momentDetail">/moment/detail.do</string>
+    <!--2.3.5.	动态点赞/取消点赞-->
+    <string name="momentLike">/moment/like.do</string>
+    <!--2.3.6.	新增评论-->
+    <string name="commentMoment">/moment/comment.do</string>
+    <!--2.3.7.	删除评论(评论人和动态所有人可删除)-->
+    <string name="commentDelMoment">/moment/delComment.do</string>
+    <!--2.3.8.	评论列表-->
+    <string name="commentMomentList">/moment/commentList.do</string>
+
+
+    <!--2.4.	发现-->
+    <!--2.4.1.	新闻列表-->
+    <string name="newsList">/discover/newsList.do</string>
+    <!--2.4.2.	新闻详情-->
+    <string name="newsDetail">/discover/newsDetail.do</string>
+    <!--2.4.3.	新闻点赞/取消点赞-->
+    <string name="newsLike">/discover/newsLike.do</string>
+    <!--2.4.4.	活动列表-->
+    <string name="activityList">/discover/activityList.do</string>
+    <!--2.4.5.	活动报名-->
+    <string name="addActivityEn">/discover/addActivityEn.do</string>
+    <!--2.4.6.	活动详情-->
+    <string name="activityDetail">/discover/activityDetail.do</string>
+    <!--2.4.7.	活动报名详情-->
+    <string name="activityEnrollDetail">/discover/activityEnrollDetail.do</string>
+    <!--2.4.8.	活动报名评论列表-->
+    <string name="addActivityEnrollComment">/discover/addActivityEnrollComment.do</string>
+    <!--2.4.10.	活动报名点赞/取消点赞-->
+    <string name="activityEnrollLike">/discover/activityEnrollLike.do</string>
+    <!--2.4.11.	分页获取相册列表-->
+    <string name="albumList">/discover/albumList.do</string>
+    <!--2.4.12.	相册详情-->
+    <string name="picDetail">/discover/picDetail.do</string>
+    <!--2.4.13.	下载照片（不需要关注返回结果）-->
+    <string name="picDownLoad">/discover/picDownLoad.do</string>
+    <!--2.4.14.	分享相册-->
+    <string name="albumShare">/discover/albumShare.do</string>
+    <!--2.4.15.	分享相册成功回调（不需要关注返回结果）-->
+    <string name="albumShareCallBack">/discover/albumShareCallBack.do</string>
+    <!--2.4.16.	分享照片-->
+    <string name="picShare">/discover/picShare.do</string>
+    <!--2.4.17.	分享相册照片成功回调（不需要关注返回结果）-->
+    <string name="picShareCallBack">/discover/picShareCallBack.do</string>
+
+    <!--2.5.	首页-->
+    <!--2.5.1.	查询用户签到信息-->
+    <string name="signInfo">/home/signInfo.do</string>
+    <!--2.5.2.	签到-->
+    <string name="sign">/home/sign.do</string>
+    <!--2.5.3.	签到记录-->
+    <string name="signRecord">/home/signRecord.do</string>
+    <!--2.5.4.	精选课程列表-->
+    <string name="selectedList">/course/selectedList.do</string>
+
+    <!--2.6.	课程-->
+    <!--2.6.1.	课程列表-->
+    <string name="courseList">/course/courseList.do</string>
+    <!--2.6.2.	讲师列表-->
+    <string name="teacherList">/course/teacherList.do</string>
+    <!--2.6.3.	课程详情-->
+    <string name="courseDetail">/course/courseDetail.do</string>
+    <!--2.6.4.	课程评论列表-->
+    <string name="commentList">/course/commentList.do</string>
+    <!--2.6.5.	课程收藏/取消收藏-->
+    <string name="addOrCancleLike">/course/addOrCancleLike.do</string>
+    <!--2.6.6.	课程评论-->
+    <string name="addComment">/course/addComment.do</string>
+
+    <!--2.7.	发现-求职招聘-->
+    <!--2.7.1.	发布职位-->
+    <string name="addPosition">/position/addPosition.do</string>
+    <!--2.7.2.	职位投递-->
+    <string name="addPositoinDelivery">/position/addPositoinDelivery.do</string>
+    <!--2.7.3.	职位列表-->
+    <string name="positionList">/position/positionList.do</string>
+    <!--2.7.3.	职位详情-->
+    <string name="positionDetail">/position/positionDetail.do</string>
+
+    <!--2.8.	发现-舞伴大厅-->
+    <!--2.8.1.	发布-->
+    <string name="addFindDancer">/dancehall/addFindDancer.do</string>
+
+    <!--2.8.	发现-舞伴大厅-->
+    <!--2.9.1.	查询分类列表-->
+    <string name="signInfos">/home/signInfo.do</string>
+
+</resources>

@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dm100"
+    android:background="@color/gray"
+    android:orientation="horizontal"
+    android:padding="@dimen/dm020">
+
+    <EditText
+        android:layout_width="@dimen/dm000"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/sp_gray_bg_white"
+        android:gravity="center_vertical"
+        android:hint="写一点评论吧..."
+        android:lines="1"
+        android:paddingLeft="@dimen/dm020"
+        android:paddingRight="@dimen/dm020"
+        android:textColor="@color/gray333"
+        android:textColorHint="@color/gray999"
+        android:textSize="@dimen/dm024" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dm030"
+        android:text="发布"
+        android:textColor="@color/tab_color"
+        android:textSize="@dimen/dm028" />
+
+</LinearLayout>

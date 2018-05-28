@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_activity"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm720">
+
+        <ImageView
+            android:id="@+id/iv_activity_home_aver_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dm200"
+                android:layout_height="@dimen/dm220"
+                android:layout_marginTop="@dimen/dm150">
+
+                <ImageView
+                    android:id="@+id/iv_activity_home_aver"
+                    android:layout_width="@dimen/dm200"
+                    android:layout_height="@dimen/dm200"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_icon" />
+
+                <ImageView
+                    android:layout_width="@dimen/dm040"
+                    android:layout_height="@dimen/dm040"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/activity_add" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dm030"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="千夜小助手"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm028"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发起活动"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dm028"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dm020"
+                android:text="- 2999人参与 -"
+                android:textColor="@color/gray999"
+                android:textSize="@dimen/dm022" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm030"
+                android:layout_marginRight="@dimen/dm030"
+                android:layout_marginTop="@dimen/dm020"
+                android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/dm010"
+                android:lines="3"
+                android:text="CCTV电视舞蹈大赛由中国中央电视台主办，每两年举办一次，自2000年起已成功举办七届。CCTV电视舞蹈大赛本着公平、公正、公开的宗旨和充分体现群众性的原则，面向全国专业团体和广大舞蹈爱好者，为大众搭建展示自我的舞台。"
+                android:textColor="@color/gray999"
+                android:textSize="@dimen/dm022" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_activity"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm300"
+        android:padding="@dimen/dm010">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_img" />
+
+    </LinearLayout>
+</LinearLayout>

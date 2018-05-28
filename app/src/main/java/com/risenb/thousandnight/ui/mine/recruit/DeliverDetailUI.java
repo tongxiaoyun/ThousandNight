@@ -1,7 +1,12 @@
 package com.risenb.thousandnight.ui.mine.recruit;
 
+import android.content.Intent;
+
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.ui.BaseUI;
+import com.risenb.thousandnight.ui.found.recruit.RecruitPostUI;
+
+import butterknife.OnClick;
 
 /**
  * 投递详情
@@ -28,5 +33,11 @@ public class DeliverDetailUI extends BaseUI {
     @Override
     protected void prepareData() {
 
+    }
+
+    @OnClick(R.id.tv_deliver_detial_post)
+    void toPost() {
+        Intent intent = new Intent(getActivity(), RecruitPostUI.class);
+        startActivity(intent);
     }
 }

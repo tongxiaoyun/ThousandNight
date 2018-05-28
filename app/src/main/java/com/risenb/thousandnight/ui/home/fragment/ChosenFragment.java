@@ -18,7 +18,9 @@ import com.risenb.thousandnight.adapter.HomeVideoAdapter;
 import com.risenb.thousandnight.beans.BannerBean;
 import com.risenb.thousandnight.ui.BaseFragment;
 import com.risenb.thousandnight.ui.home.fragment.course.ChoiceCourseUI;
+import com.risenb.thousandnight.ui.home.fragment.course.CourseDetialUI;
 import com.risenb.thousandnight.ui.home.fragment.music.MusicPlayUI;
+import com.risenb.thousandnight.ui.home.fragment.music.SongSheetUI;
 import com.risenb.thousandnight.ui.home.fragment.video.NewsVideoUI;
 import com.risenb.thousandnight.views.MyRecyclerView;
 import com.risenb.thousandnight.views.banner.MZBannerView;
@@ -114,6 +116,7 @@ public class ChosenFragment extends BaseFragment {
         homeVideoAdapter.setActivity(getActivity());
         mrv_home_video.setAdapter(homeVideoAdapter);
 
+
         //推荐歌单
         LinearLayoutManager llm_music = new LinearLayoutManager(getActivity());
         llm_music.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -122,12 +125,28 @@ public class ChosenFragment extends BaseFragment {
         homeMusicAdapter.setActivity(getActivity());
         mrv_home_music.setAdapter(homeMusicAdapter);
 
+        homeMusicAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int i) {
+                Intent intent = new Intent(getActivity(), SongSheetUI.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
         //精选课程
         GridLayoutManager glm_course = new GridLayoutManager(getActivity(), 2);
         mrv_home_course.setLayoutManager(glm_course);
         homeCourseAdapter = new HomeCourseAdapter<>();
         homeCourseAdapter.setActivity(getActivity());
         mrv_home_course.setAdapter(homeCourseAdapter);
+
+        homeCourseAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int i) {
+                Intent intent = new Intent(getActivity(), CourseDetialUI.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @OnClick(R.id.iv_home_music)

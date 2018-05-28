@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/side_nav_bar"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top_4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm088"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dm020">
+
+            <TextView
+                android:id="@+id/tv_live_play_exit"
+                android:layout_width="@dimen/dm160"
+                android:layout_height="@dimen/dm064"
+                android:background="@drawable/sp_pink"
+                android:gravity="center"
+                android:text="退出直播"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm028" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_live_play_audience"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm060"
+                android:layout_marginLeft="@dimen/dm140" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm000"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ldefault_live" />
+
+
+        <TextView
+            android:layout_width="@dimen/dm090"
+            android:layout_height="@dimen/dm070"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm020"
+            android:background="@drawable/sp_white_bg_cor"
+            android:gravity="center"
+            android:text="观众\n8868"
+            android:textColor="@color/gray333"
+            android:textSize="@dimen/dm022" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_live_play_comment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm550"
+            android:layout_alignParentBottom="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm160"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm000"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dm040"
+                android:text="天生励志难自弃"
+                android:textColor="@color/gray333"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="@dimen/dm000"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dm040"
+                    android:text="说点什么..."
+                    android:textColor="@color/gray333"
+                    android:textColorHint="@color/gray666"
+                    android:textSize="@dimen/dm026" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm020"
+                    android:layout_marginRight="@dimen/dm030"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/live_gift" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dm020"
+                    android:layout_marginRight="@dimen/dm030"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/live_camara" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <include layout="@layout/include_bottom" />
+</LinearLayout>

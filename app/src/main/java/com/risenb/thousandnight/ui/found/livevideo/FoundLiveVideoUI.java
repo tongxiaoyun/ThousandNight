@@ -1,15 +1,19 @@
 package com.risenb.thousandnight.ui.found.livevideo;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.risenb.expand.xrecyclerview.XRecyclerView;
+import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.FoundLiveVideoAdapter;
 import com.risenb.thousandnight.adapter.FoundLiveVideoTopAdapter;
 import com.risenb.thousandnight.ui.BaseUI;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * 直播
@@ -64,5 +68,20 @@ public class FoundLiveVideoUI extends BaseUI {
         liveVideoAdapter = new FoundLiveVideoAdapter<>();
         liveVideoAdapter.setActivity(this);
         xrv_found_live_video.setAdapter(liveVideoAdapter);
+
+        liveVideoAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int i) {
+                Intent intent = new Intent(getActivity(), LivePlayUI.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    @OnClick(R.id.ll_right)
+    void right() {
+        Intent intent = new Intent(getActivity(), ReleaseLiveUI.class);
+        startActivity(intent);
     }
 }

@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/translete"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dm005"
+    android:paddingLeft="@dimen/dm020"
+    android:paddingRight="@dimen/dm020"
+    android:paddingTop="@dimen/dm005">
+
+    <TextView
+        android:id="@+id/tv_item_live_comment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm050"
+        android:background="@drawable/sp_white_treste"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dm025"
+        android:paddingRight="@dimen/dm025"
+        android:textSize="@dimen/dm028" />
+
+</LinearLayout>

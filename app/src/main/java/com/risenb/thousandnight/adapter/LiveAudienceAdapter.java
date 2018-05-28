@@ -1,9 +1,12 @@
 package com.risenb.thousandnight.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
+import com.risenb.expand.utils.DisplayUtil;
 import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
 import com.risenb.expand.xrecyclerview.adapter.BaseViewHolder;
 import com.risenb.expand.xrecyclerview.bean.BaseFootBean;
@@ -13,26 +16,36 @@ import com.risenb.thousandnight.R;
 import butterknife.ButterKnife;
 
 /**
- * Created by user on 2018/5/16.
+ * ================================================
+ * 作    者：tongxiaoyun
+ * 版    本：1.0
+ * 创建日期：2017/3/16
+ * 描    述：
+ * 修订历史：
+ * ================================================
  */
-
-public class FoundJobAdapter<T extends Object> extends BaseRecyclerAdapter {
+public class LiveAudienceAdapter<T extends Object> extends BaseRecyclerAdapter<T> {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 10;
     }
 
     @Override
     protected BaseViewHolder loadView(Context context, int i) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_found_job, null));
+        View view = LayoutInflater.from(context).inflate(R.layout.item_live_audience, null);
+        view.setLayoutParams(new RecyclerView.LayoutParams(DisplayUtil.getDimen(context, R.dimen.dm080), DisplayUtil.getDimen(context, R.dimen.dm060)));
+        return new ViewHolder(view);
     }
 
-    class ViewHolder extends BaseViewHolder<T> {
-
+    private class ViewHolder extends BaseViewHolder<T> {
         public ViewHolder(View itemView) {
             super(itemView);
         }
+
+//
+//        @ViewInject(R.id.back)
+//        private ImageView back;
 
 
         @Override
@@ -55,4 +68,6 @@ public class FoundJobAdapter<T extends Object> extends BaseRecyclerAdapter {
             ButterKnife.bind(this, view);
         }
     }
+
+
 }

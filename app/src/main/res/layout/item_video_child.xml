@@ -72,6 +72,7 @@
                 android:textSize="@dimen/dm020" />
 
             <RelativeLayout
+                android:id="@+id/rl_video_message"
                 android:layout_width="@dimen/dm070"
                 android:layout_height="@dimen/dm060">
 

@@ -12,6 +12,8 @@ import com.risenb.expand.xrecyclerview.adapter.BaseViewHolder;
 import com.risenb.expand.xrecyclerview.bean.BaseFootBean;
 import com.risenb.expand.xrecyclerview.bean.BaseHeadBean;
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.ui.found.activity.ActivityHomeUI;
+import com.risenb.thousandnight.ui.found.activity.ReleaseAcitivityUI;
 import com.risenb.thousandnight.ui.found.album.FoundAlbumUI;
 import com.risenb.thousandnight.ui.found.dance.FoundDanceUI;
 import com.risenb.thousandnight.ui.found.livevideo.FoundLiveVideoUI;
@@ -148,7 +150,7 @@ public class FoundAdapter<T extends Object> extends BaseRecyclerAdapter {
          */
         @OnClick(R.id.tv_found_join)
         void join() {
-            Intent intent = new Intent(getActivity(), FoundDanceUI.class);
+            Intent intent = new Intent(getActivity(), ReleaseAcitivityUI.class);
             getActivity().startActivity(intent);
         }
 
@@ -157,7 +159,7 @@ public class FoundAdapter<T extends Object> extends BaseRecyclerAdapter {
          */
         @OnClick(R.id.tv_found_detail)
         void detail() {
-            Intent intent = new Intent(getActivity(), FoundDanceUI.class);
+            Intent intent = new Intent(getActivity(), ActivityHomeUI.class);
             getActivity().startActivity(intent);
         }
 

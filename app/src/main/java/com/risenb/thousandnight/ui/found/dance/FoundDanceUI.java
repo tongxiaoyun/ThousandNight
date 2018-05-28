@@ -1,13 +1,17 @@
 package com.risenb.thousandnight.ui.found.dance;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 
 import com.risenb.expand.xrecyclerview.XRecyclerView;
+import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.FoundDanceAdapter;
 import com.risenb.thousandnight.ui.BaseUI;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * 舞伴大厅
@@ -49,6 +53,19 @@ public class FoundDanceUI extends BaseUI {
         foundDanceAdapter = new FoundDanceAdapter<>();
         foundDanceAdapter.setActivity(this);
         xrv_found_dance.setAdapter(foundDanceAdapter);
+        foundDanceAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int i) {
+                Intent intent = new Intent(getActivity(), DanceDetialUI.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    @OnClick(R.id.ll_found_dance_publish)
+    void publish() {
+        Intent intent = new Intent(getActivity(), RelealseDanceUI.class);
+        startActivity(intent);
     }
 
 }

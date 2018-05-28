@@ -8,7 +8,7 @@ import com.risenb.thousandnight.ui.BaseUI;
 import butterknife.OnClick;
 
 /**
- * 机构简介
+ * 机构简介 未维护
  * Created by user on 2018/5/25.
  */
 
@@ -48,7 +48,7 @@ public class OrganizeUnmaintainedUI extends BaseUI {
      */
     @OnClick(R.id.tv_unmaintained_go)
     void maintenance() {
-        Intent intent = new Intent(OrganizeUnmaintainedUI.this, OrganizeMaintenanceUI.class);
+        Intent intent = new Intent(OrganizeUnmaintainedUI.this, OrganizeInfoEditUI.class);
         startActivity(intent);
     }
 

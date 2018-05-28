@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.risenb.expand.xrecyclerview.XRecyclerView
+        android:id="@+id/xrv_home_campaign"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm000"
+        android:layout_marginLeft="@dimen/dm005"
+        android:layout_marginTop="@dimen/dm020"
+        android:layout_weight="1"
+        android:scrollbars="none"></com.risenb.expand.xrecyclerview.XRecyclerView>
+
+    <TextView
+        android:id="@+id/tv_home_campaign_edit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm088"
+        android:layout_marginBottom="@dimen/dm030"
+        android:layout_marginLeft="@dimen/dm020"
+        android:layout_marginRight="@dimen/dm020"
+        android:layout_marginTop="@dimen/dm020"
+        android:background="@drawable/sp_purple_bd_cor"
+        android:gravity="center"
+        android:text="编辑"
+        android:textColor="@color/tab_color"
+        android:textSize="@dimen/dm028" />
+
+</LinearLayout>

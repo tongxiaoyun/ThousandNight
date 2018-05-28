@@ -10,7 +10,7 @@ import com.risenb.thousandnight.ui.BaseUI;
 import butterknife.BindView;
 
 /**
- * 机构认证
+ * 机构认证中
  * Created by user on 2018/5/25.
  */
 

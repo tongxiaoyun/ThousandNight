@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -15,15 +16,18 @@ import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.ui.BaseUI;
 import com.risenb.thousandnight.ui.mine.home.fragment.DynamicFragment;
 import com.risenb.thousandnight.ui.mine.home.fragment.CampaignFragment;
+import com.risenb.thousandnight.ui.mine.home.fragment.LiveVideoFragment;
+import com.risenb.thousandnight.ui.mine.home.fragment.OrganizeIntroFragment;
+import com.risenb.thousandnight.ui.mine.home.fragment.TeacherIntroFragment;
 
 import butterknife.BindView;
 
 /**
- * 我的主页
- * Created by user on 2018/5/9.
+ * 他人主页   教师主页    机构主页
+ * Created by user on 2018/5/28.
  */
 
-public class HomeUI extends BaseUI implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener {
+public class OtherHomeUI extends BaseUI implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener {
 
     /**
      * 内容
@@ -46,7 +50,11 @@ public class HomeUI extends BaseUI implements ViewPager.OnPageChangeListener, Ra
     @BindView(R.id.rg_home_other)
     RadioGroup rg_home_other;
 
-    private Fragment[] fragments = new Fragment[]{new DynamicFragment(), new CampaignFragment()};
+    @BindView(R.id.iv_home_type)
+    ImageView iv_home_type;
+
+    private Fragment[] fragments = new Fragment[]{new OrganizeIntroFragment(), new DynamicFragment(),
+            new CampaignFragment(), new LiveVideoFragment()};
     private LinearLayout.LayoutParams lp;
     private int tabWidth;
     private int indicatorWidth;
@@ -64,8 +72,9 @@ public class HomeUI extends BaseUI implements ViewPager.OnPageChangeListener, Ra
     @Override
     protected void setControlBasis() {
         setTitle("airsee的主页");
-        rg_home.setVisibility(View.VISIBLE);
-        rg_home_other.setVisibility(View.GONE);
+        rg_home.setVisibility(View.GONE);
+        rg_home_other.setVisibility(View.VISIBLE);
+        iv_home_type.setImageResource(R.drawable.mine_teacher);
         initViewPager();
         initIndicator();
     }
@@ -81,7 +90,7 @@ public class HomeUI extends BaseUI implements ViewPager.OnPageChangeListener, Ra
     private void initIndicator() {
         DisplayMetrics out = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(out);
-        tabWidth = out.widthPixels / 2;
+        tabWidth = out.widthPixels / 4;
         indicatorWidth = DisplayUtil.getDimen(getActivity().getApplicationContext(), R.dimen.dm139);
         lp = (LinearLayout.LayoutParams) v_home_indicator.getLayoutParams();
         lp.leftMargin = (tabWidth - indicatorWidth) / 2;
@@ -95,7 +104,7 @@ public class HomeUI extends BaseUI implements ViewPager.OnPageChangeListener, Ra
         MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         vp_home.setAdapter(myPagerAdapter);
         vp_home.addOnPageChangeListener(this);
-        rg_home.setOnCheckedChangeListener(this);
+        rg_home_other.setOnCheckedChangeListener(this);
     }
 
     @Override
@@ -106,7 +115,7 @@ public class HomeUI extends BaseUI implements ViewPager.OnPageChangeListener, Ra
 
     @Override
     public void onPageSelected(int position) {
-        RadioButton child = (RadioButton) rg_home.getChildAt(position);
+        RadioButton child = (RadioButton) rg_home_other.getChildAt(position);
         child.setChecked(true);
     }
 
@@ -118,11 +127,17 @@ public class HomeUI extends BaseUI implements ViewPager.OnPageChangeListener, Ra
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
         switch (i) {
-            case R.id.rb_home_1:
+            case R.id.rb_home_other_1:
                 vp_home.setCurrentItem(0);
                 break;
-            case R.id.rb_home_2:
+            case R.id.rb_home_other_2:
                 vp_home.setCurrentItem(1);
+                break;
+            case R.id.rb_home_other_3:
+                vp_home.setCurrentItem(2);
+                break;
+            case R.id.rb_home_other_4:
+                vp_home.setCurrentItem(3);
                 break;
         }
     }
@@ -144,5 +159,4 @@ public class HomeUI extends BaseUI implements ViewPager.OnPageChangeListener, Ra
         }
 
     }
-
 }

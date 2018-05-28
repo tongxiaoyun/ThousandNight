@@ -7,374 +7,107 @@
 
     <include layout="@layout/include_top_mine" />
 
-    <RelativeLayout
+    <android.support.design.widget.CoordinatorLayout xmlns:tong="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:id="@+id/ll_mine_top"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dm445"
-            android:background="@drawable/mine_bg"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/dm120">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dm030"
-                android:layout_marginRight="@dimen/dm020"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="@dimen/dm150"
-                    android:layout_height="@dimen/dm150"
-                    android:background="@drawable/sp_light_purple_oval"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:id="@+id/iv_home_icon"
-                        android:layout_width="@dimen/dm135"
-                        android:layout_height="@dimen/dm135"
-                        android:src="@drawable/default_icon" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dm030"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="@dimen/dm000"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tv_home_nickname"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:text="airsee"
-                                android:textColor="@color/white"
-                                android:textSize="@dimen/dm032"
-                                android:textStyle="bold" />
-
-                            <LinearLayout
-                                android:id="@+id/ll_home_age"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/dm005"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:id="@+id/iv_home_vip"
-                                    android:layout_width="@dimen/dm100"
-                                    android:layout_height="@dimen/dm030"
-                                    android:layout_marginRight="@dimen/dm010"
-                                    android:src="@drawable/mine_vip" />
-
-                                <ImageView
-                                    android:id="@+id/iv_home_sex"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/mine_boy" />
-
-                                <TextView
-                                    android:id="@+id/tv_home_age"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="@dimen/dm005"
-                                    android:ellipsize="end"
-                                    android:maxLines="1"
-                                    android:text="27岁"
-                                    android:textColor="@color/white"
-                                    android:textSize="@dimen/dm020" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/tv_home_attent"
-                            android:layout_width="@dimen/dm125"
-                            android:layout_height="@dimen/dm050"
-                            android:background="@drawable/sp_white_bg_cor40"
-                            android:gravity="center"
-                            android:text="关注"
-                            android:textColor="@color/purple"
-                            android:textSize="@dimen/dm026" />
-
-                        <TextView
-                            android:id="@+id/tv_home_message"
-                            android:layout_width="@dimen/dm125"
-                            android:layout_height="@dimen/dm050"
-                            android:layout_marginLeft="@dimen/dm020"
-                            android:background="@drawable/sp_white_bg_cor40"
-                            android:gravity="center"
-                            android:text="签到"
-                            android:textColor="@color/purple"
-                            android:textSize="@dimen/dm026" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/tv_home_signature"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dm020"
-                        android:ellipsize="end"
-                        android:maxLines="2"
-                        android:text="如果你无法简洁的表达你的想法，那只说明你还不够了解它。"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/dm024" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dm000"
-                android:layout_weight="1" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#50912690"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingBottom="@dimen/dm020"
-                android:paddingTop="@dimen/dm020">
-
-                <LinearLayout
-                    android:layout_width="@dimen/dm000"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="关注"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/dm024" />
-
-                    <TextView
-                        android:id="@+id/tv_home_attention"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dm010"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="123"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/dm020" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="@dimen/dm001"
-                    android:layout_height="@dimen/dm060"
-                    android:background="@color/white" />
-
-                <LinearLayout
-                    android:layout_width="@dimen/dm000"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="粉丝"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/dm024" />
-
-                    <TextView
-                        android:id="@+id/tv_home_fans"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dm010"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="23"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/dm020" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="@dimen/dm001"
-                    android:layout_height="@dimen/dm060"
-                    android:background="@color/white" />
-
-                <LinearLayout
-                    android:layout_width="@dimen/dm000"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="被赞"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/dm024" />
-
-                    <TextView
-                        android:id="@+id/tv_home_zan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dm010"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="543"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/dm020" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="@dimen/dm001"
-                    android:layout_height="@dimen/dm060"
-                    android:background="@color/white" />
-
-                <LinearLayout
-                    android:layout_width="@dimen/dm000"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="被批评"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/dm024" />
-
-                    <TextView
-                        android:id="@+id/tv_home_criticism"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dm010"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="154"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/dm020" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dm088"
-            android:background="@android:color/transparent">
-
-            <TextView
-                android:id="@+id/tv_home_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="airsee的主页"
-                android:textColor="@color/white"
-                android:textSize="@dimen/dm030" />
-
-            <RelativeLayout
-                android:id="@+id/back"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:paddingLeft="@dimen/dm030"
-                android:paddingRight="@dimen/dm030">
-
-                <ImageView
-                    android:layout_width="@dimen/dm018"
-                    android:layout_height="@dimen/dm032"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/back_white" />
-            </RelativeLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_right"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingLeft="@dimen/dm030"
-                android:paddingRight="@dimen/dm030">
-
-                <ImageView
-                    android:id="@+id/iv_right"
-                    android:layout_width="@dimen/dm050"
-                    android:layout_height="@dimen/dm020"
-                    android:src="@drawable/mine_more" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dm088"
+        android:layout_height="match_parent"
         android:background="@color/white"
         android:orientation="vertical">
 
-        <RadioGroup
-            android:id="@+id/rg_home"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/abl_home"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dm000"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:orientation="horizontal">
+            android:layout_height="@dimen/dm534"
+            android:background="@color/white">
 
-            <RadioButton
-                android:id="@+id/rb_home_1"
-                style="@style/tab_top_3"
-                android:checked="true"
-                android:text="动态" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                tong:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <RadioButton
-                android:id="@+id/rb_home_2"
-                style="@style/tab_top_3"
-                android:text="活动" />
+                <include layout="@layout/include_mine_home_top" />
 
-        </RadioGroup>
+            </LinearLayout>
 
-        <View
-            android:id="@+id/v_home_indicator"
-            android:layout_width="@dimen/dm139"
-            android:layout_height="@dimen/dm003"
-            android:background="@color/purple" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm088"
+                android:background="@color/white"
+                android:orientation="vertical">
 
-    </LinearLayout>
+                <RadioGroup
+                    android:id="@+id/rg_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm000"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
 
-    <include layout="@layout/line_1" />
+                    <RadioButton
+                        android:id="@+id/rb_home_1"
+                        style="@style/tab_top_3"
+                        android:checked="true"
+                        android:text="动态" />
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_home"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dm000"
-        android:layout_weight="1" />
+                    <RadioButton
+                        android:id="@+id/rb_home_2"
+                        style="@style/tab_top_3"
+                        android:text="活动" />
+
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/rg_home_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dm000"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/rb_home_other_1"
+                        style="@style/tab_top_3"
+                        android:checked="true"
+                        android:text="简介" />
+
+                    <RadioButton
+                        android:id="@+id/rb_home_other_2"
+                        style="@style/tab_top_3"
+                        android:text="动态" />
+
+                    <RadioButton
+                        android:id="@+id/rb_home_other_3"
+                        style="@style/tab_top_3"
+                        android:text="活动" />
+
+                    <RadioButton
+                        android:id="@+id/rb_home_other_4"
+                        style="@style/tab_top_3"
+                        android:text="直播" />
+
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/v_home_indicator"
+                    android:layout_width="@dimen/dm139"
+                    android:layout_height="@dimen/dm003"
+                    android:background="@color/purple" />
+
+            </LinearLayout>
+
+            <include layout="@layout/line_1" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tong:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
 
 </LinearLayout>

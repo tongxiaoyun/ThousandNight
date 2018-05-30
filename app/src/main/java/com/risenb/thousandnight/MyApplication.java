@@ -10,6 +10,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.risenb.expand.loading.AVLoadingIndicatorView;
 import com.risenb.expand.m;
 import com.risenb.thousandnight.beans.UserBean;
+import com.risenb.thousandnight.network.NetworkUtils;
 import com.risenb.thousandnight.utils.PreferencesUtil;
 
 /**
@@ -29,6 +30,8 @@ public class MyApplication extends Application {
         super.onCreate();
         m.getInstance().getLoadingM().setIndicatorId(AVLoadingIndicatorView.BallBeat);
         m.getInstance().initDebug(true).initNetWorkDefault(getApplicationContext()).setApplication(this);
+        m.getInstance().initNetWorkDefault(getApplicationContext());
+        NetworkUtils.getNetworkUtils().setApplication(this);
         getAndroiodScreenProperty();
         PreferencesUtil.init(getApplicationContext());
 

@@ -115,18 +115,16 @@ public class NetworkUtils {
      * type             登录方式    是       string         无       1：手机 2：微信 3：QQ
      * mobile           手机号      否       string         无       type为1时必填
      * password 密码       否       string         无      type为1时必填
-     * validCode 手机验证码  否       string        无       type为1时必填
      * wechatAuthorize     微信授权信息      否       string      无  type为2时必填
      * qqAuthorize         qq授权信息       否       string      无   type为3时必填
      * thumb           头像地址             否       string      无   第三方授权时获取
      */
-    public void login(String type, String mobile, String password, String validCode, String wechatAuthorize, String qqAuthorize, String thumb, final HttpBack<UserBean> httpBack) {
+    public void login(String type, String mobile, String password, String wechatAuthorize, String qqAuthorize, String thumb, final HttpBack<UserBean> httpBack) {
         String url = getUrl(R.string.login);
         Map<String, String> params = getReqParams();
         params.put("type", type);
         params.put("mobile", mobile);
         params.put("password", password);
-        params.put("validCode", validCode);
         params.put("wechatAuthorize", wechatAuthorize);
         params.put("qqAuthorize", qqAuthorize);
         params.put("thumb", thumb);
@@ -152,11 +150,13 @@ public class NetworkUtils {
      * newPwdOne        新密码         是           string      无
      * newPwdTwo        新密码         是           string      无
      */
-    public void findPwd(String mobile, String type, final HttpBack<Object> httpBack) {
+    public void findPwd(String mobile, String validCode, String newPwdOne, String newPwdTwo, final HttpBack<Object> httpBack) {
         String url = getUrl(R.string.findPwd);
         Map<String, String> params = getReqParams();
         params.put("mobile", mobile);
-        params.put("type", type);
+        params.put("validCode", validCode);
+        params.put("newPwdOne", newPwdOne);
+        params.put("newPwdTwo", newPwdTwo);
         m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
             @Override
             public void onSuccess(int statusCode, String response) {

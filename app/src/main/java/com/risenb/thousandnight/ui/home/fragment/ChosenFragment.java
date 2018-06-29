@@ -22,12 +22,14 @@ import com.risenb.thousandnight.ui.home.fragment.course.CourseDetialUI;
 import com.risenb.thousandnight.ui.home.fragment.music.MusicPlayUI;
 import com.risenb.thousandnight.ui.home.fragment.music.SongSheetUI;
 import com.risenb.thousandnight.ui.home.fragment.video.NewsVideoUI;
+import com.risenb.thousandnight.ui.home.homep.BannerP;
 import com.risenb.thousandnight.views.MyRecyclerView;
 import com.risenb.thousandnight.views.banner.MZBannerView;
 import com.risenb.thousandnight.views.banner.holder.MZHolderCreator;
 import com.risenb.thousandnight.views.banner.holder.MZViewHolder;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -37,7 +39,7 @@ import butterknife.OnClick;
  * Created by user on 2018/5/4.
  */
 
-public class ChosenFragment extends BaseFragment {
+public class ChosenFragment extends BaseFragment implements BannerP.BannerFace {
 
     /**
      * banner
@@ -63,6 +65,8 @@ public class ChosenFragment extends BaseFragment {
     @BindView(R.id.mrv_home_course)
     MyRecyclerView mrv_home_course;
 
+    private BannerP bannerP;
+
     private HomeVideoAdapter<Object> homeVideoAdapter;
     private HomeMusicAdapter<Object> homeMusicAdapter;
     private HomeCourseAdapter<Object> homeCourseAdapter;
@@ -76,35 +80,13 @@ public class ChosenFragment extends BaseFragment {
 
     @Override
     protected void setControlBasis() {
-        initBanner();
+        bannerP = new BannerP(this, getActivity());
         initAdapter();
     }
 
     @Override
     protected void prepareData() {
-
-    }
-
-    private void initBanner() {
-        banners = new ArrayList<>();
-        BannerBean bannerBean = null;
-        bannerBean = new BannerBean();
-        bannerBean.setImg("");
-        banners.add(bannerBean);
-        bannerBean = new BannerBean();
-        bannerBean.setImg("");
-        banners.add(bannerBean);
-        bannerBean = new BannerBean();
-        bannerBean.setImg("");
-        banners.add(bannerBean);
-
-        mzb_home.setPages(banners, new MZHolderCreator<ViewPagerHolder>() {
-            @Override
-            public ViewPagerHolder createViewHolder() {
-                return new ViewPagerHolder();
-            }
-        });
-        mzb_home.start();
+        bannerP.getBanner();
     }
 
     private void initAdapter() {
@@ -149,10 +131,21 @@ public class ChosenFragment extends BaseFragment {
         });
     }
 
-    @OnClick(R.id.iv_home_music)
-    void play() {
-        Intent intent = new Intent(getActivity(), MusicPlayUI.class);
-        startActivity(intent);
+    @Override
+    public String getType() {
+        return "1";
+    }
+
+    @Override
+    public void setBanner(ArrayList<BannerBean> result) {
+        banners = result;
+        mzb_home.setPages(banners, new MZHolderCreator<ViewPagerHolder>() {
+            @Override
+            public ViewPagerHolder createViewHolder() {
+                return new ViewPagerHolder();
+            }
+        });
+        mzb_home.start();
     }
 
     public static final class ViewPagerHolder implements MZViewHolder<BannerBean> {
@@ -168,10 +161,18 @@ public class ChosenFragment extends BaseFragment {
 
         @Override
         public void onBind(Context context, int position, BannerBean data) {
-
+            Glide.with(context).load(data.getImageUrl())
+                    .error(R.drawable.default_banner)
+                    .placeholder(R.drawable.default_banner)
+                    .into(iv_home_banner);
         }
     }
 
+    @OnClick(R.id.iv_home_music)
+    void play() {
+        Intent intent = new Intent(getActivity(), MusicPlayUI.class);
+        startActivity(intent);
+    }
 
     @OnClick(R.id.ll_home_video_more)
     void toNews() {

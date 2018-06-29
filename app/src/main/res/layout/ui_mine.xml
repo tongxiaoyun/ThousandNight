@@ -74,7 +74,7 @@
                                         android:layout_height="wrap_content"
                                         android:ellipsize="end"
                                         android:maxLines="1"
-                                        android:text="airsee"
+                                        android:text="未设置"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/dm032"
                                         android:textStyle="bold" />
@@ -91,16 +91,16 @@
                                             android:id="@+id/iv_mine_sex"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginRight="@dimen/dm005"
                                             android:src="@drawable/mine_boy" />
 
                                         <TextView
                                             android:id="@+id/tv_mine_age"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginLeft="@dimen/dm005"
                                             android:ellipsize="end"
                                             android:maxLines="1"
-                                            android:text="27岁"
+                                            android:text="未设置"
                                             android:textColor="@color/white"
                                             android:textSize="@dimen/dm020" />
 
@@ -138,7 +138,7 @@
                                 android:layout_marginTop="@dimen/dm020"
                                 android:ellipsize="end"
                                 android:maxLines="2"
-                                android:text="如果你无法简洁的表达你的想法，那只说明你还不够了解它。"
+                                android:text="您还没有设置个性签名哦！"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/dm024" />
 
@@ -182,7 +182,7 @@
                                 android:layout_marginTop="@dimen/dm010"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="123"
+                                android:text="0"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/dm020" />
 
@@ -215,7 +215,7 @@
                                 android:layout_marginTop="@dimen/dm010"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="23"
+                                android:text="0"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/dm020" />
 
@@ -248,7 +248,7 @@
                                 android:layout_marginTop="@dimen/dm010"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="543"
+                                android:text="0"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/dm020" />
 
@@ -281,7 +281,7 @@
                                 android:layout_marginTop="@dimen/dm010"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="154"
+                                android:text="0"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/dm020" />
 
@@ -431,6 +431,7 @@
 
                 <include layout="@layout/line_20" />
 
+                <!--机构认证-->
                 <RelativeLayout
                     android:id="@+id/rl_mine_menu_5"
                     android:layout_width="match_parent"
@@ -455,13 +456,14 @@
                         android:textSize="@dimen/dm026" />
 
                     <TextView
+                        android:id="@+id/tv_mine_organize_attest"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:drawablePadding="@dimen/dm020"
                         android:drawableRight="@drawable/next"
-                        android:text="未认证"
+                        android:text=""
                         android:textColor="@color/gray999"
                         android:textSize="@dimen/dm024" />
 
@@ -571,12 +573,14 @@
 
                 <include layout="@layout/line_20" />
 
+                <!--我的直播-->
                 <RelativeLayout
                     android:id="@+id/rl_mine_menu_9"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dm098"
                     android:paddingLeft="@dimen/dm020"
-                    android:paddingRight="@dimen/dm020">
+                    android:paddingRight="@dimen/dm020"
+                    android:visibility="gone">
 
                     <ImageView
                         android:layout_width="@dimen/dm041"
@@ -603,8 +607,11 @@
 
                 </RelativeLayout>
 
-                <include layout="@layout/line_1" />
+                <include layout="@layout/line_1"
+                    android:id="@+id/v_mine_line"
+                    android:visibility="gone"/>
 
+                <!--我的招聘-->
                 <RelativeLayout
                     android:id="@+id/rl_mine_menu_10"
                     android:layout_width="match_parent"
@@ -639,6 +646,7 @@
 
                 <include layout="@layout/line_1" />
 
+                <!--我的投递-->
                 <RelativeLayout
                     android:id="@+id/rl_mine_menu_11"
                     android:layout_width="match_parent"

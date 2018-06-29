@@ -26,46 +26,6 @@ public class RegisterP extends PresenterBase {
         setActivity(activity);
     }
 
-    public void sendCode() {
-        if (TextUtils.isEmpty(face.getTel())){
-            makeText("请输入手机号");
-            return;
-        }
-        if (!RegexUtils.checkMobile(face.getTel())) {
-            makeText("电话号码格式不正确");
-            return;
-        }
-        showProgressDialog();
-        NetworkUtils.getNetworkUtils().getCode(face.getTel(), "1", new HttpBack<Object>() {
-            @Override
-            public void onSuccess(String data) {
-                //当data中是String 时走这个
-                dismissProgressDialog();
-                face.sendSMSSuccess();
-            }
-
-            @Override
-            public void onSuccess(ArrayList<Object> result) {
-                //当data中是List 时走这个
-                dismissProgressDialog();
-            }
-
-            @Override
-            public void onSuccess(Object result) {
-                //当data中是Object 时走这个
-                dismissProgressDialog();
-
-            }
-
-            @Override
-            public void onFailure(String error_code, String error_msg) {
-                makeText(error_msg);
-                face.sendSMSFaile();
-                dismissProgressDialog();
-            }
-        });
-    }
-
     public void register() {
         if (TextUtils.isEmpty(face.getTel())){
             makeText("请输入手机号");
@@ -87,10 +47,10 @@ public class RegisterP extends PresenterBase {
             makeText("您输入的密码过于简单");
             return;
         }
-        if (TextUtils.isEmpty(face.getInviteCode())) {
-            makeText("请输入邀请码");
-            return;
-        }
+//        if (TextUtils.isEmpty(face.getInviteCode())) {
+//            makeText("请输入邀请码");
+//            return;
+//        }
 
         showProgressDialog();
         NetworkUtils.getNetworkUtils().register("1", face.getTel(), face.getPWD(), face.getCode(), "", "", "", new HttpBack<UserBean>() {
@@ -108,7 +68,7 @@ public class RegisterP extends PresenterBase {
             public void onSuccess(UserBean result) {
                 dismissProgressDialog();
                 application.setC(result.getC());
-                application.setUserBean(result);
+                application.setUserBean(result.getUser());
                 face.registerSuccess();
             }
 
@@ -129,10 +89,6 @@ public class RegisterP extends PresenterBase {
         String getPWD();
 
         String getInviteCode();
-
-        void sendSMSSuccess();
-
-        void sendSMSFaile();
 
         void registerSuccess();
 

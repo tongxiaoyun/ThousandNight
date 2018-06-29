@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.ui.BaseUI;
+import com.risenb.thousandnight.ui.login.loginp.CodeP;
 import com.risenb.thousandnight.ui.login.loginp.RegisterP;
 
 import butterknife.BindView;
@@ -19,7 +20,7 @@ import butterknife.OnClick;
  * Created by user on 2018/5/4.
  */
 
-public class RegisterUI extends BaseUI implements RegisterP.RegisterFace {
+public class RegisterUI extends BaseUI implements CodeP.CodeFace, RegisterP.RegisterFace {
 
     @BindView(R.id.et_register_phone)
     EditText et_register_phone;
@@ -39,6 +40,7 @@ public class RegisterUI extends BaseUI implements RegisterP.RegisterFace {
     @BindView(R.id.cb_register_agreement)
     CheckBox cb_register_agreement;
 
+    private CodeP codeP;
     private RegisterP registerP;
     private int second = 60;
     private String isAgreement = "0";
@@ -78,6 +80,7 @@ public class RegisterUI extends BaseUI implements RegisterP.RegisterFace {
     @Override
     protected void setControlBasis() {
         setTitle("注册");
+        codeP = new CodeP(this, getActivity());
         registerP = new RegisterP(this, getActivity());
         cb_register_agreement.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -101,7 +104,7 @@ public class RegisterUI extends BaseUI implements RegisterP.RegisterFace {
      */
     @OnClick(R.id.tv_register_code)
     void code() {
-        registerP.sendCode();
+        codeP.sendCode();
         tv_register_code.setClickable(false);
     }
 
@@ -128,6 +131,11 @@ public class RegisterUI extends BaseUI implements RegisterP.RegisterFace {
     @Override
     public String getTel() {
         return et_register_phone.getText().toString().trim();
+    }
+
+    @Override
+    public String getType() {
+        return "1";
     }
 
     @Override

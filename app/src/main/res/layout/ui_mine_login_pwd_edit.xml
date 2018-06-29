@@ -30,6 +30,7 @@
             android:textSize="@dimen/dm026" />
 
         <EditText
+            android:id="@+id/et_pwd_edit_old"
             style="@style/edit_style"
             android:hint="请输入旧密码"
             android:inputType="textPassword" />
@@ -58,6 +59,7 @@
             android:textSize="@dimen/dm026" />
 
         <EditText
+            android:id="@+id/et_pwd_edit_new1"
             style="@style/edit_style"
             android:hint="请输入新密码"
             android:inputType="textPassword" />
@@ -87,6 +89,7 @@
             android:textSize="@dimen/dm026" />
 
         <EditText
+            android:id="@+id/et_pwd_edit_new2"
             style="@style/edit_style"
             android:hint="请确认密码"
             android:inputType="textPassword" />
@@ -94,6 +97,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_pwd_edit_save"
         style="@style/text_style"
         android:layout_marginLeft="@dimen/dm020"
         android:layout_marginRight="@dimen/dm020"

@@ -3,7 +3,10 @@ package com.risenb.thousandnight.ui.mine.setting;
 import android.content.Intent;
 
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.beans.User;
 import com.risenb.thousandnight.ui.BaseUI;
+import com.risenb.thousandnight.ui.login.LoginUI;
+import com.risenb.thousandnight.utils.UIManager;
 
 import butterknife.OnClick;
 
@@ -85,6 +88,18 @@ public class SettingUI extends BaseUI {
     @OnClick(R.id.ll_setting_aboutus)
     void aboutus() {
         Intent intent = new Intent(SettingUI.this, AboutUsUI.class);
+        startActivity(intent);
+    }
+
+    /**
+     * 退出登录
+     */
+    @OnClick(R.id.tv_setting_exit)
+    void exitLogin() {
+        application.setC("");
+        application.setUserBean(new User());
+        UIManager.getInstance().popAllActivity();
+        Intent intent = new Intent(SettingUI.this, LoginUI.class);
         startActivity(intent);
     }
 

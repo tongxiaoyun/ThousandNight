@@ -30,6 +30,7 @@
             android:textSize="@dimen/dm026" />
 
         <EditText
+            android:id="@+id/et_pay_pwd_phone"
             style="@style/edit_style"
             android:hint="请输入手机号"
             android:inputType="phone"/>
@@ -58,11 +59,13 @@
             android:textSize="@dimen/dm026" />
 
         <EditText
+            android:id="@+id/et_pay_pwd_code"
             style="@style/edit_style"
             android:hint="请输入验证码"
             android:inputType="number"/>
 
         <TextView
+            android:id="@+id/tv_pay_pwd_code"
             android:layout_width="@dimen/dm160"
             android:layout_height="@dimen/dm050"
             android:background="@drawable/sp_purple_bg_cor"
@@ -96,6 +99,7 @@
             android:textSize="@dimen/dm026" />
 
         <EditText
+            android:id="@+id/et_pay_pwd_pwd"
             style="@style/edit_style"
             android:hint="请设置支付密码"
             android:inputType="textPassword"/>
@@ -103,6 +107,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_pay_pwd_save"
         style="@style/text_style"
         android:layout_marginLeft="@dimen/dm020"
         android:layout_marginRight="@dimen/dm020"

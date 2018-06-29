@@ -54,7 +54,7 @@ public class LoginP extends PresenterBase {
             public void onSuccess(UserBean result) {
                 dismissProgressDialog();
                 application.setC(result.getC());
-                application.setUserBean(result);
+                application.setUserBean(result.getUser());
                 face.loginSuccess();
             }
 

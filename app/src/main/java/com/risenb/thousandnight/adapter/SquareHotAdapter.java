@@ -31,6 +31,13 @@ import butterknife.ButterKnife;
 
 public class SquareHotAdapter<T extends Object> extends BaseRecyclerAdapter {
 
+    ArrayList<BannerBean> result = new ArrayList<>();
+
+    public void setResult(ArrayList<BannerBean> result) {
+        this.result = result;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         return 7;
@@ -71,7 +78,10 @@ public class SquareHotAdapter<T extends Object> extends BaseRecyclerAdapter {
         protected void initHead(BaseHeadBean baseHeadBean) {
             ll_square_hot_item.setVisibility(View.GONE);
             ll_square_hot_top.setVisibility(View.VISIBLE);
-            initBanner();
+            if (result.size() != 0)
+                initBanner();
+            else
+                ll_square_hot_top.setVisibility(View.GONE);
             initAdapter();
         }
 
@@ -86,19 +96,7 @@ public class SquareHotAdapter<T extends Object> extends BaseRecyclerAdapter {
         }
 
         private void initBanner() {
-            List<BannerBean> banners = new ArrayList<>();
-            BannerBean bannerBean = null;
-            bannerBean = new BannerBean();
-            bannerBean.setImg("");
-            banners.add(bannerBean);
-            bannerBean = new BannerBean();
-            bannerBean.setImg("");
-            banners.add(bannerBean);
-            bannerBean = new BannerBean();
-            bannerBean.setImg("");
-            banners.add(bannerBean);
-
-            mzb_square.setPages(banners, new MZHolderCreator<ViewPagerHolder>() {
+            mzb_square.setPages(result, new MZHolderCreator<ViewPagerHolder>() {
                 @Override
                 public ViewPagerHolder createViewHolder() {
                     return new ViewPagerHolder();
@@ -131,7 +129,7 @@ public class SquareHotAdapter<T extends Object> extends BaseRecyclerAdapter {
 
         @Override
         public void onBind(Context context, int position, BannerBean data) {
-            Glide.with(context).load("").error(R.drawable.default_banner).placeholder(R.drawable.default_banner).into(iv_home_banner);
+            Glide.with(context).load(data.getImageUrl()).error(R.drawable.default_banner).placeholder(R.drawable.default_banner).into(iv_home_banner);
 
         }
     }

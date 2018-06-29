@@ -16,6 +16,7 @@ import com.risenb.thousandnight.adapter.MusicAdapter;
 import com.risenb.thousandnight.adapter.MusicClassifyAdapter;
 import com.risenb.thousandnight.beans.BannerBean;
 import com.risenb.thousandnight.ui.BaseFragment;
+import com.risenb.thousandnight.ui.home.homep.BannerP;
 import com.risenb.thousandnight.views.MyRecyclerView;
 import com.risenb.thousandnight.views.banner.MZBannerView;
 import com.risenb.thousandnight.views.banner.holder.MZHolderCreator;
@@ -31,7 +32,7 @@ import butterknife.OnClick;
  * Created by user on 2018/5/10.
  */
 
-public class MusicFragment extends BaseFragment {
+public class MusicFragment extends BaseFragment implements BannerP.BannerFace {
 
     /**
      * banner
@@ -51,6 +52,8 @@ public class MusicFragment extends BaseFragment {
     @BindView(R.id.mrv_music_classify)
     MyRecyclerView mrv_music_classify;
 
+    private BannerP bannerP;
+
     private MusicAdapter<Object> musicAdapter;
     private MusicClassifyAdapter<Object> musicClassifyAdapter;
     private ArrayList<BannerBean> banners;
@@ -62,35 +65,13 @@ public class MusicFragment extends BaseFragment {
 
     @Override
     protected void setControlBasis() {
-        initBanner();
+        bannerP = new BannerP(this, getActivity());
         initAdapter();
     }
 
     @Override
     protected void prepareData() {
-
-    }
-
-    private void initBanner() {
-        banners = new ArrayList<>();
-        BannerBean bannerBean = null;
-        bannerBean = new BannerBean();
-        bannerBean.setImg("");
-        banners.add(bannerBean);
-        bannerBean = new BannerBean();
-        bannerBean.setImg("");
-        banners.add(bannerBean);
-        bannerBean = new BannerBean();
-        bannerBean.setImg("");
-        banners.add(bannerBean);
-
-        mzb_home.setPages(banners, new MZHolderCreator<ViewPagerHolder>() {
-            @Override
-            public ViewPagerHolder createViewHolder() {
-                return new ViewPagerHolder();
-            }
-        });
-        mzb_home.start();
+        bannerP.getBanner();
     }
 
     private void initAdapter() {
@@ -118,6 +99,23 @@ public class MusicFragment extends BaseFragment {
         });
     }
 
+    @Override
+    public String getType() {
+        return "1";
+    }
+
+    @Override
+    public void setBanner(ArrayList<BannerBean> result) {
+        banners = result;
+        mzb_home.setPages(banners, new MZHolderCreator<ViewPagerHolder>() {
+            @Override
+            public ViewPagerHolder createViewHolder() {
+                return new ViewPagerHolder();
+            }
+        });
+        mzb_home.start();
+    }
+
     public static final class ViewPagerHolder implements MZViewHolder<BannerBean> {
 
         private ImageView iv_home_banner;
@@ -131,7 +129,7 @@ public class MusicFragment extends BaseFragment {
 
         @Override
         public void onBind(Context context, int position, BannerBean data) {
-            Glide.with(context).load("").error(R.drawable.default_banner).placeholder(R.drawable.default_banner).into(iv_home_banner);
+            Glide.with(context).load(data.getImageUrl()).error(R.drawable.default_banner).placeholder(R.drawable.default_banner).into(iv_home_banner);
 
         }
     }

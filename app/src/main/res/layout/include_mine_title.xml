@@ -36,7 +36,7 @@
             android:ellipsize="end"
             android:gravity="center_vertical"
             android:maxLines="1"
-            android:text="120"
+            android:text="0"
             android:textColor="@color/white"
             android:textSize="@dimen/dm026" />
 

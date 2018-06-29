@@ -23,6 +23,14 @@
     <string name="editInfo">/user/editInfo.do</string>
     <!--2.2.4.	修改登录密码（通过旧密码）-->
     <string name="changePwd">/user/changePwd.do</string>
+    <!--2.2.5.	设置支付密码获取验证码-->
+    <string name="getPayCode">/validCode/getPayCode.do</string>
+    <!--2.2.6.	设置支付密码-->
+    <string name="changePay">/user/changePay.do</string>
+    <!--2.2.7.	关注/取消管关注-->
+    <string name="fans">/userCenter/fans.do</string>
+    <!--2.2.8.	认证机构-->
+    <string name="companyAuth">/userCenter/companyAuth.do</string>
 
     <!--2.3.	广场-->
     <!--2.3.1.	动态列表-->
@@ -118,5 +126,8 @@
     <!--2.8.	发现-舞伴大厅-->
     <!--2.9.1.	查询分类列表-->
     <string name="signInfos">/home/signInfo.do</string>
+
+    <!--2.5.1.	获取轮播图-->
+    <string name="list">/banner/list.do</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.risenb.thousandnight.ui.login.loginp;
+package com.risenb.thousandnight.ui.mine.minep;
 
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
@@ -6,53 +6,46 @@ import android.text.TextUtils;
 import com.risenb.thousandnight.network.HttpBack;
 import com.risenb.thousandnight.network.NetworkUtils;
 import com.risenb.thousandnight.ui.PresenterBase;
-import com.risenb.thousandnight.utils.RegexUtils;
 
 import java.util.ArrayList;
 
+
 /**
- * Created by user on 2018/5/30.
+ * Created by user on 2018/6/28.
  */
 
-public class ForgetPwdP extends PresenterBase {
+public class LoginPwdEditP extends PresenterBase {
 
-    private ForgetPwdP presenter;
+    private LoginPwdEditFace face;
 
-    private ForgetPwdFace face;
-
-    public ForgetPwdP(ForgetPwdFace face, FragmentActivity activity) {
+    public LoginPwdEditP(LoginPwdEditFace face, FragmentActivity activity) {
         this.face = face;
         setActivity(activity);
     }
 
-    public void forgetPwd() {
-        if (TextUtils.isEmpty(face.getTel())) {
-            makeText("请输入手机号");
+    public void changePwd() {
+        if (TextUtils.isEmpty(face.getOldPwd())) {
+            makeText("请输入旧密码");
             return;
         }
-        if (!RegexUtils.checkMobile(face.getTel())) {
-            makeText("电话号码格式不正确");
+        if (TextUtils.isEmpty(face.getNewPwdOne())) {
+            makeText("请输入新密码");
             return;
         }
-        if (TextUtils.isEmpty(face.getCode())) {
-            makeText("请输入验证码");
+        if (TextUtils.isEmpty(face.getNewPwdTwo())) {
+            makeText("请输入确认密码");
             return;
         }
-        if (TextUtils.isEmpty(face.getPWD())) {
-            makeText("请输入密码");
-            return;
-        }
-        if (face.getPWD().length() < 6) {
+        if (face.getNewPwdOne().length() < 6) {
             makeText("您输入的密码过于简单");
             return;
         }
-        if (!face.getPWD().equals(face.getConfirmPWD())) {
+        if (!face.getNewPwdOne().equals(face.getNewPwdTwo())) {
             makeText("您输入的密码不一致");
             return;
         }
-
         showProgressDialog();
-        NetworkUtils.getNetworkUtils().findPwd(face.getTel(), face.getCode(), face.getPWD(), face.getConfirmPWD(), new HttpBack<Object>() {
+        NetworkUtils.getNetworkUtils().changePwd(face.getOldPwd(), face.getNewPwdOne(), face.getNewPwdTwo(), new HttpBack<Object>() {
             @Override
             public void onSuccess(String data) {
                 dismissProgressDialog();
@@ -78,15 +71,13 @@ public class ForgetPwdP extends PresenterBase {
         });
     }
 
-    public interface ForgetPwdFace {
+    public interface LoginPwdEditFace {
 
-        String getTel();
+        String getOldPwd();
 
-        String getCode();
+        String getNewPwdOne();
 
-        String getPWD();
-
-        String getConfirmPWD();
+        String getNewPwdTwo();
 
     }
 

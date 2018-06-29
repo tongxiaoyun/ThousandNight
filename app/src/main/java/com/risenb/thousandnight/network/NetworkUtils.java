@@ -7,7 +7,9 @@ import com.risenb.expand.m;
 import com.risenb.expand.network.response.RawResponseHandler;
 import com.risenb.thousandnight.MyApplication;
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.beans.BannerBean;
 import com.risenb.thousandnight.beans.BaseBean;
+import com.risenb.thousandnight.beans.CodeBean;
 import com.risenb.thousandnight.beans.CommentBean;
 import com.risenb.thousandnight.beans.MomentBean;
 import com.risenb.thousandnight.beans.NewsBean;
@@ -55,7 +57,7 @@ public class NetworkUtils {
      * mobile       手机号     是       string      无
      * type         类型      是       string      无       1:注册 2:找回密码 3：更换手机号 4：绑定手机
      */
-    public void getCode(String mobile, String type, final HttpBack<Object> httpBack) {
+    public void getCode(String mobile, String type, final HttpBack<CodeBean> httpBack) {
         String url = getUrl(R.string.getCode);
         Map<String, String> params = getReqParams();
         params.put("mobile", mobile);
@@ -64,7 +66,7 @@ public class NetworkUtils {
             @Override
             public void onSuccess(int statusCode, String response) {
                 BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
-                new JsonFormatUtils().format(baseBean, httpBack, Object.class);
+                new JsonFormatUtils().format(baseBean, httpBack, CodeBean.class);
             }
 
             @Override
@@ -179,6 +181,7 @@ public class NetworkUtils {
     public void home(final HttpBack<User> httpBack) {
         String url = getUrl(R.string.home);
         Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
         m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
             @Override
             public void onSuccess(int statusCode, String response) {
@@ -202,6 +205,7 @@ public class NetworkUtils {
     public void index(String userId, final HttpBack<UserCenterBean> httpBack) {
         String url = getUrl(R.string.index);
         Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
         params.put("userId", userId);
         m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
             @Override
@@ -241,6 +245,7 @@ public class NetworkUtils {
                          String classLng, String classLat, String classAddress, String introduce, String lastLng, String lastLat, final HttpBack<Object> httpBack) {
         String url = getUrl(R.string.editInfo);
         Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
         params.put("nickName", nickName);
         params.put("birthday", birthday);
         params.put("gender", gender);
@@ -276,9 +281,10 @@ public class NetworkUtils {
      * newPwdOne      新密码         是           string          无
      * newPwdTwo      新密码         是           string          无
      */
-    public void changePwd(String oldPwd, String newPwdOne, String newPwdTwo, final HttpBack<UserCenterBean> httpBack) {
+    public void changePwd(String oldPwd, String newPwdOne, String newPwdTwo, final HttpBack<Object> httpBack) {
         String url = getUrl(R.string.changePwd);
         Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
         params.put("oldPwd", oldPwd);
         params.put("newPwdOne", newPwdOne);
         params.put("newPwdTwo", newPwdTwo);
@@ -286,7 +292,55 @@ public class NetworkUtils {
             @Override
             public void onSuccess(int statusCode, String response) {
                 BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
-                new JsonFormatUtils().format(baseBean, httpBack, UserCenterBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, Object.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.2.5.	设置支付密码获取验证码
+     */
+    public void getPayCode(final HttpBack<CodeBean> httpBack) {
+        String url = getUrl(R.string.getPayCode);
+        Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, CodeBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.2.6.	设置支付密码
+     * validCode	验证码	  是	   string	无
+     * payPpwd	    支付密码	  是	   string	无
+     */
+    public void changePay(String validCode, String payPpwd, final HttpBack<Object> httpBack) {
+        String url = getUrl(R.string.changePay);
+        Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
+        params.put("validCode", validCode);
+        params.put("payPpwd", payPpwd);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, Object.class);
             }
 
             @Override
@@ -588,6 +642,28 @@ public class NetworkUtils {
 
     }
 
+    /**
+     * 2.5.1.	获取轮播图
+     * type	    类型	        是	    int	   无	  1：首页 2：广场 3：新闻
+     */
+    public void banner(String type, final HttpBack<BannerBean> httpBack) {
+        String url = getUrl(R.string.list);
+        Map<String, String> params = getReqParams();
+        params.put("type", type);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, BannerBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
 
 
     private HashMap getReqParams() {

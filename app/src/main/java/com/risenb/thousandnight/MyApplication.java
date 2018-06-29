@@ -9,7 +9,8 @@ import android.view.WindowManager;
 import com.alibaba.fastjson.JSONObject;
 import com.risenb.expand.loading.AVLoadingIndicatorView;
 import com.risenb.expand.m;
-import com.risenb.thousandnight.beans.UserBean;
+import com.risenb.expand.utils.Log;
+import com.risenb.thousandnight.beans.User;
 import com.risenb.thousandnight.network.NetworkUtils;
 import com.risenb.thousandnight.utils.PreferencesUtil;
 
@@ -24,17 +25,24 @@ import com.risenb.thousandnight.utils.PreferencesUtil;
  */
 public class MyApplication extends Application {
 
+    private static  Context content;
 
     @Override
     public void onCreate() {
         super.onCreate();
         m.getInstance().getLoadingM().setIndicatorId(AVLoadingIndicatorView.BallBeat);
         m.getInstance().initDebug(true).initNetWorkDefault(getApplicationContext()).setApplication(this);
+        Log.debug = true;
+        content = getApplicationContext();
         m.getInstance().initNetWorkDefault(getApplicationContext());
         NetworkUtils.getNetworkUtils().setApplication(this);
         getAndroiodScreenProperty();
         PreferencesUtil.init(getApplicationContext());
 
+    }
+
+    public static  Context getContent() {
+        return content;
     }
 
     public void getAndroiodScreenProperty() {
@@ -51,7 +59,6 @@ public class MyApplication extends Application {
 
     }
 
-
     public String getC() {
         return (String) PreferencesUtil.getInstance().getData("c", "");
     }
@@ -60,15 +67,15 @@ public class MyApplication extends Application {
         PreferencesUtil.getInstance().saveData("c", c);
     }
 
-    public void setUserBean(UserBean bean) {
+    public void setUserBean(User bean) {
         PreferencesUtil.getInstance().saveData("UserBean", JSONObject.toJSONString(bean));
     }
 
-    public UserBean getUserBean() {
+    public User getUserBean() {
         String str = (String) PreferencesUtil.getInstance().getData("UserBean", "{}");
         if (!TextUtils.isEmpty(str)) {
             try {
-                return JSONObject.parseObject(str, UserBean.class);
+                return JSONObject.parseObject(str, User.class);
             } catch (Exception e) {
 
             }

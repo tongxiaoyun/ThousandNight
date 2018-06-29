@@ -20,6 +20,7 @@ import com.risenb.expand.utils.DisplayUtil;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.beans.BannerBean;
 import com.risenb.thousandnight.ui.BaseFragment;
+import com.risenb.thousandnight.ui.home.homep.BannerP;
 import com.risenb.thousandnight.views.banner.MZBannerView;
 import com.risenb.thousandnight.views.banner.holder.MZHolderCreator;
 import com.risenb.thousandnight.views.banner.holder.MZViewHolder;
@@ -35,7 +36,7 @@ import butterknife.OnClick;
  * Created by user on 2018/5/10.
  */
 
-public class VideoFragment extends BaseFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener {
+public class VideoFragment extends BaseFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener, BannerP.BannerFace {
 
     /**
      * banner
@@ -55,6 +56,8 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
     @BindView(R.id.vp_video)
     ViewPager vp_video;
 
+    private BannerP bannerP;
+
     private ArrayList<Fragment> fragments = new ArrayList<>();
     private int tabWidth;
     private int tabHeight;
@@ -73,36 +76,14 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
 
     @Override
     protected void setControlBasis() {
-        initBanner();
+        bannerP = new BannerP(this, getActivity());
         initIndicator();
         initPager();
     }
 
     @Override
     protected void prepareData() {
-
-    }
-
-    private void initBanner() {
-        banners = new ArrayList<>();
-        BannerBean bannerBean = null;
-        bannerBean = new BannerBean();
-        bannerBean.setImg("");
-        banners.add(bannerBean);
-        bannerBean = new BannerBean();
-        bannerBean.setImg("");
-        banners.add(bannerBean);
-        bannerBean = new BannerBean();
-        bannerBean.setImg("");
-        banners.add(bannerBean);
-
-        mzb_home.setPages(banners, new MZHolderCreator<ViewPagerHolder>() {
-            @Override
-            public ViewPagerHolder createViewHolder() {
-                return new ViewPagerHolder();
-            }
-        });
-        mzb_home.start();
+        bannerP.getBanner();
     }
 
     private void initIndicator() {
@@ -163,6 +144,23 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
         vp_video.setCurrentItem(checkedId - 0x8333333);
     }
 
+    @Override
+    public String getType() {
+        return "1";
+    }
+
+    @Override
+    public void setBanner(ArrayList<BannerBean> result) {
+        banners = result;
+        mzb_home.setPages(banners, new MZHolderCreator<ViewPagerHolder>() {
+            @Override
+            public ViewPagerHolder createViewHolder() {
+                return new ViewPagerHolder();
+            }
+        });
+        mzb_home.start();
+    }
+
     public static final class ViewPagerHolder implements MZViewHolder<BannerBean> {
 
         private ImageView iv_home_banner;
@@ -176,7 +174,7 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
 
         @Override
         public void onBind(Context context, int position, BannerBean data) {
-            Glide.with(context).load("").error(R.drawable.default_banner).placeholder(R.drawable.default_banner).into(iv_home_banner);
+            Glide.with(context).load(data.getImageUrl()).error(R.drawable.default_banner).placeholder(R.drawable.default_banner).into(iv_home_banner);
 
         }
     }

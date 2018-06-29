@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.ui.BaseUI;
+import com.risenb.thousandnight.ui.login.loginp.CodeP;
 import com.risenb.thousandnight.ui.login.loginp.ForgetPwdP;
 
 import butterknife.BindView;
@@ -17,7 +18,7 @@ import butterknife.OnClick;
  * Created by user on 2018/5/4.
  */
 
-public class ForgetPwdUI extends BaseUI implements ForgetPwdP.ForgetPwdFace {
+public class ForgetPwdUI extends BaseUI implements CodeP.CodeFace, ForgetPwdP.ForgetPwdFace {
 
     @BindView(R.id.et_forget_pwd_phone)
     EditText et_forget_pwd_phone;
@@ -34,6 +35,7 @@ public class ForgetPwdUI extends BaseUI implements ForgetPwdP.ForgetPwdFace {
     @BindView(R.id.tv_forget_pwd_code)
     TextView tv_forget_pwd_code;
 
+    private CodeP codeP;
     private ForgetPwdP forgetPwdP;
 
     private int second = 60;
@@ -73,6 +75,7 @@ public class ForgetPwdUI extends BaseUI implements ForgetPwdP.ForgetPwdFace {
     @Override
     protected void setControlBasis() {
         setTitle("忘记密码");
+        codeP = new CodeP(this, getActivity());
         forgetPwdP = new ForgetPwdP(this, getActivity());
     }
 
@@ -86,7 +89,7 @@ public class ForgetPwdUI extends BaseUI implements ForgetPwdP.ForgetPwdFace {
      */
     @OnClick(R.id.tv_forget_pwd_code)
     void code() {
-        forgetPwdP.sendCode();
+        codeP.sendCode();
         tv_forget_pwd_code.setClickable(false);
     }
 
@@ -101,6 +104,11 @@ public class ForgetPwdUI extends BaseUI implements ForgetPwdP.ForgetPwdFace {
     @Override
     public String getTel() {
         return et_forget_pwd_phone.getText().toString().trim();
+    }
+
+    @Override
+    public String getType() {
+        return "2";
     }
 
     @Override

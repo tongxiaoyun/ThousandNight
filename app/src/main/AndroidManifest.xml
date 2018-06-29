@@ -564,6 +564,18 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"></activity>
+
+        <activity
+            android:name="com.risenb.expand.imagepick.MultiImageSelectorActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/NO_ACTION_BAR" />
+
+        <activity
+            android:name="com.risenb.expand.imagepick.PhotoPreviewActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/NO_ACTION_BAR" />
     </application>
 
 </manifest>

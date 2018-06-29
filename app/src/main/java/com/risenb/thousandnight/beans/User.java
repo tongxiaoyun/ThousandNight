@@ -10,6 +10,14 @@ package com.risenb.thousandnight.beans;
  * ================================================
  */
 public class User {
+    private String age;//":年龄
+    private String authStatus;//":认证状态  1：可认证 2：认证中 3：认证成功(type为3)
+    private String birthdayStr;//":生日显示
+    private String commentNo;//":被评论数量,
+    private String fansNo;//":粉丝数量,
+    private String focusNo;//":关注数量,
+    private String likeNo;//":被赞数量
+    private String vipInfo;//":vip展示字符串
     private String balance;//;//:千币余额,
     private String birthday;//;//:生日,
     private String cityId;//:市id,
@@ -37,6 +45,70 @@ public class User {
     private String userId;//:用户id,
     private String userNo;//:用户编码,
     private String wechatAuthorize;//:微信授权信息
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getAuthStatus() {
+        return authStatus;
+    }
+
+    public void setAuthStatus(String authStatus) {
+        this.authStatus = authStatus;
+    }
+
+    public String getBirthdayStr() {
+        return birthdayStr;
+    }
+
+    public void setBirthdayStr(String birthdayStr) {
+        this.birthdayStr = birthdayStr;
+    }
+
+    public String getCommentNo() {
+        return commentNo;
+    }
+
+    public void setCommentNo(String commentNo) {
+        this.commentNo = commentNo;
+    }
+
+    public String getFansNo() {
+        return fansNo;
+    }
+
+    public void setFansNo(String fansNo) {
+        this.fansNo = fansNo;
+    }
+
+    public String getFocusNo() {
+        return focusNo;
+    }
+
+    public void setFocusNo(String focusNo) {
+        this.focusNo = focusNo;
+    }
+
+    public String getLikeNo() {
+        return likeNo;
+    }
+
+    public void setLikeNo(String likeNo) {
+        this.likeNo = likeNo;
+    }
+
+    public String getVipInfo() {
+        return vipInfo;
+    }
+
+    public void setVipInfo(String vipInfo) {
+        this.vipInfo = vipInfo;
+    }
 
     public String getBalance() {
         return balance;

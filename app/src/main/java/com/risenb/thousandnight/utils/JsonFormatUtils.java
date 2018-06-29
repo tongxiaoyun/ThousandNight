@@ -36,7 +36,7 @@ public class JsonFormatUtils {
     public <T> void format(BaseBean baseBean, HttpBack<T> httpBack, Class<T> type) {
         Log.e(baseBean.toString());
         Log.e(baseBean.getData());
-        if (baseBean.getStatus() == 0) {
+        if (baseBean.getStatus() == 1) {
             String data = baseBean.getData();
             if (TextUtils.isEmpty(data)) {
                 httpBack.onSuccess(data);

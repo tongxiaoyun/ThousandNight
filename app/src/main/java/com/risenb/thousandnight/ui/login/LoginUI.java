@@ -2,6 +2,7 @@ package com.risenb.thousandnight.ui.login;
 
 import android.content.Intent;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
@@ -49,49 +50,55 @@ public class LoginUI extends BaseUI implements LoginP.LoginFace {
     @Override
     protected void setControlBasis() {
         setTitle("登录");
+        if (!TextUtils.isEmpty(application.getC())){
+            Intent intent = new Intent(LoginUI.this, TabUI.class);
+            startActivity(intent);
+            finish();
+        }
+
         loginP = new LoginP(this, getActivity());
-        et_login_phone.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                iv_login_status1.setVisibility(View.VISIBLE);
-                if ("15701337967".equals(et_login_phone.getText().toString().trim())) {
-                    iv_login_status1.setImageResource(R.drawable.login_correct);
-                } else {
-                    iv_login_status1.setImageResource(R.drawable.login_error);
-                }
-            }
-        });
-        et_login_pwd.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                iv_login_status2.setVisibility(View.VISIBLE);
-                if ("".equals(et_login_pwd.getText().toString().trim())) {
-                    iv_login_status2.setImageResource(R.drawable.login_correct);
-                } else {
-                    iv_login_status2.setImageResource(R.drawable.login_error);
-                }
-            }
-        });
+//        et_login_phone.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                iv_login_status1.setVisibility(View.VISIBLE);
+//                if ("".equals(et_login_phone.getText().toString().trim())) {
+//                    iv_login_status1.setImageResource(R.drawable.login_correct);
+//                } else {
+//                    iv_login_status1.setImageResource(R.drawable.login_error);
+//                }
+//            }
+//        });
+//        et_login_pwd.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                iv_login_status2.setVisibility(View.VISIBLE);
+//                if ("".equals(et_login_pwd.getText().toString().trim())) {
+//                    iv_login_status2.setImageResource(R.drawable.login_correct);
+//                } else {
+//                    iv_login_status2.setImageResource(R.drawable.login_error);
+//                }
+//            }
+//        });
     }
 
     @Override

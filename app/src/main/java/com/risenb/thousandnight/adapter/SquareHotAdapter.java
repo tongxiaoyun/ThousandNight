@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
@@ -15,6 +16,8 @@ import com.risenb.expand.xrecyclerview.bean.BaseFootBean;
 import com.risenb.expand.xrecyclerview.bean.BaseHeadBean;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.beans.BannerBean;
+import com.risenb.thousandnight.beans.MomentBean;
+import com.risenb.thousandnight.utils.GlideRoundTransform;
 import com.risenb.thousandnight.views.banner.MZBannerView;
 import com.risenb.thousandnight.views.banner.holder.MZHolderCreator;
 import com.risenb.thousandnight.views.banner.holder.MZViewHolder;
@@ -29,18 +32,13 @@ import butterknife.ButterKnife;
  * Created by user on 2018/5/11.
  */
 
-public class SquareHotAdapter<T extends Object> extends BaseRecyclerAdapter {
+public class SquareHotAdapter<T extends MomentBean> extends BaseRecyclerAdapter {
 
     ArrayList<BannerBean> result = new ArrayList<>();
 
     public void setResult(ArrayList<BannerBean> result) {
         this.result = result;
         notifyDataSetChanged();
-    }
-
-    @Override
-    public int getItemCount() {
-        return 7;
     }
 
     @Override
@@ -66,12 +64,36 @@ public class SquareHotAdapter<T extends Object> extends BaseRecyclerAdapter {
         @BindView(R.id.rv_square_notice)
         RecyclerView rv_square_notice;
 
+        @BindView(R.id.iv_hot_img)
+        ImageView iv_hot_img;
+
+        @BindView(R.id.tv_hot_content)
+        TextView tv_hot_content;
+
+        @BindView(R.id.iv_hot_icon)
+        ImageView iv_hot_icon;
+
+        @BindView(R.id.tv_hot_nickname)
+        TextView tv_hot_nickname;
+
+        @BindView(R.id.tv_hot_comment)
+        TextView tv_hot_comment;
+
         private SquareHotTopAdapter<Object> squareHotTopAdapter;
 
         @Override
         protected void prepareData() {
             ll_square_hot_item.setVisibility(View.VISIBLE);
             ll_square_hot_top.setVisibility(View.GONE);
+            Glide.with(getActivity()).load("").placeholder(R.drawable.default_img).error(R.drawable.default_img).into(iv_hot_img);
+            Glide.with(getActivity()).load(bean.getThumb())
+                    .transform(new GlideRoundTransform(getActivity()))
+                    .error(R.drawable.default_icon)
+                    .placeholder(R.drawable.default_icon)
+                    .into(iv_hot_icon);
+            tv_hot_content.setText(bean.getContent());
+            tv_hot_nickname.setText(bean.getNickName());
+            tv_hot_comment.setText(bean.getCommentNum());
         }
 
         @Override

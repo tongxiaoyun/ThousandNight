@@ -24,7 +24,7 @@ public class BannerP extends PresenterBase {
 
     public void getBanner() {
         showProgressDialog();
-        NetworkUtils.getNetworkUtils().banner(face.getType(), new HttpBack<BannerBean>() {
+        NetworkUtils.getNetworkUtils().banner(face.getBannerType(), new HttpBack<BannerBean>() {
             @Override
             public void onSuccess(String data) {
                 dismissProgressDialog();
@@ -51,7 +51,7 @@ public class BannerP extends PresenterBase {
 
     public interface BannerFace {
 
-        String getType();
+        String getBannerType();
 
         void setBanner(ArrayList<BannerBean> result);
     }

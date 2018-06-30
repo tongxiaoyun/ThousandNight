@@ -100,7 +100,7 @@ public class MusicFragment extends BaseFragment implements BannerP.BannerFace {
     }
 
     @Override
-    public String getType() {
+    public String getBannerType() {
         return "1";
     }
 

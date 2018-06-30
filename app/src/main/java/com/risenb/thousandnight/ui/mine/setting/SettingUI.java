@@ -97,7 +97,7 @@ public class SettingUI extends BaseUI {
     @OnClick(R.id.tv_setting_exit)
     void exitLogin() {
         application.setC("");
-        application.setUserBean(new User());
+        application.setUserBean(null);
         UIManager.getInstance().popAllActivity();
         Intent intent = new Intent(SettingUI.this, LoginUI.class);
         startActivity(intent);

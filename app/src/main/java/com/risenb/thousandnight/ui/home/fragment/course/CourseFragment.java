@@ -145,7 +145,7 @@ public class CourseFragment extends BaseFragment implements ViewPager.OnPageChan
     }
 
     @Override
-    public String getType() {
+    public String getBannerType() {
         return "1";
     }
 

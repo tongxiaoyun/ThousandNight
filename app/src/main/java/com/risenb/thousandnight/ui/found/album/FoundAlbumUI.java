@@ -8,7 +8,11 @@ import com.risenb.expand.xrecyclerview.XRecyclerView;
 import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.FoundAlbumAdapter;
+import com.risenb.thousandnight.beans.AlbumBean;
 import com.risenb.thousandnight.ui.BaseUI;
+import com.risenb.thousandnight.ui.found.foundp.FoundAlbumP;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 
@@ -17,12 +21,15 @@ import butterknife.BindView;
  * Created by user on 2018/5/15.
  */
 
-public class FoundAlbumUI extends BaseUI {
+public class FoundAlbumUI extends BaseUI implements XRecyclerView.LoadingListener, FoundAlbumP.FoundAlbumFace {
 
     @BindView(R.id.xrv_common)
     XRecyclerView xrv_common;
 
-    private FoundAlbumAdapter<Object> foundAlbumAdapter;
+    private FoundAlbumP foundAlbumP;
+
+    private FoundAlbumAdapter<AlbumBean> foundAlbumAdapter;
+    private int page = 1;
 
     @Override
     protected void back() {
@@ -38,11 +45,12 @@ public class FoundAlbumUI extends BaseUI {
     protected void setControlBasis() {
         setTitle("千夜相册");
         initAdapter();
+        foundAlbumP = new FoundAlbumP(this, getActivity());
     }
 
     @Override
     protected void prepareData() {
-
+        foundAlbumP.albumList();
     }
 
     private void initAdapter() {
@@ -52,6 +60,7 @@ public class FoundAlbumUI extends BaseUI {
         foundAlbumAdapter = new FoundAlbumAdapter<>();
         foundAlbumAdapter.setActivity(this);
         xrv_common.setAdapter(foundAlbumAdapter);
+        xrv_common.setLoadingListener(this);
         foundAlbumAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int i) {
@@ -61,4 +70,37 @@ public class FoundAlbumUI extends BaseUI {
         });
     }
 
+    @Override
+    public void onRefresh() {
+        page = 1;
+        foundAlbumP.albumList();
+    }
+
+    @Override
+    public void onLoadMore() {
+        page++;
+        foundAlbumP.albumList();
+    }
+
+    @Override
+    public int getPageNo() {
+        return page;
+    }
+
+    @Override
+    public String getPageSize() {
+        return "10";
+    }
+
+    @Override
+    public void setResult(ArrayList<AlbumBean> result) {
+        foundAlbumAdapter.setList(result);
+        xrv_common.refreshComplete();
+    }
+
+    @Override
+    public void addResult(ArrayList<AlbumBean> result) {
+        foundAlbumAdapter.addList(result);
+        xrv_common.loadMoreComplete();
+    }
 }

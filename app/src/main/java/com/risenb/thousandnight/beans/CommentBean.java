@@ -24,13 +24,13 @@ public class CommentBean {
     private String parentUserId;//"://父级用户id
     private String thumb;//"://评论人头像
     private String userId;//"://评论人id
-    private ArrayList<MomentChildBean> childComment;//
+    private ArrayList<MomentBean> childComment;//
 
-    public ArrayList<MomentChildBean> getChildComment() {
+    public ArrayList<MomentBean> getChildComment() {
         return childComment;
     }
 
-    public void setChildComment(ArrayList<MomentChildBean> childComment) {
+    public void setChildComment(ArrayList<MomentBean> childComment) {
         this.childComment = childComment;
     }
 

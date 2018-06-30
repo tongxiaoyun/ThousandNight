@@ -7,6 +7,7 @@ import com.risenb.expand.m;
 import com.risenb.expand.network.response.RawResponseHandler;
 import com.risenb.thousandnight.MyApplication;
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.beans.AlbumBean;
 import com.risenb.thousandnight.beans.BannerBean;
 import com.risenb.thousandnight.beans.BaseBean;
 import com.risenb.thousandnight.beans.CodeBean;
@@ -364,6 +365,7 @@ public class NetworkUtils {
     public void momentList(String targetId, String type, String lat, String lng, String pageNo, String pageSize, final HttpBack<MomentBean> httpBack) {
         String url = getUrl(R.string.momentList);
         Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
         params.put("targetId", targetId);
         params.put("type", type);
         params.put("lat", lat);
@@ -575,6 +577,7 @@ public class NetworkUtils {
     public void newsList(String type, String keyWord, String pageNo, String pageSize, final HttpBack<NewsBean> httpBack) {
         String url = getUrl(R.string.newsList);
         Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
         params.put("type", type);
         params.put("keyWord", keyWord);
         params.put("pageNo", pageNo);
@@ -643,12 +646,39 @@ public class NetworkUtils {
     }
 
     /**
+     * 2.4.11.	分页获取相册列表
+     * pageNo           页码              否           int             1
+     * pageSize         每页显示条数       否            int           15
+     */
+    public void albumList(String pageNo, String pageSize, final HttpBack<AlbumBean> httpBack) {
+        String url = getUrl(R.string.albumList);
+        Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
+        params.put("pageNo", pageNo);
+        params.put("pageSize", pageSize);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, AlbumBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
      * 2.5.1.	获取轮播图
      * type	    类型	        是	    int	   无	  1：首页 2：广场 3：新闻
      */
     public void banner(String type, final HttpBack<BannerBean> httpBack) {
         String url = getUrl(R.string.list);
         Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
         params.put("type", type);
         m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
             @Override

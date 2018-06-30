@@ -21,6 +21,7 @@
             android:paddingTop="@dimen/dm035">
 
             <ImageView
+                android:id="@+id/iv_news_img"
                 android:layout_width="@dimen/dm122"
                 android:layout_height="@dimen/dm122"
                 android:scaleType="centerCrop"
@@ -33,6 +34,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_news_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
@@ -49,6 +51,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tv_news_look"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/found_look"
@@ -56,11 +59,12 @@
                         android:ellipsize="end"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="122"
+                        android:text="0"
                         android:textColor="@color/gray999"
                         android:textSize="@dimen/dm020" />
 
                     <TextView
+                        android:id="@+id/tv_news_zan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dm035"
@@ -69,7 +73,7 @@
                         android:ellipsize="end"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="122"
+                        android:text="0"
                         android:textColor="@color/gray999"
                         android:textSize="@dimen/dm020" />
 
@@ -79,6 +83,7 @@
                         android:layout_weight="1" />
 
                     <TextView
+                        android:id="@+id/tv_news_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dm020"

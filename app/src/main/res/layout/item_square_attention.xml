@@ -21,6 +21,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/iv_attention_icon"
                 android:layout_width="@dimen/dm085"
                 android:layout_height="@dimen/dm085"
                 android:src="@drawable/default_icon" />
@@ -33,6 +34,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_attention_nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
@@ -53,17 +55,19 @@
                     android:paddingRight="@dimen/dm015">
 
                     <ImageView
+                        android:id="@+id/iv_attention_sex"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/found_boy" />
 
                     <TextView
+                        android:id="@+id/tv_attention_age"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dm005"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        android:text="27"
+                        android:text="0"
                         android:textColor="@color/white"
                         android:textSize="@dimen/dm020" />
 
@@ -90,6 +94,7 @@
             android:layout_marginTop="@dimen/dm025"></android.support.v7.widget.RecyclerView>
 
         <TextView
+            android:id="@+id/tv_attention_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dm115"
@@ -111,6 +116,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_attention_zan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/found_zan"
@@ -118,11 +124,12 @@
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="168"
+                android:text="0"
                 android:textColor="@color/gray999"
                 android:textSize="@dimen/dm020" />
 
             <TextView
+                android:id="@+id/tv_attention_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dm040"
@@ -131,11 +138,12 @@
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="168"
+                android:text="0"
                 android:textColor="@color/gray999"
                 android:textSize="@dimen/dm020" />
 
             <TextView
+                android:id="@+id/tv_attention_time"
                 android:layout_width="@dimen/dm000"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

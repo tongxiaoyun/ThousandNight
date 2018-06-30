@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
@@ -13,6 +14,7 @@ import com.risenb.expand.xrecyclerview.bean.BaseFootBean;
 import com.risenb.expand.xrecyclerview.bean.BaseHeadBean;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.beans.BannerBean;
+import com.risenb.thousandnight.beans.NewsBean;
 import com.risenb.thousandnight.views.banner.MZBannerView;
 import com.risenb.thousandnight.views.banner.holder.MZHolderCreator;
 import com.risenb.thousandnight.views.banner.holder.MZViewHolder;
@@ -27,18 +29,13 @@ import butterknife.ButterKnife;
  * Created by user on 2018/5/15.
  */
 
-public class FoundNewsAdapter<T extends Object> extends BaseRecyclerAdapter {
+public class FoundNewsAdapter<T extends NewsBean> extends BaseRecyclerAdapter {
 
-    ArrayList<BannerBean> result = new ArrayList<>();
+    private ArrayList<BannerBean> result = new ArrayList<>();
 
     public void setResult(ArrayList<BannerBean> result) {
         this.result = result;
         notifyDataSetChanged();
-    }
-
-    @Override
-    public int getItemCount() {
-        return 3;
     }
 
     @Override
@@ -61,10 +58,30 @@ public class FoundNewsAdapter<T extends Object> extends BaseRecyclerAdapter {
         @BindView(R.id.mzb_banner)
         MZBannerView mzb_banner;
 
+        @BindView(R.id.iv_news_img)
+        ImageView iv_news_img;
+
+        @BindView(R.id.tv_news_title)
+        TextView tv_news_title;
+
+        @BindView(R.id.tv_news_look)
+        TextView tv_news_look;
+
+        @BindView(R.id.tv_news_zan)
+        TextView tv_news_zan;
+
+        @BindView(R.id.tv_news_time)
+        TextView tv_news_time;
+
         @Override
         protected void prepareData() {
             ll_news_item.setVisibility(View.VISIBLE);
             ll_banner_top.setVisibility(View.GONE);
+            Glide.with(getActivity()).load(bean.getImg()).placeholder(R.drawable.default_img).error(R.drawable.default_img).into(iv_news_img);
+            tv_news_title.setText(bean.getTitle());
+            tv_news_look.setText(bean.getViewCount());
+            tv_news_zan.setText(bean.getLikeCount());
+            tv_news_time.setText(bean.getCreateTimeStr());
         }
 
         @Override

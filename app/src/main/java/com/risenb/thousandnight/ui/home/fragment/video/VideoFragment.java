@@ -145,7 +145,7 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
     }
 
     @Override
-    public String getType() {
+    public String getBannerType() {
         return "1";
     }
 

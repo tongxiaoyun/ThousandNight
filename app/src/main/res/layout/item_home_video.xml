@@ -12,12 +12,14 @@
         android:layout_height="@dimen/dm226">
 
         <ImageView
+            android:id="@+id/iv_video_cover"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dm226"
             android:scaleType="centerCrop"
             android:src="@drawable/default_img" />
 
         <TextView
+            android:id="@+id/tv_video_viewNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -35,6 +37,7 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/tv_video_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dm020"

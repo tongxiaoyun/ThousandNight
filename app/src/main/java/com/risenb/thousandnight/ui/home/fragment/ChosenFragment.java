@@ -16,7 +16,11 @@ import com.risenb.thousandnight.adapter.HomeCourseAdapter;
 import com.risenb.thousandnight.adapter.HomeMusicAdapter;
 import com.risenb.thousandnight.adapter.HomeVideoAdapter;
 import com.risenb.thousandnight.beans.BannerBean;
+import com.risenb.thousandnight.beans.CourseListBean;
+import com.risenb.thousandnight.beans.MusicSheetBean;
+import com.risenb.thousandnight.beans.VideoListBean;
 import com.risenb.thousandnight.ui.BaseFragment;
+import com.risenb.thousandnight.ui.home.HomeP;
 import com.risenb.thousandnight.ui.home.fragment.course.ChoiceCourseUI;
 import com.risenb.thousandnight.ui.home.fragment.course.CourseDetialUI;
 import com.risenb.thousandnight.ui.home.fragment.music.MusicPlayUI;
@@ -29,7 +33,6 @@ import com.risenb.thousandnight.views.banner.holder.MZHolderCreator;
 import com.risenb.thousandnight.views.banner.holder.MZViewHolder;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -39,7 +42,7 @@ import butterknife.OnClick;
  * Created by user on 2018/5/4.
  */
 
-public class ChosenFragment extends BaseFragment implements BannerP.BannerFace {
+public class ChosenFragment extends BaseFragment implements BannerP.BannerFace, ChosenP.ChosenFace {
 
     /**
      * banner
@@ -67,11 +70,12 @@ public class ChosenFragment extends BaseFragment implements BannerP.BannerFace {
 
     private BannerP bannerP;
 
-    private HomeVideoAdapter<Object> homeVideoAdapter;
-    private HomeMusicAdapter<Object> homeMusicAdapter;
-    private HomeCourseAdapter<Object> homeCourseAdapter;
+    private HomeVideoAdapter<VideoListBean> homeVideoAdapter;
+    private HomeMusicAdapter<MusicSheetBean> homeMusicAdapter;
+    private HomeCourseAdapter<CourseListBean> homeCourseAdapter;
 
     private ArrayList<BannerBean> banners;
+    private ChosenP chosenP;
 
     @Override
     protected void loadViewLayout(LayoutInflater inflater, ViewGroup container) {
@@ -81,12 +85,17 @@ public class ChosenFragment extends BaseFragment implements BannerP.BannerFace {
     @Override
     protected void setControlBasis() {
         bannerP = new BannerP(this, getActivity());
+        chosenP = new ChosenP(this, getActivity());
         initAdapter();
     }
 
     @Override
     protected void prepareData() {
         bannerP.getBanner();
+        chosenP.videoListHot();
+        chosenP.musicSheetList();
+        chosenP.selectedList();
+        chosenP.selectedList();
     }
 
     private void initAdapter() {
@@ -148,6 +157,21 @@ public class ChosenFragment extends BaseFragment implements BannerP.BannerFace {
         mzb_home.start();
     }
 
+    @Override
+    public void setHotVideo(ArrayList<VideoListBean> result) {
+        homeVideoAdapter.setList(result);
+    }
+
+    @Override
+    public void setHotMusic(ArrayList<MusicSheetBean> result) {
+        homeMusicAdapter.setList(result);
+    }
+
+    @Override
+    public void setCourse(ArrayList<CourseListBean> result) {
+        homeCourseAdapter.setList(result);
+    }
+
     public static final class ViewPagerHolder implements MZViewHolder<BannerBean> {
 
         private ImageView iv_home_banner;
@@ -182,9 +206,15 @@ public class ChosenFragment extends BaseFragment implements BannerP.BannerFace {
 
 
     @OnClick(R.id.tv_home_choice_more)
-    void toChoice(){
+    void toChoice() {
         Intent intent = new Intent(getActivity(), ChoiceCourseUI.class);
         startActivity(intent);
+    }
+
+
+    @OnClick(R.id.tv_home_video_refresh)
+    void refreshVideo() {
+        chosenP.videoListHot();
     }
 
 }

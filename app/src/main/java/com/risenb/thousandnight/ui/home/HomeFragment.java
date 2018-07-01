@@ -13,9 +13,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.risenb.expand.utils.DisplayUtil;
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.beans.HomeSignBean;
 import com.risenb.thousandnight.ui.BaseFragment;
 import com.risenb.thousandnight.ui.home.download.DownloadUI;
 import com.risenb.thousandnight.ui.home.fragment.ChosenFragment;
@@ -33,7 +35,7 @@ import butterknife.OnClick;
  * Created by user on 2018/5/4.
  */
 
-public class HomeFragment extends BaseFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener {
+public class HomeFragment extends BaseFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener, HomeP.HomeFace {
 
     /**
      * 内容
@@ -59,6 +61,13 @@ public class HomeFragment extends BaseFragment implements ViewPager.OnPageChange
     @BindView(R.id.iv_home_sign)
     ImageView iv_home_sign;
 
+
+    @BindView(R.id.tv_home_sign_days)
+    TextView tv_home_sign_days;
+
+    @BindView(R.id.tv_home_sign)
+    TextView tv_home_sign;
+
     @BindView(R.id.ll_home_sign)
     LinearLayout ll_home_sign;
 
@@ -67,6 +76,7 @@ public class HomeFragment extends BaseFragment implements ViewPager.OnPageChange
     private LinearLayout.LayoutParams lp;
     private int tabWidth;
     private int indicatorWidth;
+    private HomeP homeP;
 
     @Override
     protected void loadViewLayout(LayoutInflater inflater, ViewGroup container) {
@@ -75,6 +85,7 @@ public class HomeFragment extends BaseFragment implements ViewPager.OnPageChange
 
     @Override
     protected void setControlBasis() {
+        homeP = new HomeP(this, getActivity());
         initViewPager();
         initIndicator();
     }
@@ -139,13 +150,15 @@ public class HomeFragment extends BaseFragment implements ViewPager.OnPageChange
      */
     @OnClick(R.id.iv_home_sign)
     void sign() {
-        if (iv_home_sign.getVisibility() == View.VISIBLE) {
-            iv_home_sign.setVisibility(View.INVISIBLE);
-            ll_home_sign.setVisibility(View.VISIBLE);
-        } else {
-            iv_home_sign.setVisibility(View.VISIBLE);
-            ll_home_sign.setVisibility(View.GONE);
-        }
+        homeP.signInfo();
+    }
+
+    /**
+     * 签到
+     */
+    @OnClick(R.id.tv_home_sign)
+    void toSign() {
+        homeP.sign();
     }
 
     @OnClick(R.id.ll_home_sign)
@@ -162,6 +175,7 @@ public class HomeFragment extends BaseFragment implements ViewPager.OnPageChange
         Intent intent = new Intent(getActivity(), HomeSignRecordUI.class);
         startActivity(intent);
     }
+
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -196,6 +210,29 @@ public class HomeFragment extends BaseFragment implements ViewPager.OnPageChange
                 vp_home.setCurrentItem(3);
                 break;
         }
+    }
+
+    @Override
+    public void setSign(HomeSignBean result) {
+        if (iv_home_sign.getVisibility() == View.VISIBLE) {
+            iv_home_sign.setVisibility(View.INVISIBLE);
+            ll_home_sign.setVisibility(View.VISIBLE);
+            tv_home_sign_days.setText(result.getContinueSignDays());
+            if (result.isSign()) {
+                tv_home_sign.setText("已签到");
+                tv_home_sign.setClickable(false);
+            } else {
+                tv_home_sign.setText("立即签到");
+                tv_home_sign.setClickable(true);
+            }
+        }
+    }
+
+    @Override
+    public void signSuccess() {
+        makeText("签到成功");
+        iv_home_sign.setVisibility(View.VISIBLE);
+        ll_home_sign.setVisibility(View.GONE);
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {

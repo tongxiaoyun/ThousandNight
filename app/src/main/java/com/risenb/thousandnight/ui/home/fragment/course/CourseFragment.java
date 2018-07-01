@@ -19,6 +19,8 @@ import com.bumptech.glide.Glide;
 import com.risenb.expand.utils.DisplayUtil;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.beans.BannerBean;
+import com.risenb.thousandnight.beans.ClassBean;
+import com.risenb.thousandnight.beans.ParamBean;
 import com.risenb.thousandnight.ui.BaseFragment;
 import com.risenb.thousandnight.ui.home.homep.BannerP;
 import com.risenb.thousandnight.views.banner.MZBannerView;
@@ -36,7 +38,7 @@ import butterknife.OnClick;
  * Created by user on 2018/5/10.
  */
 
-public class CourseFragment extends BaseFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener, BannerP.BannerFace {
+public class CourseFragment extends BaseFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener, BannerP.BannerFace, CourseP.CourseFace {
 
     /**
      * banner
@@ -67,7 +69,7 @@ public class CourseFragment extends BaseFragment implements ViewPager.OnPageChan
     private int screenWidth;
 
     private ArrayList<BannerBean> banners;
-    private List<String> tabs;
+    private CourseP courseP;
 
     @Override
     protected void loadViewLayout(LayoutInflater inflater, ViewGroup container) {
@@ -77,13 +79,14 @@ public class CourseFragment extends BaseFragment implements ViewPager.OnPageChan
     @Override
     protected void setControlBasis() {
         bannerP = new BannerP(this, getActivity());
+        courseP = new CourseP(this, getActivity());
         initIndicator();
-        initPager();
     }
 
     @Override
     protected void prepareData() {
         bannerP.getBanner();
+        courseP.classifyList();
     }
 
     private void initIndicator() {
@@ -96,29 +99,27 @@ public class CourseFragment extends BaseFragment implements ViewPager.OnPageChan
         tabHeight = DisplayUtil.getDimen(getActivity().getApplicationContext(), R.dimen.dm082);
     }
 
-    private void initPager() {
-        tabs = new ArrayList<>();
-        tabs.add("全部");
-        tabs.add("拉丁舞");
-        tabs.add("芭蕾舞");
-        tabs.add("古典舞");
-        tabs.add("现代舞");
-        tabs.add("爵士舞");
+    private void initPager(ArrayList<ParamBean> list) {
         LayoutInflater inflater = LayoutInflater.from(getActivity());
         RadioButton rb = null;
+        ParamBean param = new ParamBean();
+        param.setName("全部");
+        param.setParamId("");
+        list.add(0, param);
+        rg_course.removeAllViews();
         rg_course.setOnCheckedChangeListener(this);
-        for (int i = 0; i < tabs.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             rb = (RadioButton) inflater.inflate(R.layout.item_text, null);
-            rb.setText(tabs.get(i));
+            rb.setText(list.get(i).getName());
             rb.setId(0x8333333 + i);
             if (i == 0) {
                 rb.setChecked(true);
             }
-            fragments.add(new CourseChildFragment());
+            fragments.add(new CourseChildFragment(list.get(i).getParamId()));
             rg_course.addView(rb, tabWidth, tabHeight);
         }
         myPagerAdapter = new MyPagerAdapter(getChildFragmentManager());
-        vp_course.setOffscreenPageLimit(tabs.size());
+        vp_course.setOffscreenPageLimit(list.size());
         vp_course.setAdapter(myPagerAdapter);
         vp_course.addOnPageChangeListener(this);
     }
@@ -159,6 +160,11 @@ public class CourseFragment extends BaseFragment implements ViewPager.OnPageChan
             }
         });
         mzb_home.start();
+    }
+
+    @Override
+    public void setClassResult(ClassBean result) {
+        initPager(result.getGeneral());
     }
 
     public static final class ViewPagerHolder implements MZViewHolder<BannerBean> {

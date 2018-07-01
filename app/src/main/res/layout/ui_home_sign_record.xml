@@ -64,6 +64,7 @@
             android:paddingBottom="@dimen/dm025">
 
             <TextView
+                android:id="@+id/tv_home_sign_continue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -112,6 +113,7 @@
                 android:paddingRight="@dimen/dm020">
 
                 <TextView
+                    android:id="@+id/tv_home_sign_current"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/home_sign_clock"
@@ -127,6 +129,7 @@
                     android:layout_weight="1" />
 
                 <TextView
+                    android:id="@+id/tv_home_sign_is"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="今日已签到"
@@ -152,6 +155,7 @@
                     android:src="@drawable/home_sign_left" />
 
                 <TextView
+                    android:id="@+id/tv_home_sign_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2018-03-22"
@@ -166,9 +170,10 @@
 
             </LinearLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <com.risenb.thousandnight.views.SignCalendarView
+                android:id="@+id/scv_sign"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+                android:layout_height="@dimen/dm450"></com.risenb.thousandnight.views.SignCalendarView>
 
             <include layout="@layout/line_20" />
 

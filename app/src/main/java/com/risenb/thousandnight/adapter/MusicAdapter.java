@@ -11,6 +11,7 @@ import com.risenb.expand.xrecyclerview.adapter.BaseViewHolder;
 import com.risenb.expand.xrecyclerview.bean.BaseFootBean;
 import com.risenb.expand.xrecyclerview.bean.BaseHeadBean;
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.beans.MusicSheetBean;
 import com.risenb.thousandnight.ui.home.fragment.music.SongSheetUI;
 import com.risenb.thousandnight.views.MyRecyclerView;
 
@@ -42,7 +43,7 @@ public class MusicAdapter<T extends Object> extends BaseRecyclerAdapter {
         @BindView(R.id.mrv_music)
         MyRecyclerView mrv_music;
 
-        private HomeMusicAdapter<Object> homeMusicAdapter;
+        private HomeMusicAdapter<MusicSheetBean> homeMusicAdapter;
 
         @Override
         protected void prepareData() {

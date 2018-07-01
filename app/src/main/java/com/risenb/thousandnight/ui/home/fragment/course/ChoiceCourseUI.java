@@ -8,6 +8,7 @@ import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.HomeCourseAdapter;
 import com.risenb.thousandnight.adapter.HomeMusicAdapter;
 import com.risenb.thousandnight.adapter.HomeVideoAdapter;
+import com.risenb.thousandnight.beans.CourseListBean;
 import com.risenb.thousandnight.ui.BaseUI;
 
 import butterknife.BindView;
@@ -25,7 +26,7 @@ public class ChoiceCourseUI extends BaseUI {
 
     @BindView(R.id.xrv_choice_course)
     XRecyclerView xrv_choice_course;
-    private HomeCourseAdapter<Object> choiceCourseAdapter;
+    private HomeCourseAdapter<CourseListBean> choiceCourseAdapter;
 
 
     @Override

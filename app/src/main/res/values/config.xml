@@ -129,5 +129,12 @@
 
     <!--2.5.1.	获取轮播图-->
     <string name="list">/banner/list.do</string>
+    <!--2.4.1.	视频列表-->
+    <string name="videoList">/video/videoList.do</string>
+    <!--2.3.1.	歌单列表-->
+    <string name="musicSheetList">/music/musicSheetList.do</string>
+
+    <!--2.7.1.	查询分类列表-->
+    <string name="classifyList">/home/classifyList.do</string>
 
 </resources>

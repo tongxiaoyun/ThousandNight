@@ -15,6 +15,8 @@
         android:paddingTop="@dimen/dm040">
 
         <ImageView
+
+            android:id="@+id/iv_course_cover"
             android:layout_width="@dimen/dm200"
             android:layout_height="@dimen/dm130"
             android:scaleType="centerCrop"
@@ -27,6 +29,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_course_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -43,6 +46,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_course_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
@@ -76,7 +80,7 @@
                     android:maxLines="1"
                     android:text="200购买"
                     android:textColor="@color/gray999"
-                    android:textSize="@dimen/dm020"/>
+                    android:textSize="@dimen/dm020" />
 
             </LinearLayout>
 

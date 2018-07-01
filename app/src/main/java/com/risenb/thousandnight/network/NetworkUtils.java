@@ -10,13 +10,20 @@ import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.beans.AlbumBean;
 import com.risenb.thousandnight.beans.BannerBean;
 import com.risenb.thousandnight.beans.BaseBean;
+import com.risenb.thousandnight.beans.ClassBean;
 import com.risenb.thousandnight.beans.CodeBean;
 import com.risenb.thousandnight.beans.CommentBean;
+import com.risenb.thousandnight.beans.CourseListBean;
+import com.risenb.thousandnight.beans.HomeHotVideoBean;
+import com.risenb.thousandnight.beans.HomeSignBean;
 import com.risenb.thousandnight.beans.MomentBean;
+import com.risenb.thousandnight.beans.MusicSheetBean;
 import com.risenb.thousandnight.beans.NewsBean;
+import com.risenb.thousandnight.beans.SignBean;
 import com.risenb.thousandnight.beans.User;
 import com.risenb.thousandnight.beans.UserBean;
 import com.risenb.thousandnight.beans.UserCenterBean;
+import com.risenb.thousandnight.beans.VideoListBean;
 import com.risenb.thousandnight.utils.JsonFormatUtils;
 
 
@@ -182,7 +189,6 @@ public class NetworkUtils {
     public void home(final HttpBack<User> httpBack) {
         String url = getUrl(R.string.home);
         Map<String, String> params = getReqParams();
-        params.put("c", application.getC());
         m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
             @Override
             public void onSuccess(int statusCode, String response) {
@@ -206,7 +212,6 @@ public class NetworkUtils {
     public void index(String userId, final HttpBack<UserCenterBean> httpBack) {
         String url = getUrl(R.string.index);
         Map<String, String> params = getReqParams();
-        params.put("c", application.getC());
         params.put("userId", userId);
         m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
             @Override
@@ -246,7 +251,6 @@ public class NetworkUtils {
                          String classLng, String classLat, String classAddress, String introduce, String lastLng, String lastLat, final HttpBack<Object> httpBack) {
         String url = getUrl(R.string.editInfo);
         Map<String, String> params = getReqParams();
-        params.put("c", application.getC());
         params.put("nickName", nickName);
         params.put("birthday", birthday);
         params.put("gender", gender);
@@ -285,7 +289,6 @@ public class NetworkUtils {
     public void changePwd(String oldPwd, String newPwdOne, String newPwdTwo, final HttpBack<Object> httpBack) {
         String url = getUrl(R.string.changePwd);
         Map<String, String> params = getReqParams();
-        params.put("c", application.getC());
         params.put("oldPwd", oldPwd);
         params.put("newPwdOne", newPwdOne);
         params.put("newPwdTwo", newPwdTwo);
@@ -577,7 +580,6 @@ public class NetworkUtils {
     public void newsList(String type, String keyWord, String pageNo, String pageSize, final HttpBack<NewsBean> httpBack) {
         String url = getUrl(R.string.newsList);
         Map<String, String> params = getReqParams();
-        params.put("c", application.getC());
         params.put("type", type);
         params.put("keyWord", keyWord);
         params.put("pageNo", pageNo);
@@ -653,7 +655,6 @@ public class NetworkUtils {
     public void albumList(String pageNo, String pageSize, final HttpBack<AlbumBean> httpBack) {
         String url = getUrl(R.string.albumList);
         Map<String, String> params = getReqParams();
-        params.put("c", application.getC());
         params.put("pageNo", pageNo);
         params.put("pageSize", pageSize);
         m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
@@ -678,7 +679,6 @@ public class NetworkUtils {
     public void banner(String type, final HttpBack<BannerBean> httpBack) {
         String url = getUrl(R.string.list);
         Map<String, String> params = getReqParams();
-        params.put("c", application.getC());
         params.put("type", type);
         m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
             @Override
@@ -696,10 +696,250 @@ public class NetworkUtils {
     }
 
 
+    /**
+     * 2.1.1.	查询用户签到信息
+     */
+    public void signInfo(final HttpBack<HomeSignBean> httpBack) {
+        String url = getUrl(R.string.signInfo);
+        Map<String, String> params = getReqParams();
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, HomeSignBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.1.2.	签到
+     */
+    public void sign(final HttpBack<Object> httpBack) {
+        String url = getUrl(R.string.sign);
+        Map<String, String> params = getReqParams();
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, Object.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+
+    /**
+     * 2.1.2.	签到
+     */
+    public void signRecord(String dateStr, final HttpBack<SignBean> httpBack) {
+        String url = getUrl(R.string.signRecord);
+        Map<String, String> params = getReqParams();
+        params.put("dateStr", dateStr);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, SignBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+
+    /**
+     * 2.3.1.	歌曲表单
+     * pageNo       页码      否（默认1）      Int
+     * pageSize     每页条数    否（默认15）     Int
+     * isRecommend  是否推荐（   0：不推荐 1：推荐） 否   int 不传为全部
+     */
+    public void musicSheetList(String pageNo, String pageSize, String isRecommend, final HttpBack<MusicSheetBean> httpBack) {
+        String url = getUrl(R.string.musicSheetList);
+        Map<String, String> params = getReqParams();
+        if (!TextUtils.isEmpty(pageNo))
+            params.put("pageNo", pageNo);
+        if (!TextUtils.isEmpty(pageSize))
+            params.put("pageSize", pageSize);
+        if (!TextUtils.isEmpty(isRecommend))
+            params.put("isRecommend", isRecommend);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, MusicSheetBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.1.4.	精选课程列表
+     * pageNo       页码      否（默认1）      Int
+     * pageSize     每页条数    否（默认15）     Int
+     */
+    public void selectedList(String pageNo, String pageSize, final HttpBack<CourseListBean> httpBack) {
+        String url = getUrl(R.string.selectedList);
+        Map<String, String> params = getReqParams();
+        if (!TextUtils.isEmpty(pageNo))
+            params.put("pageNo", pageNo);
+        if (!TextUtils.isEmpty(pageSize))
+            params.put("pageSize", pageSize);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, CourseListBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+
+    /**
+     * 2.1.4.	精选课程列表
+     * pageNo       页码      否（默认1）      Int
+     * pageSize     每页条数    否（默认15）     Int
+     */
+    public void courseList(String paramId, String teacherId, String orderField, String orderDirection, String pageNo, String pageSize, final HttpBack<CourseListBean> httpBack) {
+        String url = getUrl(R.string.courseList);
+        Map<String, String> params = getReqParams();
+        if (!TextUtils.isEmpty(paramId))
+            params.put("paramId", paramId);
+
+        if (!TextUtils.isEmpty(teacherId))
+            params.put("teacherId", teacherId);
+
+        if (!TextUtils.isEmpty(orderField))
+            params.put("orderField", orderField);
+
+        if (!TextUtils.isEmpty(orderDirection))
+            params.put("orderDirection", orderDirection);
+        if (!TextUtils.isEmpty(pageNo))
+            params.put("pageNo", pageNo);
+        if (!TextUtils.isEmpty(pageSize))
+            params.put("pageSize", pageSize);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, CourseListBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.7.1.	查询分类列表
+     */
+    public void classifyList(String type, final HttpBack<ClassBean> httpBack) {
+        String url = getUrl(R.string.classifyList);
+        Map<String, String> params = getReqParams();
+        if (!TextUtils.isEmpty(type))
+            params.put("type", type);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, ClassBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+
+    /**
+     * 2.4.1.	视频列表
+     * pageNo       页码                        否（默认1）          Int
+     * pageSize     每页条数                     否（默认15）         Int
+     * isHot        是否热播（0：否1：是）         否                  int         不传为全部
+     * paramId      分类ID                       否                  Long          无
+     * parentId     分类父ID                      否                Long            0
+     * orderField   排序字段                       否                String(观看量：view_num 评论量：    comment_num     创建时间：   create_time )   默认创建时间
+     * orderDirection   排序方向                   否                String(升 asc降 desc)默认降
+     */
+    public void videoList(String pageNo, String pageSize, String isHot, String paramId, String parentId, String orderField, String orderDirection, final HttpBack<HomeHotVideoBean> httpBack) {
+        String url = getUrl(R.string.videoList);
+        Map<String, String> params = getReqParams();
+        params.put("pageNo", pageNo);
+        params.put("pageSize", pageSize);
+        params.put("isHot", isHot);
+        if (!TextUtils.isEmpty(paramId))
+            params.put("paramId", paramId);
+        if (!TextUtils.isEmpty(parentId))
+            params.put("parentId", parentId);
+        if (!TextUtils.isEmpty(orderField))
+            params.put("orderField", orderField);
+        if (!TextUtils.isEmpty(orderDirection))
+            params.put("orderDirection", orderDirection);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, HomeHotVideoBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.4.1.	视频列表
+     * pageNo       页码                        否（默认1）          Int
+     * pageSize     每页条数                     否（默认15）         Int
+     * isHot        是否热播（0：否1：是）         否                  int         不传为全部
+     * paramId      分类ID                       否                  Long          无
+     * parentId     分类父ID                      否                Long            0
+     * orderField   排序字段                       否                String(观看量：view_num 评论量：    comment_num     创建时间：   create_time )   默认创建时间
+     * orderDirection   排序方向                   否                String(升 asc降 desc)默认降
+     */
+    public void videoListHot(final HttpBack<HomeHotVideoBean> httpBack) {
+        videoList("1", "6", "1", "", "", "", "", httpBack);
+    }
+
+
     private HashMap getReqParams() {
         Map<String, String> params = new HashMap<>();
         if (!TextUtils.isEmpty(application.getC())) {
-            params.put("token", application.getC());
+            params.put("c", application.getC());
 
         }
         return (HashMap) params;

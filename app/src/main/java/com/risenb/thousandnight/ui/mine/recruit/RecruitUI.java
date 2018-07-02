@@ -8,6 +8,7 @@ import com.risenb.expand.xrecyclerview.XRecyclerView;
 import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.FoundRecruitAdapter;
+import com.risenb.thousandnight.beans.PositonBean;
 import com.risenb.thousandnight.ui.BaseUI;
 
 import butterknife.BindView;
@@ -22,7 +23,7 @@ public class RecruitUI extends BaseUI {
     @BindView(R.id.xrv_common)
     XRecyclerView xrv_common;
 
-    private FoundRecruitAdapter<Object> foundRecruitAdapter;
+    private FoundRecruitAdapter<PositonBean> foundRecruitAdapter;
     private String ui = "";
 
     @Override
@@ -40,7 +41,7 @@ public class RecruitUI extends BaseUI {
         setTitle("求职招聘");
         rightVisible(R.drawable.mine_delete);
         ui = getIntent().getStringExtra("ui");
-        initAdapter();
+//        initAdapter();
     }
 
     @Override
@@ -60,6 +61,7 @@ public class RecruitUI extends BaseUI {
                 @Override
                 public void onItemClick(View view, int i) {
                     Intent intent = new Intent(RecruitUI.this, RecruitDetailUI.class);
+                    intent.putExtra("ui", "mine");
                     startActivity(intent);
                 }
             });
@@ -69,6 +71,7 @@ public class RecruitUI extends BaseUI {
                 @Override
                 public void onItemClick(View view, int i) {
                     Intent intent = new Intent(RecruitUI.this, DeliverDetailUI.class);
+                    intent.putExtra("ui", "mine");
                     startActivity(intent);
                 }
             });

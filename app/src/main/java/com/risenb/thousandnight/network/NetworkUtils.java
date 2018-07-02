@@ -19,6 +19,7 @@ import com.risenb.thousandnight.beans.HomeSignBean;
 import com.risenb.thousandnight.beans.MomentBean;
 import com.risenb.thousandnight.beans.MusicSheetBean;
 import com.risenb.thousandnight.beans.NewsBean;
+import com.risenb.thousandnight.beans.PositonBean;
 import com.risenb.thousandnight.beans.SignBean;
 import com.risenb.thousandnight.beans.User;
 import com.risenb.thousandnight.beans.UserBean;
@@ -935,6 +936,169 @@ public class NetworkUtils {
         videoList("1", "6", "1", "", "", "", "", httpBack);
     }
 
+
+    /**
+     * 2.5.1.	发布职位
+     * positionName	职位名称	是	string
+     * positionType	职位类型	是	int
+     * typeName	职位类型名称	是	String
+     * workYears	工作年限	是	int
+     * yearsName	工作年限名称	是	string
+     * positionGrade	职位等级	是	int
+     * gradeName	职位等级名称	是	string
+     * provinceId	省Id	是	int
+     * provinceName	省名称	是	string
+     * cityId	市ID	是	int
+     * cityName	市名称	是	string
+     * areaId	区ID	是	int
+     * areaName	区名称	是	string
+     * salaryType	薪资类型(1：范围 2：面议 )	是	int
+     * salaryBegin	薪资起始值	否	int
+     * salaryEnd	薪资结束值	否	int
+     * positionDesc	职位描述	否	string
+     */
+
+    public void addPosition(String positionName, String positionType, String typeName, String workYears, String yearsName, String positionGrade, String gradeName, String provinceId, String provinceName,
+                            String cityId, String cityName, String areaId, String areaName, String salaryType, String salaryBegin, String salaryEnd, String positionDesc, final HttpBack<Object> httpBack) {
+        String url = getUrl(R.string.addPosition);
+        Map<String, String> params = getReqParams();
+        params.put("positionName", positionName);
+        params.put("positionType", positionType);
+        params.put("typeName", typeName);
+        params.put("workYears", workYears);
+        params.put("yearsName", yearsName);
+        params.put("positionGrade", positionGrade);
+        params.put("gradeName", gradeName);
+        params.put("provinceId", provinceId);
+        params.put("provinceName", provinceName);
+        params.put("cityId", cityId);
+        params.put("cityName", cityName);
+        params.put("areaId", areaId);
+        params.put("areaName", areaName);
+        params.put("salaryType", salaryType);
+        if (!TextUtils.isEmpty(salaryBegin))
+            params.put("salaryBegin", salaryBegin);
+        if (!TextUtils.isEmpty(salaryEnd))
+            params.put("salaryEnd", salaryEnd);
+        if (!TextUtils.isEmpty(positionDesc))
+            params.put("positionDesc", positionDesc);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, Object.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.5.2.	职位投递
+     * positionId	职位ID	是	string
+     * deliveryInfo	投递信息	否	string
+     * video	视频	否	视频文件
+     */
+    public void addPositoinDelivery(String positionId, String deliveryInfo, File video, final HttpBack<Object> httpBack) {
+        String url = getUrl(R.string.addPositoinDelivery);
+        Map<String, String> params = getReqParams();
+        params.put("positionId", positionId);
+        if (!TextUtils.isEmpty(deliveryInfo))
+            params.put("deliveryInfo", deliveryInfo);
+        m.getInstance().getNetUtils().upload().url(url).params(params).addFile("thumbTemp", video).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, Object.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.5.3.	职位列表
+     * provinceId	省ID	否	int
+     * cityId	市ID	否	int
+     * areaId	区ID	否	int
+     * positionType	职位类型ID	否	Int
+     * workYears	工作年限ID	否	int
+     * positionGrade	职位等级ID	否	int
+     * salaryType	薪资类型(1：范围 2：面议 )	否	int
+     * salaryBegin	薪资起始值	否	int
+     * salaryEnd	薪资结束值	否	int
+     * pageNo	页码	否（默认1）	Int
+     * pageSize	每页条数	否（默认15）	Int
+     */
+    public void positionList(String pageNo, String pageSize, String provinceId, String cityId, String areaId, String positionType, String workYears, String positionGrade, String salaryType,
+                             String salaryBegin, String salaryEnd, final HttpBack<PositonBean> httpBack) {
+        String url = getUrl(R.string.positionList);
+        Map<String, String> params = getReqParams();
+        params.put("pageNo", pageNo);
+        params.put("pageSize", pageSize);
+        if (!TextUtils.isEmpty(provinceId))
+            params.put("provinceId", provinceId);
+        if (!TextUtils.isEmpty(cityId))
+            params.put("cityId", cityId);
+        if (!TextUtils.isEmpty(areaId))
+            params.put("areaId", areaId);
+        if (!TextUtils.isEmpty(positionType))
+            params.put("positionType", positionType);
+        if (!TextUtils.isEmpty(workYears))
+            params.put("workYears", workYears);
+        if (!TextUtils.isEmpty(positionGrade))
+            params.put("positionGrade", positionGrade);
+        if (!TextUtils.isEmpty(salaryType))
+            params.put("salaryType", salaryType);
+        if (!TextUtils.isEmpty(salaryBegin))
+            params.put("salaryBegin", salaryBegin);
+        if (!TextUtils.isEmpty(salaryEnd))
+            params.put("salaryEnd", salaryEnd);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, PositonBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.5.4.	职位详情
+     * positionId	职位id	是	int
+     */
+    public void positionDetail(String positionId, final HttpBack<PositonBean> httpBack) {
+        String url = getUrl(R.string.positionDetail);
+        Map<String, String> params = getReqParams();
+        params.put("positionId", positionId);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, PositonBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
 
     private HashMap getReqParams() {
         Map<String, String> params = new HashMap<>();

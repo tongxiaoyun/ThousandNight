@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="5"
+                android:text="0"
                 android:textColor="@color/white"
                 android:textSize="@dimen/dm080"
                 android:textStyle="bold" />

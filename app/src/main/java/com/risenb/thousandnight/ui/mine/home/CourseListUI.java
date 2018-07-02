@@ -8,6 +8,7 @@ import com.risenb.expand.xrecyclerview.XRecyclerView;
 import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.CourseChildAdapter;
+import com.risenb.thousandnight.beans.CourseListBean;
 import com.risenb.thousandnight.ui.BaseUI;
 import com.risenb.thousandnight.ui.home.fragment.course.CourseDetialUI;
 
@@ -23,7 +24,7 @@ public class CourseListUI extends BaseUI {
     @BindView(R.id.xrv_common)
     XRecyclerView xrv_common;
 
-    private CourseChildAdapter<Object> courseChildAdapter;
+    private CourseChildAdapter<CourseListBean> courseChildAdapter;
 
     @Override
     protected void back() {

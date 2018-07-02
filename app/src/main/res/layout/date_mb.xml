@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/translete"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtWeekDateMB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dm030"
+        android:layout_marginRight="@dimen/dm030"
+        android:layout_marginTop="@dimen/dm010"
+        android:layout_marginBottom="@dimen/dm020"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/dm034"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="@dimen/dm100"
+        android:layout_height="@dimen/dm070">
+
+        <TextView
+            android:id="@+id/tv_point"
+            android:layout_width="@dimen/dm040"
+            android:layout_alignParentRight="true"
+            android:layout_height="@dimen/dm020"
+            android:textSize="@dimen/dm016"
+            android:visibility="gone"
+            android:gravity="center"
+            android:background="@drawable/sp_date"/>
+
+        <TextView
+            android:id="@+id/txtDayDateMB"
+            android:layout_width="@dimen/dm040"
+            android:layout_height="@dimen/dm040"
+            android:layout_marginLeft="@dimen/dm030"
+            android:layout_marginRight="@dimen/dm030"
+            android:layout_marginTop="@dimen/dm010"
+            android:layout_marginBottom="@dimen/dm020"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/gray999"
+            android:textSize="@dimen/dm028" />
+
+        <ImageView
+            android:id="@+id/ivtDayDateMB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dm012"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/dm005"
+            android:layout_alignParentBottom="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/singed"/>
+    </RelativeLayout>
+</LinearLayout>

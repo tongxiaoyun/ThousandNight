@@ -12,12 +12,14 @@
         android:layout_height="@dimen/dm226">
 
         <ImageView
+            android:id="@+id/iv_home_course_cover"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dm226"
             android:scaleType="centerCrop"
             android:src="@drawable/default_img" />
 
         <TextView
+            android:id="@+id/iv_home_course_playcount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -35,6 +37,7 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/iv_home_course_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dm020"
@@ -63,6 +66,7 @@
             android:textSize="@dimen/dm020" />
 
         <TextView
+            android:id="@+id/iv_home_course_count"
             android:layout_width="@dimen/dm000"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dm020"

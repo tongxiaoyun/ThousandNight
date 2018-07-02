@@ -12,12 +12,13 @@
         android:layout_height="@dimen/dm200">
 
         <ImageView
+            android:id="@+id/iv_home_music_cover"
             android:layout_width="@dimen/dm200"
             android:layout_height="@dimen/dm200"
-            android:scaleType="centerCrop"
             android:src="@drawable/default_icon" />
 
         <TextView
+            android:id="@+id/tv_home_music_play_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -37,6 +38,7 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/tv_home_music_sheet_name"
         android:layout_width="@dimen/dm200"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dm015"
@@ -48,6 +50,7 @@
         android:textSize="@dimen/dm024" />
 
     <TextView
+        android:id="@+id/tv_home_music_singer"
         android:layout_width="@dimen/dm200"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dm010"

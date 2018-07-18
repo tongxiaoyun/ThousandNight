@@ -6,6 +6,7 @@
     android:padding="@dimen/dm020">
 
     <EditText
+        android:id="@+id/et_replay_content"
         android:layout_width="@dimen/dm000"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -20,9 +21,11 @@
         android:textSize="@dimen/dm024" />
 
     <TextView
+        android:id="@+id/tv_replay_publish"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dm030"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dm030"
         android:text="发布"
         android:textColor="@color/tab_color"
         android:textSize="@dimen/dm028" />

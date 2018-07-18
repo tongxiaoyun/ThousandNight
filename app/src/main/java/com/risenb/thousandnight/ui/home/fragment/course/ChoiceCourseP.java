@@ -2,11 +2,7 @@ package com.risenb.thousandnight.ui.home.fragment.course;
 
 import android.support.v4.app.FragmentActivity;
 
-import com.risenb.thousandnight.beans.ClassBean;
 import com.risenb.thousandnight.beans.CourseListBean;
-import com.risenb.thousandnight.beans.HomeHotVideoBean;
-import com.risenb.thousandnight.beans.MusicSheetBean;
-import com.risenb.thousandnight.beans.VideoListBean;
 import com.risenb.thousandnight.network.HttpBack;
 import com.risenb.thousandnight.network.NetworkUtils;
 import com.risenb.thousandnight.ui.PresenterBase;
@@ -14,35 +10,39 @@ import com.risenb.thousandnight.ui.PresenterBase;
 import java.util.ArrayList;
 
 /**
- * Created by user on 2018/5/30.
+ * Created by user on 2018/7/17.
  */
 
-public class CourseP extends PresenterBase {
+public class ChoiceCourseP extends PresenterBase {
 
-    private CourseFace face;
+    private ChoiceCourseFace face;
 
-    public CourseP(CourseFace face, FragmentActivity activity) {
+    public ChoiceCourseP(ChoiceCourseFace face, FragmentActivity activity) {
         this.face = face;
         setActivity(activity);
     }
 
-    public void classifyList() {
+    public void selectedList() {
         showProgressDialog();
-        NetworkUtils.getNetworkUtils().classifyList(face.getClassifyType(), new HttpBack<ClassBean>() {
+        NetworkUtils.getNetworkUtils().selectedList(String.valueOf(face.getPageNo()), face.getPageSize(), new HttpBack<CourseListBean>() {
             @Override
             public void onSuccess(String data) {
                 dismissProgressDialog();
             }
 
             @Override
-            public void onSuccess(ArrayList<ClassBean> result) {
+            public void onSuccess(ArrayList<CourseListBean> result) {
                 dismissProgressDialog();
+                if (face.getPageNo() == 1) {
+                    face.setResult(result);
+                } else {
+                    face.addResult(result);
+                }
             }
 
             @Override
-            public void onSuccess(ClassBean result) {
+            public void onSuccess(CourseListBean result) {
                 dismissProgressDialog();
-                face.setClassResult(result);
             }
 
             @Override
@@ -54,11 +54,15 @@ public class CourseP extends PresenterBase {
     }
 
 
-    public interface CourseFace {
+    public interface ChoiceCourseFace {
 
-        String getClassifyType();
+        int getPageNo();
 
-        void setClassResult(ClassBean result);
+        String getPageSize();
+
+        void setResult(ArrayList<CourseListBean> result);
+
+        void addResult(ArrayList<CourseListBean> result);
     }
 
 }

@@ -24,6 +24,7 @@ import com.risenb.thousandnight.ui.home.HomeP;
 import com.risenb.thousandnight.ui.home.fragment.course.ChoiceCourseUI;
 import com.risenb.thousandnight.ui.home.fragment.course.CourseDetialUI;
 import com.risenb.thousandnight.ui.home.fragment.music.MusicPlayUI;
+import com.risenb.thousandnight.ui.home.fragment.music.MusicSecondUI;
 import com.risenb.thousandnight.ui.home.fragment.music.SongSheetUI;
 import com.risenb.thousandnight.ui.home.fragment.video.NewsVideoUI;
 import com.risenb.thousandnight.ui.home.homep.BannerP;
@@ -94,7 +95,6 @@ public class ChosenFragment extends BaseFragment implements BannerP.BannerFace, 
         bannerP.getBanner();
         chosenP.videoListHot();
         chosenP.musicSheetList();
-        chosenP.selectedList();
         chosenP.selectedList();
     }
 
@@ -201,11 +201,21 @@ public class ChosenFragment extends BaseFragment implements BannerP.BannerFace, 
     @OnClick(R.id.ll_home_video_more)
     void toNews() {
         Intent intent = new Intent(getActivity(), NewsVideoUI.class);
+        intent.putExtra("title", "热播视频");
+        intent.putExtra("isHot", "1");
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.ll_home_music_more)
+    void toMusic() {
+        Intent intent = new Intent(getActivity(), MusicSecondUI.class);
+        intent.putExtra("title", "推荐歌单");
+        intent.putExtra("isRecommend", "1");
         startActivity(intent);
     }
 
 
-    @OnClick(R.id.tv_home_choice_more)
+    @OnClick(R.id.ll_home_choice_more)
     void toChoice() {
         Intent intent = new Intent(getActivity(), ChoiceCourseUI.class);
         startActivity(intent);
@@ -215,6 +225,11 @@ public class ChosenFragment extends BaseFragment implements BannerP.BannerFace, 
     @OnClick(R.id.tv_home_video_refresh)
     void refreshVideo() {
         chosenP.videoListHot();
+    }
+
+    @OnClick(R.id.tv_home_course_refresh)
+    void refreshCourse() {
+        chosenP.selectedList();
     }
 
 }

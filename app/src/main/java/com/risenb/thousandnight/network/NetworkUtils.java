@@ -14,6 +14,7 @@ import com.risenb.thousandnight.beans.ClassBean;
 import com.risenb.thousandnight.beans.CodeBean;
 import com.risenb.thousandnight.beans.CommentBean;
 import com.risenb.thousandnight.beans.CourseListBean;
+import com.risenb.thousandnight.beans.DanceHallBean;
 import com.risenb.thousandnight.beans.HomeHotVideoBean;
 import com.risenb.thousandnight.beans.HomeSignBean;
 import com.risenb.thousandnight.beans.MomentBean;
@@ -936,6 +937,84 @@ public class NetworkUtils {
         videoList("1", "6", "1", "", "", "", "", httpBack);
     }
 
+    /**
+     * 2.4.2   收藏/取消收藏 视频
+     * videoId	视频ID	                            是	long
+     * type	操作类型     0：取消收藏      1：收藏	    是	int
+     */
+    public void addOrCancleLikeVideo(String videoId, String type, final HttpBack<Object> httpBack) {
+        String url = getUrl(R.string.video_addOrCancleLike);
+        Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
+        params.put("videoId", videoId);
+        params.put("type", type);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, Object.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.4.3   评论视频
+     * videoId	视频ID	                            是	long
+     * content	评论内容	是	String
+     */
+    public void addCommentVideo(String videoId, String content, final HttpBack<Object> httpBack) {
+        String url = getUrl(R.string.video_addComment);
+        Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
+        params.put("videoId", videoId);
+        params.put("content", content);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, Object.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.4.4	视频评论列表
+     * pageNo       页码                        否（默认1）          Int
+     * pageSize     每页条数                     否（默认15）         Int
+     * videoId	视频ID	是	long
+     */
+    public void videoCommentList(String pageNo, String pageSize, String videoId, final HttpBack<CommentBean> httpBack) {
+        String url = getUrl(R.string.video_commentList);
+        Map<String, String> params = getReqParams();
+        params.put("pageNo", pageNo);
+        params.put("pageSize", pageSize);
+        params.put("videoId", videoId);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, CommentBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
 
     /**
      * 2.5.1.	发布职位
@@ -1090,6 +1169,46 @@ public class NetworkUtils {
             public void onSuccess(int statusCode, String response) {
                 BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
                 new JsonFormatUtils().format(baseBean, httpBack, PositonBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.6.2.	舞伴大厅列表
+     * longitude	经度	否	String
+     * latitude	纬度	否	string
+     * provinceId	省ID	否	int
+     * dancesFirst	舞种分类ID	否	long
+     * dancePartnerType	性别	否	int
+     * pageNo	页码	否（默认1）	Int
+     * pageSize	每页条数	否（默认15）	Int
+     */
+    public void dancehallList(String pageNo, String pageSize, String longitude, String latitude, String provinceId, String dancesFirst, String dancePartnerType, final HttpBack<DanceHallBean> httpBack) {
+        String url = getUrl(R.string.dancehallList);
+        Map<String, String> params = getReqParams();
+        params.put("pageNo", pageNo);
+        params.put("pageSize", pageSize);
+        if (!TextUtils.isEmpty(longitude))
+            params.put("longitude", longitude);
+        if (!TextUtils.isEmpty(latitude))
+            params.put("latitude", latitude);
+        if (!TextUtils.isEmpty(provinceId))
+            params.put("provinceId", provinceId);
+        if (!TextUtils.isEmpty(dancesFirst))
+            params.put("dancesFirst", dancesFirst);
+        if (!TextUtils.isEmpty(dancePartnerType))
+            params.put("dancePartnerType", dancePartnerType);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, DanceHallBean.class);
             }
 
             @Override

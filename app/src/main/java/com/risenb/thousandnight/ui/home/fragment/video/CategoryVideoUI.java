@@ -14,7 +14,10 @@ import android.widget.RadioGroup;
 
 import com.risenb.expand.utils.DisplayUtil;
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.beans.ClassBean;
+import com.risenb.thousandnight.beans.ParamBean;
 import com.risenb.thousandnight.ui.BaseUI;
+import com.risenb.thousandnight.ui.home.fragment.course.CourseP;
 
 import java.util.ArrayList;
 
@@ -29,7 +32,7 @@ import butterknife.BindView;
  * 修订历史：
  * ================================================
  */
-public class CategoryVideoUI extends BaseUI implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener {
+public class CategoryVideoUI extends BaseUI implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener, CourseP.CourseFace {
 
     @BindView(R.id.rg_video)
     RadioGroup rg_video;
@@ -42,14 +45,16 @@ public class CategoryVideoUI extends BaseUI implements ViewPager.OnPageChangeLis
      */
     @BindView(R.id.v_video_indicator)
     View v_video_indicator;
+
     private LinearLayout.LayoutParams lp;
     private int indicatorWidth;
     private int screenWidth;
     private int tabWidth;
     private int tabHeight;
-    private ArrayList<String> tabs;
     private ArrayList<Fragment> fragments = new ArrayList<>();
     private MyPagerAdapter myPagerAdapter;
+
+    private CourseP courseP;
 
     @Override
     protected void back() {
@@ -64,13 +69,13 @@ public class CategoryVideoUI extends BaseUI implements ViewPager.OnPageChangeLis
     @Override
     protected void setControlBasis() {
         setTitle("视频");
+        courseP = new CourseP(this, getActivity());
         initIndicator();
-        initPager();
     }
 
     @Override
     protected void prepareData() {
-
+        courseP.classifyList();
     }
 
     private void initIndicator() {
@@ -83,29 +88,27 @@ public class CategoryVideoUI extends BaseUI implements ViewPager.OnPageChangeLis
         tabHeight = DisplayUtil.getDimen(getActivity().getApplicationContext(), R.dimen.dm082);
     }
 
-    private void initPager() {
-        tabs = new ArrayList<>();
-        tabs.add("全部");
-        tabs.add("分类1");
-        tabs.add("分类2");
-        tabs.add("特殊分类");
-        tabs.add("分类3");
-        tabs.add("分类4");
+    private void initPager(ArrayList<ParamBean> list) {
         LayoutInflater inflater = LayoutInflater.from(getActivity());
         RadioButton rb = null;
+        ParamBean param = new ParamBean();
+        param.setName("全部");
+        param.setParamId("");
+        list.add(0, param);
+        rg_video.removeAllViews();
         rg_video.setOnCheckedChangeListener(this);
-        for (int i = 0; i < tabs.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             rb = (RadioButton) inflater.inflate(R.layout.item_text, null);
-            rb.setText(tabs.get(i));
-            rb.setId(0x8433333 + i);
+            rb.setText(list.get(i).getName());
+            rb.setId(0x8333333 + i);
             if (i == 0) {
                 rb.setChecked(true);
             }
-            fragments.add(new VideoChildFragment());
+            fragments.add(new VideoChildFragment(list.get(i).getParamId()));
             rg_video.addView(rb, tabWidth, tabHeight);
         }
         myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        vp_video.setOffscreenPageLimit(tabs.size());
+        vp_video.setOffscreenPageLimit(list.size());
         vp_video.setAdapter(myPagerAdapter);
         vp_video.addOnPageChangeListener(this);
     }
@@ -118,7 +121,8 @@ public class CategoryVideoUI extends BaseUI implements ViewPager.OnPageChangeLis
 
     @Override
     public void onPageSelected(int position) {
-
+        RadioButton childAt = (RadioButton) rg_video.getChildAt(position);
+        childAt.setChecked(true);
     }
 
     @Override
@@ -129,6 +133,16 @@ public class CategoryVideoUI extends BaseUI implements ViewPager.OnPageChangeLis
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         vp_video.setCurrentItem(checkedId - 0x8433333);
+    }
+
+    @Override
+    public String getClassifyType() {
+        return "7";
+    }
+
+    @Override
+    public void setClassResult(ClassBean result) {
+        initPager(result.getGeneral());
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {

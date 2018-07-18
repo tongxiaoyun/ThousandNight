@@ -69,7 +69,7 @@ public class FoundRecruitUI extends BaseUI implements XRecyclerView.LoadingListe
             public void onItemClick(View view, int i) {
                 Intent intent = new Intent(FoundRecruitUI.this, DeliverDetailUI.class);
                 intent.putExtra("ui", "found");
-                intent.putExtra("positionId", "");
+                intent.putExtra("positionId", foundRecruitAdapter.getList().get(i).getPositionId());
                 startActivity(intent);
             }
         });

@@ -429,4 +429,6 @@
             android:textSize="@dimen/dm030" />
 
     </LinearLayout>
+
+    <include layout="@layout/include_bottom" />
 </LinearLayout>

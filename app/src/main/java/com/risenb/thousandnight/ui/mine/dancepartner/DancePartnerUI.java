@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.risenb.expand.xrecyclerview.XRecyclerView;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.FoundDanceAdapter;
+import com.risenb.thousandnight.beans.DanceHallBean;
 import com.risenb.thousandnight.ui.BaseUI;
 
 import butterknife.BindView;
@@ -19,7 +20,7 @@ public class DancePartnerUI extends BaseUI {
     @BindView(R.id.xrv_common)
     XRecyclerView xrv_common;
 
-    private FoundDanceAdapter<Object> foundDanceAdapter;
+    private FoundDanceAdapter<DanceHallBean> foundDanceAdapter;
 
     @Override
     protected void back() {
@@ -35,7 +36,7 @@ public class DancePartnerUI extends BaseUI {
     protected void setControlBasis() {
         setTitle("寻找舞伴记录");
         rightVisible(R.drawable.mine_delete);
-        initAdapter();
+//        initAdapter();
     }
 
     @Override

@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.CommentAdapter;
 import com.risenb.thousandnight.adapter.CourseRecordAdapter;
+import com.risenb.thousandnight.beans.CommentBean;
 import com.risenb.thousandnight.ui.BaseUI;
 
 import butterknife.BindView;
@@ -23,7 +24,7 @@ public class DanceDetialUI extends BaseUI {
 
     @BindView(R.id.rv_course_comment)
     RecyclerView rv_course_comment;
-    private CommentAdapter<Object> commentAdapter;
+    private CommentAdapter<CommentBean> commentAdapter;
 
     @Override
     protected void back() {

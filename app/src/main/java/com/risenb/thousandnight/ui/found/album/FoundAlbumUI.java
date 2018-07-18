@@ -10,7 +10,6 @@ import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.FoundAlbumAdapter;
 import com.risenb.thousandnight.beans.AlbumBean;
 import com.risenb.thousandnight.ui.BaseUI;
-import com.risenb.thousandnight.ui.found.foundp.FoundAlbumP;
 
 import java.util.ArrayList;
 

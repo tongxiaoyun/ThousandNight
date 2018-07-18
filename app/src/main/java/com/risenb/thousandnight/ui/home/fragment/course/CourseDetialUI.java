@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.CommentAdapter;
 import com.risenb.thousandnight.adapter.CourseRecordAdapter;
+import com.risenb.thousandnight.beans.CommentBean;
 import com.risenb.thousandnight.ui.BaseUI;
 import com.tencent.rtmp.TXLiveConstants;
 import com.tencent.rtmp.TXVodPlayer;
@@ -44,7 +45,7 @@ public class CourseDetialUI extends BaseUI {
 
     private TXVodPlayer mVodPlayer;
     private CourseRecordAdapter<Object> courseRecordAdapter;
-    private CommentAdapter<Object> commentAdapter;
+    private CommentAdapter<CommentBean> commentAdapter;
 
     @Override
 

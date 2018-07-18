@@ -4,7 +4,6 @@ import android.widget.EditText;
 
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.ui.BaseUI;
-import com.risenb.thousandnight.ui.mine.minep.LoginPwdEditP;
 
 import butterknife.BindView;
 import butterknife.OnClick;

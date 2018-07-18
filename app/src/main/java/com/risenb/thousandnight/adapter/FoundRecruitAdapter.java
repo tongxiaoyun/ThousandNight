@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
  * Created by user on 2018/5/16.
  */
 
-public class FoundRecruitAdapter<T extends PositonBean> extends BaseRecyclerAdapter {
+public class FoundRecruitAdapter<T extends PositonBean> extends BaseRecyclerAdapter<T> {
 
     private String ui;
 
@@ -86,7 +86,7 @@ public class FoundRecruitAdapter<T extends PositonBean> extends BaseRecyclerAdap
             if ("发现".equals(ui)) {
                 ll_recruit_user.setVisibility(View.VISIBLE);
                 v_line.setVisibility(View.VISIBLE);
-                ll_recruit_person_num.setVisibility(View.INVISIBLE);
+                ll_recruit_person_num.setVisibility(View.GONE);
             } else if ("招聘".equals(ui)) {
                 ll_recruit_user.setVisibility(View.GONE);
                 v_line.setVisibility(View.GONE);

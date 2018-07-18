@@ -8,7 +8,10 @@ import com.risenb.expand.xrecyclerview.XRecyclerView;
 import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.adapter.FoundDanceAdapter;
+import com.risenb.thousandnight.beans.DanceHallBean;
 import com.risenb.thousandnight.ui.BaseUI;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -18,12 +21,15 @@ import butterknife.OnClick;
  * Created by user on 2018/5/16.
  */
 
-public class FoundDanceUI extends BaseUI {
+public class FoundDanceUI extends BaseUI implements XRecyclerView.LoadingListener, FoundDanceP.FoundDanceFace {
 
     @BindView(R.id.xrv_found_dance)
     XRecyclerView xrv_found_dance;
 
-    private FoundDanceAdapter<Object> foundDanceAdapter;
+    private FoundDanceP foundDanceP;
+
+    private FoundDanceAdapter<DanceHallBean> foundDanceAdapter;
+    private int page = 1;
 
     @Override
     protected void back() {
@@ -39,11 +45,12 @@ public class FoundDanceUI extends BaseUI {
     protected void setControlBasis() {
         setTitle("舞伴大厅");
         initAdapter();
+        foundDanceP = new FoundDanceP(this, getActivity());
     }
 
     @Override
     protected void prepareData() {
-
+        foundDanceP.positionList();
     }
 
     private void initAdapter() {
@@ -53,6 +60,7 @@ public class FoundDanceUI extends BaseUI {
         foundDanceAdapter = new FoundDanceAdapter<>();
         foundDanceAdapter.setActivity(this);
         xrv_found_dance.setAdapter(foundDanceAdapter);
+        xrv_found_dance.setLoadingListener(this);
         foundDanceAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int i) {
@@ -68,4 +76,62 @@ public class FoundDanceUI extends BaseUI {
         startActivity(intent);
     }
 
+    @Override
+    public void onRefresh() {
+        page = 1;
+        foundDanceP.positionList();
+    }
+
+    @Override
+    public void onLoadMore() {
+        page++;
+        foundDanceP.positionList();
+    }
+
+    @Override
+    public int getPageNo() {
+        return page;
+    }
+
+    @Override
+    public String getPageSize() {
+        return "10";
+    }
+
+    @Override
+    public String getLongitude() {
+        return "";
+    }
+
+    @Override
+    public String getLatitude() {
+        return "";
+    }
+
+    @Override
+    public String getProvinceId() {
+        return "";
+    }
+
+    @Override
+    public String getDanceFirst() {
+        return "";
+    }
+
+    @Override
+    public String getDancePartenerType() {
+        return "";
+    }
+
+    @Override
+    public void setResult(ArrayList<DanceHallBean> result) {
+        foundDanceAdapter.setList(result);
+        xrv_found_dance.refreshComplete();
+    }
+
+    @Override
+    public void addResult(ArrayList<DanceHallBean> result) {
+        foundDanceAdapter.addList(result);
+        xrv_found_dance.loadMoreComplete();
+    }
 }

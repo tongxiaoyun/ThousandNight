@@ -8,14 +8,16 @@
 
     <include layout="@layout/include_title" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dm088">
+        android:layout_height="@dimen/dm088"
+        android:orientation="horizontal">
 
         <HorizontalScrollView
             android:id="@+id/hsv_video"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/dm088"
+            android:layout_weight="1"
             android:background="@color/white"
             android:scrollbars="none">
 
@@ -53,7 +55,7 @@
             android:textColor="@color/gray666"
             android:textSize="@dimen/dm028" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <include layout="@layout/line_1" />
 

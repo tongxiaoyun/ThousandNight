@@ -10,7 +10,6 @@ import com.risenb.thousandnight.adapter.FoundNewsAdapter;
 import com.risenb.thousandnight.beans.BannerBean;
 import com.risenb.thousandnight.beans.NewsBean;
 import com.risenb.thousandnight.ui.BaseFragment;
-import com.risenb.thousandnight.ui.found.foundp.NewsChildP;
 import com.risenb.thousandnight.ui.home.homep.BannerP;
 
 import java.util.ArrayList;

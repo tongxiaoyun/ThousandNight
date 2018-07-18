@@ -19,7 +19,10 @@ import com.bumptech.glide.Glide;
 import com.risenb.expand.utils.DisplayUtil;
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.beans.BannerBean;
+import com.risenb.thousandnight.beans.ClassBean;
+import com.risenb.thousandnight.beans.ParamBean;
 import com.risenb.thousandnight.ui.BaseFragment;
+import com.risenb.thousandnight.ui.home.fragment.course.CourseP;
 import com.risenb.thousandnight.ui.home.homep.BannerP;
 import com.risenb.thousandnight.views.banner.MZBannerView;
 import com.risenb.thousandnight.views.banner.holder.MZHolderCreator;
@@ -36,7 +39,7 @@ import butterknife.OnClick;
  * Created by user on 2018/5/10.
  */
 
-public class VideoFragment extends BaseFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener, BannerP.BannerFace {
+public class VideoFragment extends BaseFragment implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener, BannerP.BannerFace, CourseP.CourseFace {
 
     /**
      * banner
@@ -67,7 +70,7 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
     private int screenWidth;
 
     private ArrayList<BannerBean> banners;
-    private List<String> tabs;
+    private CourseP courseP;
 
     @Override
     protected void loadViewLayout(LayoutInflater inflater, ViewGroup container) {
@@ -77,13 +80,14 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
     @Override
     protected void setControlBasis() {
         bannerP = new BannerP(this, getActivity());
+        courseP = new CourseP(this, getActivity());
         initIndicator();
-        initPager();
     }
 
     @Override
     protected void prepareData() {
         bannerP.getBanner();
+        courseP.classifyList();
     }
 
     private void initIndicator() {
@@ -96,29 +100,27 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
         tabHeight = DisplayUtil.getDimen(getActivity().getApplicationContext(), R.dimen.dm082);
     }
 
-    private void initPager() {
-        tabs = new ArrayList<>();
-        tabs.add("全部");
-        tabs.add("分类1");
-        tabs.add("分类2");
-        tabs.add("特殊分类");
-        tabs.add("分类3");
-        tabs.add("分类4");
+    private void initPager(ArrayList<ParamBean> list) {
         LayoutInflater inflater = LayoutInflater.from(getActivity());
         RadioButton rb = null;
+        ParamBean param = new ParamBean();
+        param.setName("全部");
+        param.setParamId("");
+        list.add(0, param);
+        rg_video.removeAllViews();
         rg_video.setOnCheckedChangeListener(this);
-        for (int i = 0; i < tabs.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             rb = (RadioButton) inflater.inflate(R.layout.item_text, null);
-            rb.setText(tabs.get(i));
+            rb.setText(list.get(i).getName());
             rb.setId(0x8333333 + i);
             if (i == 0) {
                 rb.setChecked(true);
             }
-            fragments.add(new VideoChildFragment());
+            fragments.add(new VideoChildFragment(list.get(i).getParamId()));
             rg_video.addView(rb, tabWidth, tabHeight);
         }
         myPagerAdapter = new MyPagerAdapter(getChildFragmentManager());
-        vp_video.setOffscreenPageLimit(tabs.size());
+        vp_video.setOffscreenPageLimit(list.size());
         vp_video.setAdapter(myPagerAdapter);
         vp_video.addOnPageChangeListener(this);
     }
@@ -131,7 +133,8 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
 
     @Override
     public void onPageSelected(int position) {
-
+        RadioButton childAt = (RadioButton) rg_video.getChildAt(position);
+        childAt.setChecked(true);
     }
 
     @Override
@@ -159,6 +162,16 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
             }
         });
         mzb_home.start();
+    }
+
+    @Override
+    public String getClassifyType() {
+        return "7";
+    }
+
+    @Override
+    public void setClassResult(ClassBean result) {
+        initPager(result.getGeneral());
     }
 
     public static final class ViewPagerHolder implements MZViewHolder<BannerBean> {
@@ -208,18 +221,24 @@ public class VideoFragment extends BaseFragment implements ViewPager.OnPageChang
     @OnClick(R.id.tv_home_video_menu1)
     void toMenu1() {
         Intent intent = new Intent(getActivity(), NewsVideoUI.class);
+        intent.putExtra("title", "最新");
+        intent.putExtra("isHot", "");
         startActivity(intent);
     }
 
     @OnClick(R.id.tv_home_video_menu2)
     void toMenu2() {
         Intent intent = new Intent(getActivity(), NewsVideoUI.class);
+        intent.putExtra("title", "最热");
+        intent.putExtra("isHot", "1");
         startActivity(intent);
     }
 
     @OnClick(R.id.tv_home_video_menu3)
     void toMenu3() {
         Intent intent = new Intent(getActivity(), NewsVideoUI.class);
+        intent.putExtra("title", "精选");
+        intent.putExtra("isHot", "");
         startActivity(intent);
     }
 

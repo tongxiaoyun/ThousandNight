@@ -146,6 +146,7 @@ public class MusicFragment extends BaseFragment implements BannerP.BannerFace {
     void toNews() {
         Intent intent = new Intent(getActivity(), MusicSecondUI.class);
         intent.putExtra("title", "最新");
+        intent.putExtra("isRecommend", "");
         startActivity(intent);
     }
 
@@ -153,6 +154,7 @@ public class MusicFragment extends BaseFragment implements BannerP.BannerFace {
     void toHot() {
         Intent intent = new Intent(getActivity(), MusicSecondUI.class);
         intent.putExtra("title", "最热");
+        intent.putExtra("isRecommend", "");
         startActivity(intent);
     }
 }

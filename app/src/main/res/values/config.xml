@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--服务器地址-->
-    <string name="service_host_address">http://47.104.72.136:5080</string>
+    <!--<string name="service_host_address">http://47.104.72.136:5080</string>-->
+    <string name="service_host_address">http://qianye.yl-mall.cn/risenb-client-web</string>
 
     <!--2.1.	登录注册-->
     <!--2.1.1.	获取验证码-->
@@ -122,6 +123,8 @@
     <!--2.8.	发现-舞伴大厅-->
     <!--2.8.1.	发布-->
     <string name="addFindDancer">/dancehall/addFindDancer.do</string>
+    <!--2.6.2.	舞伴大厅列表-->
+    <string name="dancehallList">/dancehall/dancehallList.do</string>
 
     <!--2.8.	发现-舞伴大厅-->
     <!--2.9.1.	查询分类列表-->
@@ -129,8 +132,16 @@
 
     <!--2.5.1.	获取轮播图-->
     <string name="list">/banner/list.do</string>
+
     <!--2.4.1.	视频列表-->
     <string name="videoList">/video/videoList.do</string>
+    <!--2.4.2   收藏/取消收藏 视频-->
+    <string name="video_addOrCancleLike">/video/addOrCancleLike.do</string>
+    <!--2.4.3   评论视频-->
+    <string name="video_addComment">/video/addComment.do</string>
+    <!--2.4.4.  视频评论列表-->
+    <string name="video_commentList">/video/commentList.do</string>
+
     <!--2.3.1.	歌单列表-->
     <string name="musicSheetList">/music/musicSheetList.do</string>
 

@@ -15,7 +15,6 @@ import com.risenb.thousandnight.beans.MomentBean;
 import com.risenb.thousandnight.ui.BaseFragment;
 import com.risenb.thousandnight.ui.home.homep.BannerP;
 import com.risenb.thousandnight.ui.square.SquareDetailUI;
-import com.risenb.thousandnight.ui.square.squarep.HotP;
 
 import java.util.ArrayList;
 

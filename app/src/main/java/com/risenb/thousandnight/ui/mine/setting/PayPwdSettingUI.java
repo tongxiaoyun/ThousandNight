@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import com.risenb.thousandnight.R;
 import com.risenb.thousandnight.ui.BaseUI;
-import com.risenb.thousandnight.ui.mine.minep.PayPwdSettingP;
 
 import butterknife.BindView;
 import butterknife.OnClick;

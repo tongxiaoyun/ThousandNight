@@ -11,6 +11,8 @@ import com.risenb.thousandnight.adapter.HomeVideoAdapter;
 import com.risenb.thousandnight.beans.CourseListBean;
 import com.risenb.thousandnight.ui.BaseUI;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 
 /**
@@ -22,12 +24,15 @@ import butterknife.BindView;
  * 修订历史：
  * ================================================
  */
-public class ChoiceCourseUI extends BaseUI {
+public class ChoiceCourseUI extends BaseUI implements XRecyclerView.LoadingListener, ChoiceCourseP.ChoiceCourseFace {
 
     @BindView(R.id.xrv_choice_course)
     XRecyclerView xrv_choice_course;
-    private HomeCourseAdapter<CourseListBean> choiceCourseAdapter;
 
+    private HomeCourseAdapter<CourseListBean> choiceCourseAdapter;
+    private int page = 1;
+
+    private ChoiceCourseP choiceCourseP;
 
     @Override
     protected void back() {
@@ -43,11 +48,12 @@ public class ChoiceCourseUI extends BaseUI {
     protected void setControlBasis() {
         setTitle("精选课程");
         initAdapter();
+        choiceCourseP = new ChoiceCourseP(this, getActivity());
     }
 
     @Override
     protected void prepareData() {
-
+        choiceCourseP.selectedList();
     }
 
     private void initAdapter() {
@@ -57,5 +63,40 @@ public class ChoiceCourseUI extends BaseUI {
         choiceCourseAdapter = new HomeCourseAdapter<>();
         choiceCourseAdapter.setActivity(getActivity());
         xrv_choice_course.setAdapter(choiceCourseAdapter);
+        xrv_choice_course.setLoadingListener(this);
+    }
+
+    @Override
+    public void onRefresh() {
+        page = 1;
+        choiceCourseP.selectedList();
+    }
+
+    @Override
+    public void onLoadMore() {
+        page++;
+        choiceCourseP.selectedList();
+    }
+
+    @Override
+    public int getPageNo() {
+        return page;
+    }
+
+    @Override
+    public String getPageSize() {
+        return "10";
+    }
+
+    @Override
+    public void setResult(ArrayList<CourseListBean> result) {
+        choiceCourseAdapter.setList(result);
+        xrv_choice_course.refreshComplete();
+    }
+
+    @Override
+    public void addResult(ArrayList<CourseListBean> result) {
+        choiceCourseAdapter.addList(result);
+        xrv_choice_course.loadMoreComplete();
     }
 }

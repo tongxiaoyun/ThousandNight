@@ -132,7 +132,8 @@ public class CourseFragment extends BaseFragment implements ViewPager.OnPageChan
 
     @Override
     public void onPageSelected(int position) {
-
+        RadioButton childAt = (RadioButton) rg_course.getChildAt(position);
+        childAt.setChecked(true);
     }
 
     @Override
@@ -160,6 +161,11 @@ public class CourseFragment extends BaseFragment implements ViewPager.OnPageChan
             }
         });
         mzb_home.start();
+    }
+
+    @Override
+    public String getClassifyType() {
+        return "1";
     }
 
     @Override

@@ -12,6 +12,7 @@
         android:id="@+id/xrv_news_video"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dm000"
+        android:paddingTop="@dimen/dm020"
         android:layout_weight="1" />
 
     <include layout="@layout/include_bottom" />

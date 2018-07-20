@@ -31,6 +31,7 @@ public class FoundRecruitUI extends BaseUI implements XRecyclerView.LoadingListe
 
     private FoundRecruitAdapter<PositonBean> foundRecruitAdapter;
     private int page = 1;
+    public static boolean isRefresh = false;
 
     @Override
     protected void back() {
@@ -55,6 +56,15 @@ public class FoundRecruitUI extends BaseUI implements XRecyclerView.LoadingListe
         foundRecruitP.positionList();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (isRefresh){
+            isRefresh = !isRefresh;
+            foundRecruitP.positionList();
+        }
+    }
+
     private void initAdapter() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -70,6 +80,7 @@ public class FoundRecruitUI extends BaseUI implements XRecyclerView.LoadingListe
                 Intent intent = new Intent(FoundRecruitUI.this, DeliverDetailUI.class);
                 intent.putExtra("ui", "found");
                 intent.putExtra("positionId", foundRecruitAdapter.getList().get(i).getPositionId());
+                intent.putExtra("positionName", foundRecruitAdapter.getList().get(i).getPositionName());
                 startActivity(intent);
             }
         });

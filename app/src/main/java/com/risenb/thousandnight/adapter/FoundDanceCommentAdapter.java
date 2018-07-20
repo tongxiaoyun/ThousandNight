@@ -24,15 +24,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * ================================================
- * 作    者：tongxiaoyun
- * 版    本：1.0
- * 创建日期：2017/3/16
- * 描    述：
- * 修订历史：
- * ================================================
+ * Created by user on 2018/7/20.
  */
-public class CommentAdapter<T extends CommentBean> extends BaseRecyclerAdapter<T> {
+
+public class FoundDanceCommentAdapter<T extends CommentBean> extends BaseRecyclerAdapter<T> {
 
     @Override
     protected BaseViewHolder loadView(Context context, int i) {
@@ -82,6 +77,4 @@ public class CommentAdapter<T extends CommentBean> extends BaseRecyclerAdapter<T
             ButterKnife.bind(this, view);
         }
     }
-
-
 }

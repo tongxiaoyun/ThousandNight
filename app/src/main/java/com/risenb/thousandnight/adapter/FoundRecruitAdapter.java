@@ -112,10 +112,6 @@ public class FoundRecruitAdapter<T extends PositonBean> extends BaseRecyclerAdap
                     .placeholder(R.drawable.default_icon)
                     .error(R.drawable.default_icon)
                     .into(iv_recruit_icon);
-            Glide.with(getActivity()).load("")
-                    .placeholder(R.drawable.found_level_2)
-                    .error(R.drawable.found_level_2)
-                    .into(iv_recruit_level);
 
         }
 

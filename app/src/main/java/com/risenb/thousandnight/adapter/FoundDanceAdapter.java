@@ -130,7 +130,7 @@ public class FoundDanceAdapter<T extends DanceHallBean> extends BaseRecyclerAdap
             }
             tv_dance_grade.setText(bean.getLevelName());
             tv_dance_addr.setText(bean.getAddress());
-            tv_dance_distance.setText("0km");
+            tv_dance_distance.setText(bean.getDistance());
             SimpleDateFormat format_begin = new SimpleDateFormat("yyyy年MM月dd日HH:mm");
             tv_dance_begintime.setText(format_begin.format(new Date(new Long(bean.getBeginTime()))));
             if ("1".equals(bean.getDancePartnerType())) {

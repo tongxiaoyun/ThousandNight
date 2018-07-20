@@ -43,6 +43,7 @@
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
                         android:maxLines="1"
+                        android:maxLength="10"
                         android:text="拉丁舞教练"
                         android:textColor="@color/gray333"
                         android:textSize="@dimen/dm030" />
@@ -302,5 +303,7 @@
             android:textSize="@dimen/dm028" />
 
     </LinearLayout>
+
+    <include layout="@layout/include_bottom" />
 
 </LinearLayout>

@@ -20,7 +20,9 @@ import com.risenb.thousandnight.beans.HomeSignBean;
 import com.risenb.thousandnight.beans.MomentBean;
 import com.risenb.thousandnight.beans.MusicSheetBean;
 import com.risenb.thousandnight.beans.NewsBean;
+import com.risenb.thousandnight.beans.ParamBean;
 import com.risenb.thousandnight.beans.PositonBean;
+import com.risenb.thousandnight.beans.ProviceBean;
 import com.risenb.thousandnight.beans.SignBean;
 import com.risenb.thousandnight.beans.User;
 import com.risenb.thousandnight.beans.UserBean;
@@ -862,6 +864,7 @@ public class NetworkUtils {
 
     /**
      * 2.7.1.	查询分类列表
+     * type	分类（1：课程 2:音乐 7:视频）	是	int	无
      */
     public void classifyList(String type, final HttpBack<ClassBean> httpBack) {
         String url = getUrl(R.string.classifyList);
@@ -873,6 +876,32 @@ public class NetworkUtils {
             public void onSuccess(int statusCode, String response) {
                 BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
                 new JsonFormatUtils().format(baseBean, httpBack, ClassBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.7.2.     查询条件接口
+     * hierarchy	层级	是	int	无
+     * type	类型（5：舞种 6：舞伴级别）	是	int
+     */
+    public void conditionList(String hierarchy, String type, final HttpBack<ParamBean> httpBack) {
+        String url = getUrl(R.string.condition);
+        Map<String, String> params = getReqParams();
+        params.put("hierarchy", hierarchy);
+        if (!TextUtils.isEmpty(type))
+            params.put("type", type);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, ParamBean.class);
             }
 
             @Override
@@ -1041,6 +1070,7 @@ public class NetworkUtils {
                             String cityId, String cityName, String areaId, String areaName, String salaryType, String salaryBegin, String salaryEnd, String positionDesc, final HttpBack<Object> httpBack) {
         String url = getUrl(R.string.addPosition);
         Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
         params.put("positionName", positionName);
         params.put("positionType", positionType);
         params.put("typeName", typeName);
@@ -1085,10 +1115,11 @@ public class NetworkUtils {
     public void addPositoinDelivery(String positionId, String deliveryInfo, File video, final HttpBack<Object> httpBack) {
         String url = getUrl(R.string.addPositoinDelivery);
         Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
         params.put("positionId", positionId);
         if (!TextUtils.isEmpty(deliveryInfo))
             params.put("deliveryInfo", deliveryInfo);
-        m.getInstance().getNetUtils().upload().url(url).params(params).addFile("thumbTemp", video).enqueue(new RawResponseHandler() {
+        m.getInstance().getNetUtils().upload().url(url).params(params).addFile("video", video).enqueue(new RawResponseHandler() {
             @Override
             public void onSuccess(int statusCode, String response) {
                 BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
@@ -1180,6 +1211,66 @@ public class NetworkUtils {
     }
 
     /**
+     * 2.6.1.	发布
+     * dancePartnerType	舞伴类型(1:男 2：女 3：皆可)	是	int
+     * peopleNum	人数	是	int
+     * dancesFirst	舞种一级分类ID	是	int
+     * dancesFirstName	舞种一级分类名称	是	string
+     * dancesSecond	舞种二级分类ID	否	int
+     * dancesSecondName	舞种二级分类名称	否	string
+     * level	级别	是	int
+     * levelName	级别名称	是	string
+     * title	标题	是	string
+     * explain	说明	是	string
+     * provinceId	省ID	是	string
+     * provinceName	省名称	是	string
+     * longitude	经度	是	string
+     * latitude	纬度	是	string
+     * address	详细地址	是	string
+     * beginTimeStr	开始日期	是	string	时间格式    2018-09-12 11
+     * endTimeStr	结束日期	是	string	时间格式    2018-09-12 17
+     */
+    public void addFindDancer(String dancePartnerType, String peopleNum, String dancesFirst, String dancesFirstName, String dancesSecond, String dancesSecondName, String level, String levelName, String title,
+                              String explain, String provinceId, String provinceName, String longitude, String latitude, String address, String beginTimeStr, String endTimeStr, final HttpBack<Object> httpBack) {
+        String url = getUrl(R.string.addFindDancer);
+        Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
+        params.put("dancePartnerType", dancePartnerType);
+        params.put("peopleNum", peopleNum);
+        params.put("dancesFirst", dancesFirst);
+        params.put("dancesFirstName", dancesFirstName);
+        if (!TextUtils.isEmpty(dancesSecond))
+            params.put("dancesSecond", dancesSecond);
+        if (!TextUtils.isEmpty(dancesSecondName))
+            params.put("dancesSecondName", dancesSecondName);
+        params.put("level", level);
+        params.put("levelName", levelName);
+        params.put("title", title);
+        params.put("explain", explain);
+        params.put("provinceId", provinceId);
+        params.put("provinceName", provinceName);
+        params.put("longitude", longitude);
+        params.put("latitude", latitude);
+        params.put("address", address);
+        params.put("beginTimeStr", beginTimeStr);
+        params.put("endTimeStr", endTimeStr);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, Object.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+
+    /**
      * 2.6.2.	舞伴大厅列表
      * longitude	经度	否	String
      * latitude	纬度	否	string
@@ -1209,6 +1300,109 @@ public class NetworkUtils {
             public void onSuccess(int statusCode, String response) {
                 BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
                 new JsonFormatUtils().format(baseBean, httpBack, DanceHallBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.6.3.    舞伴大厅详情
+     * danceHallId	主键ID	是	long
+     * longitude	经度	否	String
+     * latitude	纬度	否	string
+     */
+    public void dancehallDetail(String danceHallId, String longitude, String latitude, final HttpBack<DanceHallBean> httpBack) {
+        String url = getUrl(R.string.dancehallDetail);
+        Map<String, String> params = getReqParams();
+        params.put("danceHallId", danceHallId);
+        if (!TextUtils.isEmpty(longitude))
+            params.put("longitude", longitude);
+        if (!TextUtils.isEmpty(latitude))
+            params.put("latitude", latitude);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, DanceHallBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.6.4.舞伴大厅评论
+     * danceHallId	舞伴大厅ID	是	int
+     * content	评论内容	是	string
+     */
+    public void addFindDancerComment(String danceHallId, String content, final HttpBack<Object> httpBack) {
+        String url = getUrl(R.string.addFindDancerComment);
+        Map<String, String> params = getReqParams();
+        params.put("c", application.getC());
+        params.put("danceHallId", danceHallId);
+        params.put("content", content);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, Object.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.6.5  舞伴大厅评论列表
+     * pageNo       页码                        否（默认1）          Int
+     * pageSize     每页条数                     否（默认15）         Int
+     * danceHallId	舞伴大厅ID	是	int
+     */
+    public void dancehallCommentList(String pageNo, String pageSize, String danceHallId, final HttpBack<CommentBean> httpBack) {
+        String url = getUrl(R.string.dancehallCommentList);
+        Map<String, String> params = getReqParams();
+        params.put("pageNo", pageNo);
+        params.put("pageSize", pageSize);
+        params.put("danceHallId", danceHallId);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, CommentBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+    /**
+     * 2.7	获取省市区
+     */
+    public void getPlaces(final HttpBack<ProviceBean> httpBack) {
+        String url = getUrl(R.string.getPlaces);
+        Map<String, String> params = getReqParams();
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, ProviceBean.class);
             }
 
             @Override

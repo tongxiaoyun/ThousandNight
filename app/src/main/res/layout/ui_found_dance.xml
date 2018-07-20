@@ -129,4 +129,6 @@
 
     </LinearLayout>
 
+    <include layout="@layout/include_bottom" />
+
 </LinearLayout>

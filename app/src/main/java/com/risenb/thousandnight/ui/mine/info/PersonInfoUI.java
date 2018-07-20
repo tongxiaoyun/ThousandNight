@@ -1,6 +1,7 @@
 package com.risenb.thousandnight.ui.mine.info;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +10,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
+import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
+import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.bumptech.glide.Glide;
 import com.risenb.expand.imagepick.PhotoPicker;
 import com.risenb.expand.imagepick.picker.Load;
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.beans.AreaBean;
+import com.risenb.thousandnight.beans.CardBean;
+import com.risenb.thousandnight.beans.ProviceBean;
 import com.risenb.thousandnight.ui.BaseUI;
 import com.risenb.thousandnight.utils.GlideImageLoader;
 import com.risenb.thousandnight.utils.GlideRoundTransform;
@@ -31,7 +38,7 @@ import butterknife.OnClick;
  * Created by user on 2018/5/7.
  */
 
-public class PersonInfoUI extends BaseUI {
+public class PersonInfoUI extends BaseUI implements AddressP.AddressFace {
 
     //头像
     @BindView(R.id.iv_personinfo_icon)
@@ -67,6 +74,22 @@ public class PersonInfoUI extends BaseUI {
     @BindView(R.id.et_personinfo_intro)
     EditText et_personinfo_intro;
 
+    private AddressP addressP;
+
+    private String sex = "0";
+
+    private ArrayList<ProviceBean> options1Items = new ArrayList<>();
+    private ArrayList<ArrayList<String>> options2Items = new ArrayList<>();
+    private ArrayList<ArrayList<ArrayList<AreaBean>>> options3Items = new ArrayList<>();
+
+    private String provinceId = "";
+    private String cityId = "";
+    private String areaId = "";
+
+    private String provinceName = "";
+    private String cityName = "";
+    private String areaName = "";
+
     private List<String> features = new ArrayList<String>();
 
     @Override
@@ -83,6 +106,7 @@ public class PersonInfoUI extends BaseUI {
     protected void setControlBasis() {
         setTitle("编辑资料");
         rightVisible("保存");
+        addressP = new AddressP(this, getActivity());
     }
 
     @Override
@@ -128,6 +152,102 @@ public class PersonInfoUI extends BaseUI {
                 return tv_hot_word;
             }
         });
+    }
+
+    private void initOptionsPickerView(final ArrayList<CardBean> options1Items) {
+        OptionsPickerView optionsPickerView = new OptionsPickerBuilder(PersonInfoUI.this, new OnOptionsSelectListener() {
+            @Override
+            public void onOptionsSelect(int options1, int option2, int options3, View v) {
+                sex = String.valueOf(options1Items.get(options1).getId());
+                tv_personinfo_sex.setText(options1Items.get(options1).getPickerViewText());
+
+            }
+        })
+                .setTitleText("性别选择")
+                .setDividerColor(Color.GRAY)
+                .setTextColorCenter(Color.GRAY)
+                .setContentTextSize(18)
+                .build();
+        optionsPickerView.setPicker(options1Items);
+        optionsPickerView.show();
+
+    }
+
+    private void initAddressPickView() {
+        OptionsPickerView pvOptions = new OptionsPickerBuilder(PersonInfoUI.this, new OnOptionsSelectListener() {
+            @Override
+            public void onOptionsSelect(int options1, int option2, int options3, View v) {
+                tv_personinfo_pcd.setText(options1Items.get(options1).getPickerViewText() + "  " + options1Items.get(options1).getCitys().get(option2).getCname() + "  " + options1Items.get(options1).getCitys().get(option2).getAreas().get(options3).getAname());
+                provinceId = options1Items.get(options1).getPcode();
+                cityId = options1Items.get(options1).getCitys().get(option2).getCcode();
+                areaId = options1Items.get(options1).getCitys().get(option2).getAreas().get(options3).getAcode();
+
+                provinceName = options1Items.get(options1).getPname();
+                cityName = options1Items.get(options1).getCitys().get(option2).getCname();
+                areaName = options1Items.get(options1).getCitys().get(option2).getAreas().get(options3).getAname();
+            }
+        })
+                .setTitleText("城市选择")
+                .setDividerColor(Color.GRAY)
+                .setTextColorCenter(Color.GRAY)
+                .setContentTextSize(18)
+                .build();
+
+        pvOptions.setPicker(options1Items, options2Items, options3Items);
+        pvOptions.show();
+
+    }
+
+    /**
+     * 性别修改
+     */
+    @OnClick(R.id.ll_personinfo_sex)
+    void getSex() {
+        ArrayList<CardBean> options1Items = new ArrayList<>();
+        options1Items.add(new CardBean(1, "男"));
+        options1Items.add(new CardBean(2, "女"));
+        initOptionsPickerView(options1Items);
+    }
+
+    /**
+     * 工作地点
+     */
+    @OnClick(R.id.ll_personinfo_pcd)
+    void positionAddr() {
+        if (options1Items == null || options1Items.size() == 0) {
+            addressP.getPlaces();
+        } else {
+            initAddressPickView();
+        }
+    }
+
+    @Override
+    public void setAddress(ArrayList<ProviceBean> result) {
+        options1Items = result;
+        for (int i = 0; i < result.size(); i++) {//遍历省份
+            ArrayList<String> CityList = new ArrayList<>();//该省的城市列表（第二级）
+            ArrayList<ArrayList<AreaBean>> Province_AreaList = new ArrayList<>();//该省的所有地区列表（第三极）
+
+            for (int c = 0; c < result.get(i).getCitys().size(); c++) {//遍历该省份的所有城市
+                String CityName = result.get(i).getCitys().get(c).getCname();
+                CityList.add(CityName);//添加城市
+                ArrayList<AreaBean> City_AreaList = new ArrayList<>();//该城市的所有地区列表
+                City_AreaList.addAll(result.get(i).getCitys().get(c).getAreas());
+                Province_AreaList.add(City_AreaList);//添加该省所有地区数据
+            }
+
+            /**
+             * 添加城市数据
+             */
+            options2Items.add(CityList);
+
+            /**
+             * 添加地区数据
+             */
+            options3Items.add(Province_AreaList);
+        }
+
+        initAddressPickView();
     }
 
     /**

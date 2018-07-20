@@ -120,18 +120,22 @@
     <!--2.7.3.	职位详情-->
     <string name="positionDetail">/position/positionDetail.do</string>
 
-    <!--2.8.	发现-舞伴大厅-->
-    <!--2.8.1.	发布-->
+    <!--2.6.	发现-舞伴大厅-->
+    <!--2.6.1.	发布-->
     <string name="addFindDancer">/dancehall/addFindDancer.do</string>
     <!--2.6.2.	舞伴大厅列表-->
     <string name="dancehallList">/dancehall/dancehallList.do</string>
+    <!--2.6.3.  舞伴大厅详情-->
+    <string name="dancehallDetail">/dancehall/dancehallDetail.do</string>
+    <!--2.6.4   舞伴大厅评论-->
+    <string name="addFindDancerComment">/dancehall/addFindDancerComment.do</string>
+    <!--2.6.5.  舞伴大厅评论列表-->
+    <string name="dancehallCommentList">/dancehall/dancehallCommentList.do</string>
+    <!--2.6.6   舞伴大厅点赞/取消点赞-->
+    <string name="dance_addOrCancleLike">/dancehall/addOrCancleLike.do</string>
 
-    <!--2.8.	发现-舞伴大厅-->
     <!--2.9.1.	查询分类列表-->
     <string name="signInfos">/home/signInfo.do</string>
-
-    <!--2.5.1.	获取轮播图-->
-    <string name="list">/banner/list.do</string>
 
     <!--2.4.1.	视频列表-->
     <string name="videoList">/video/videoList.do</string>
@@ -145,7 +149,14 @@
     <!--2.3.1.	歌单列表-->
     <string name="musicSheetList">/music/musicSheetList.do</string>
 
+    <!--2.5.1.	获取轮播图-->
+    <string name="list">/banner/list.do</string>
+
     <!--2.7.1.	查询分类列表-->
     <string name="classifyList">/home/classifyList.do</string>
+    <!--2.7.2   查询条件接口-->
+    <string name="condition">/home/condition.do</string>
+    <!--2.7.3   获取省市区-->
+    <string name="getPlaces"></string>
 
 </resources>

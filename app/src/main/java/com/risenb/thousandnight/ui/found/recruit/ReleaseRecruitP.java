@@ -39,21 +39,17 @@ public class ReleaseRecruitP extends PresenterBase {
             makeText("请选择职位等级");
             return;
         }
-        if (TextUtils.isEmpty(face.getPositionType())) {
+        if (TextUtils.isEmpty(face.getProvinceName())) {
             makeText("请选择工作地点");
-            return;
-        }
-        if (TextUtils.isEmpty(face.getSalaryType())) {
-            makeText("请选择期望薪资");
             return;
         }
         if ("1".equals(face.getSalaryType())){
             if (TextUtils.isEmpty(face.getSalaryBegin())) {
-                makeText("最低薪资不能为空");
+                makeText("最高薪资不能为空");
                 return;
             }
             if (TextUtils.isEmpty(face.getSalaryEnd())) {
-                makeText("最高薪资不能为空");
+                makeText("最低薪资不能为空");
                 return;
             }
         }
@@ -68,7 +64,7 @@ public class ReleaseRecruitP extends PresenterBase {
                     @Override
                     public void onSuccess(String data) {
                         dismissProgressDialog();
-                        getActivity().finish();
+                        face.publishSuccess();
                     }
 
                     @Override
@@ -125,6 +121,8 @@ public class ReleaseRecruitP extends PresenterBase {
         String getSalaryEnd();
 
         String getPositionDesc();
+
+        void publishSuccess();
 
     }
 

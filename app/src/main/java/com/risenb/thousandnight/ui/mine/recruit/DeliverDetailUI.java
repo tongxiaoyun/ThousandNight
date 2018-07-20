@@ -73,6 +73,7 @@ public class DeliverDetailUI extends BaseUI implements DeliverDetailP.DeliverDet
 
     @Override
     protected void setControlBasis() {
+        setTitle(getIntent().getStringExtra("positionName"));
         ui = getIntent().getStringExtra("ui");
         positionId = getIntent().getStringExtra("positionId");
         if ("found".equals(ui)) {
@@ -91,6 +92,7 @@ public class DeliverDetailUI extends BaseUI implements DeliverDetailP.DeliverDet
     @OnClick(R.id.tv_deliver_detial_post)
     void toPost() {
         Intent intent = new Intent(getActivity(), RecruitPostUI.class);
+        intent.putExtra("positionId", positionId);
         startActivity(intent);
     }
 
@@ -124,10 +126,6 @@ public class DeliverDetailUI extends BaseUI implements DeliverDetailP.DeliverDet
                     .error(R.drawable.default_icon)
                     .into(iv_recruit_detail_icon);
             tv_recruit_detail_nickname.setText(result.getNickName());
-            Glide.with(this).load("")
-                    .placeholder(R.drawable.found_level_2)
-                    .error(R.drawable.found_level_2)
-                    .into(iv_recruit_detail_level);
             tv_recruit_detail_desc.setText(result.getPositionDesc());
 
         }

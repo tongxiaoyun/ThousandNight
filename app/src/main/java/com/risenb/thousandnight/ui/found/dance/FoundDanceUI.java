@@ -65,6 +65,7 @@ public class FoundDanceUI extends BaseUI implements XRecyclerView.LoadingListene
             @Override
             public void onItemClick(View view, int i) {
                 Intent intent = new Intent(getActivity(), DanceDetialUI.class);
+                intent.putExtra("danceHallId", foundDanceAdapter.getList().get(i).getDanceHallId());
                 startActivity(intent);
             }
         });

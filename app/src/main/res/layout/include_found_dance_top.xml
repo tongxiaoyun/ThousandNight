@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dm025"
+        android:paddingLeft="@dimen/dm020"
+        android:paddingTop="@dimen/dm025">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dm025"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_dance_detail_icon"
+                android:layout_width="@dimen/dm085"
+                android:layout_height="@dimen/dm085"
+                android:src="@drawable/default_icon" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dm000"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm030"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_dance_detail_nickanme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLength="15"
+                    android:maxLines="1"
+                    android:text="绿森林"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm026" />
+
+                <LinearLayout
+                    android:id="@+id/ll_dance_detail_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dm030"
+                    android:layout_marginTop="@dimen/dm005"
+                    android:background="@drawable/sp_pink_bg_cor"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dm015"
+                    android:paddingRight="@dimen/dm015">
+
+                    <ImageView
+                        android:id="@+id/iv_dance_detail_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/found_girl" />
+
+                    <TextView
+                        android:id="@+id/tv_dance_detail_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dm005"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dm020" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_dance_detail_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/dance_icon3" />
+
+            <TextView
+                android:id="@+id/tv_dance_detail_attention"
+                android:layout_width="@dimen/dm100"
+                android:layout_height="@dimen/dm055"
+                android:layout_marginLeft="@dimen/dm050"
+                android:layout_marginRight="@dimen/dm020"
+                android:background="@drawable/sp_purple_bg_cor"
+                android:gravity="center"
+                android:text="关注"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dm028" />
+
+        </LinearLayout>
+
+        <include layout="@layout/line_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm025"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_dance_detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="舞蹈大赛"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm030" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm025"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dm000"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_dance_detail_addr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/found_adr"
+                    android:drawablePadding="@dimen/dm018"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="北京朝阳区十里堡路1号未来时大厦1201"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_dance_detail_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm020"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="0km"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm022" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm002"
+            android:layout_marginLeft="@dimen/dm020"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm020"
+            android:background="@drawable/sp_line"
+            android:layerType="software" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dm025"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm020"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dm000"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_dance_detail_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/found_time"
+                    android:drawablePadding="@dimen/dm020"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="2018年3月29日9:00"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm002"
+            android:layout_marginRight="@dimen/dm020"
+            android:background="@drawable/sp_line"
+            android:layerType="software" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm025"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dance_detail_partner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/dance_icon1"
+                    android:drawablePadding="@dimen/dm018"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="女伴"
+                    android:textColor="@color/tab_color"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_dance_detail_partnernum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm020"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="0 位"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm022" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm002"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm020"
+            android:background="@drawable/sp_line"
+            android:layerType="software" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm025"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dance_detail_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/dance_icon2"
+                    android:drawablePadding="@dimen/dm018"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="拉丁舞"
+                    android:textColor="@color/gray333"
+                    android:textSize="@dimen/dm024" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_dance_detail_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm020"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="中级"
+                android:textColor="@color/gray333"
+                android:textSize="@dimen/dm022" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm002"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm020"
+            android:background="@drawable/sp_line"
+            android:layerType="software" />
+
+        <TextView
+            android:id="@+id/tv_dance_detail_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dm020"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm020"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="本次舞蹈大赛专门为了热爱拉丁舞的爱好者设定，大赛分为3个阶段，每个阶段都会选出出众3组，每个阶段都会本次舞蹈大赛专门为了热爱拉丁舞的爱好者设定，大赛分为3个阶段，每个阶段都会选出出众3组，每个阶段都会"
+            android:textColor="@color/gray666"
+            android:textSize="@dimen/dm024" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm002"
+            android:layout_marginRight="@dimen/dm020"
+            android:background="@drawable/sp_line"
+            android:layerType="software" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dm020"
+            android:layout_marginTop="@dimen/dm020"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_dance_detail_look"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/found_look"
+                android:drawablePadding="@dimen/dm008"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="@color/gray999"
+                android:textSize="@dimen/dm020" />
+
+            <TextView
+                android:id="@+id/tv_dance_detail_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm035"
+                android:drawableLeft="@drawable/found_message"
+                android:drawablePadding="@dimen/dm008"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="@color/gray999"
+                android:textSize="@dimen/dm020" />
+
+            <TextView
+                android:id="@+id/tv_dance_detail_zan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dm035"
+                android:drawableLeft="@drawable/found_zan"
+                android:drawablePadding="@dimen/dm008"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="@color/gray999"
+                android:textSize="@dimen/dm020" />
+
+            <TextView
+                android:id="@+id/tv_dance_detail_publishtime"
+                android:layout_width="@dimen/dm000"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:maxLines="1"
+                android:text="2018-03-29 09:00"
+                android:textColor="@color/gray999"
+                android:textSize="@dimen/dm020" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/line_20" />
+
+    <TextView
+        android:id="@+id/tv_comment_num"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm100"
+        android:drawableLeft="@drawable/course_comment"
+        android:drawablePadding="@dimen/dm010"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="@dimen/dm010"
+        android:paddingLeft="@dimen/dm020"
+        android:paddingRight="@dimen/dm020"
+        android:text="评论（0）"
+        android:textColor="@color/gray333"
+        android:textSize="@dimen/dm026" />
+
+    <include layout="@layout/line_1" />
+
+</LinearLayout>

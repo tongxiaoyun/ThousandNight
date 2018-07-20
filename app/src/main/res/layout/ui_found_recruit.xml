@@ -91,4 +91,6 @@
         android:layout_height="@dimen/dm000"
         android:layout_weight="1" />
 
+    <include layout="@layout/include_bottom" />
+
 </LinearLayout>

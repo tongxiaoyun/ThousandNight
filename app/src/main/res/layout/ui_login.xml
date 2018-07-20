@@ -192,4 +192,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/login_bg" />
 
+    <include layout="@layout/include_bottom"/>
+
 </LinearLayout>

@@ -5,14 +5,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.risenb.expand.utils.DisplayUtil;
 import com.risenb.expand.xrecyclerview.adapter.BaseRecyclerAdapter;
 import com.risenb.expand.xrecyclerview.adapter.BaseViewHolder;
 import com.risenb.expand.xrecyclerview.bean.BaseFootBean;
 import com.risenb.expand.xrecyclerview.bean.BaseHeadBean;
 import com.risenb.thousandnight.R;
+import com.risenb.thousandnight.beans.VideoBean;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -24,12 +29,7 @@ import butterknife.ButterKnife;
  * 修订历史：
  * ================================================
  */
-public class CourseRecordAdapter<T extends Object> extends BaseRecyclerAdapter<T> {
-
-    @Override
-    public int getItemCount() {
-        return 10;
-    }
+public class CourseRecordAdapter<T extends VideoBean> extends BaseRecyclerAdapter<T> {
 
     @Override
     protected BaseViewHolder loadView(Context context, int i) {
@@ -38,19 +38,23 @@ public class CourseRecordAdapter<T extends Object> extends BaseRecyclerAdapter<T
         return new ViewHolder(view);
     }
 
-    private class ViewHolder extends BaseViewHolder<T> {
+    class ViewHolder extends BaseViewHolder<T> {
         public ViewHolder(View itemView) {
             super(itemView);
         }
 
-//
-//        @ViewInject(R.id.back)
-//        private ImageView back;
+        //
+        @BindView(R.id.iv_cover)
+        ImageView iv_cover;
+        @BindView(R.id.tv_name)
+        TextView tv_name;
 
 
         @Override
         protected void prepareData() {
+            tv_name.setText(bean.getVideoName());
 
+            Glide.with(getActivity()).load(bean.getThumb()).error(R.drawable.default_img).into(iv_cover);
         }
 
         @Override

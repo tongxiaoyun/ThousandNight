@@ -39,6 +39,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_course_detial_grade"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/dm005"
@@ -53,6 +54,7 @@
                             android:textSize="@dimen/dm024" />
 
                         <TextView
+                            android:id="@+id/tv_course_detial_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dm020"
@@ -71,6 +73,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_course_detial_episode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="共20集"
@@ -79,6 +82,7 @@
 
 
                         <TextView
+                            android:id="@+id/tv_course_detial_episode_watchAmount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dm040"
@@ -106,6 +110,7 @@
                             android:textSize="@dimen/dm026" />
 
                         <TextView
+                            android:id="@+id/tv_course_detial_episode_coursePrice"
                             android:layout_width="@dimen/dm000"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -146,6 +151,7 @@
                     android:textSize="@dimen/dm026" />
 
                 <TextView
+                    android:id="@+id/tv_course_detial_select"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="@dimen/dm010"
@@ -166,6 +172,7 @@
             <include layout="@layout/line_20" />
 
             <TextView
+                android:id="@+id/tv_couse_detial_introduce"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="@dimen/dm010"

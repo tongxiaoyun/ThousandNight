@@ -30,6 +30,7 @@
         android:paddingRight="@dimen/dm020">
 
         <ImageView
+            android:id="@+id/iv_teacher_cover"
             android:layout_width="@dimen/dm108"
             android:layout_height="@dimen/dm108"
             android:adjustViewBounds="true"
@@ -43,6 +44,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_teacher_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="绿光森林"
@@ -67,6 +69,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_teacher_video_count"
                     android:layout_width="@dimen/dm000"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -82,6 +85,7 @@
                     android:textSize="@dimen/dm022" />
 
                 <TextView
+                    android:id="@+id/tv_teacher_video_rate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="90%"

@@ -46,5 +46,5 @@ dependencies {
     compile 'com.github.chrisbanes.photoview:library:1.2.4'
     compile(name: 'LiteAVSDK_Professional_4.6.4218', ext: 'aar')
     compile 'com.github.chrisbanes.photoview:library:1.2.4'
-    compile 'com.contrarywind:Android-PickerView:3.2.4'
+    compile 'com.contrarywind:Android-PickerView:4.1.5'
 }

@@ -67,6 +67,7 @@ public class CourseChildFragment extends BaseFragment implements CourseChildP.Co
             @Override
             public void onItemClick(View view, int i) {
                 Intent intent = new Intent(getActivity(), CourseDetialUI.class);
+                intent.putExtra("courseId",courseChildAdapter.getList().get(i).getCourseId());
                 startActivity(intent);
             }
         });
@@ -112,7 +113,12 @@ public class CourseChildFragment extends BaseFragment implements CourseChildP.Co
     @Override
     public void addList(ArrayList<CourseListBean> result) {
         xrv_course_child.loadMoreComplete();
-        courseChildAdapter.addList(result);
+        if (courseChildAdapter.getList() == null) {
+            courseChildAdapter.setList(result);
+        } else {
+            courseChildAdapter.addList(result);
+        }
+
     }
 
     @Override

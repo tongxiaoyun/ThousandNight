@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  * Created by user on 2018/5/10.
  */
 
-public class CourseChildAdapter<T extends CourseListBean> extends BaseRecyclerAdapter {
+public class CourseChildAdapter<T extends CourseListBean> extends BaseRecyclerAdapter<T> {
 
 
     @Override

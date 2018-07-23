@@ -13,6 +13,7 @@ import com.risenb.thousandnight.beans.BaseBean;
 import com.risenb.thousandnight.beans.ClassBean;
 import com.risenb.thousandnight.beans.CodeBean;
 import com.risenb.thousandnight.beans.CommentBean;
+import com.risenb.thousandnight.beans.CourseDetialBean;
 import com.risenb.thousandnight.beans.CourseListBean;
 import com.risenb.thousandnight.beans.DanceHallBean;
 import com.risenb.thousandnight.beans.HomeHotVideoBean;
@@ -852,6 +853,58 @@ public class NetworkUtils {
             public void onSuccess(int statusCode, String response) {
                 BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
                 new JsonFormatUtils().format(baseBean, httpBack, CourseListBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+
+    /**
+     * 2.2.3.课程详情
+     * courseId
+     */
+    public void courseDetail(String courseId, final HttpBack<CourseDetialBean> httpBack) {
+        String url = getUrl(R.string.courseDetail);
+        Map<String, String> params = getReqParams();
+        params.put("courseId", courseId);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, CourseDetialBean.class);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+                httpBack.onFailure(String.valueOf(statusCode), error_msg);
+            }
+        });
+
+    }
+
+
+    /**
+     * 2.4.4	视频评论列表
+     * pageNo       页码                        否（默认1）          Int
+     * pageSize     每页条数                     否（默认15）         Int
+     * videoId	视频ID	是	long
+     */
+    public void courseCommentList(String pageNo, String pageSize, String courseId, final HttpBack<CommentBean> httpBack) {
+        String url = getUrl(R.string.commentList);
+        Map<String, String> params = getReqParams();
+        params.put("pageNo", pageNo);
+        params.put("pageSize", pageSize);
+        params.put("courseId", courseId);
+        m.getInstance().getNetUtils().post().url(url).params(params).enqueue(new RawResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, String response) {
+                BaseBean baseBean = JSONObject.parseObject(response, BaseBean.class);
+                new JsonFormatUtils().format(baseBean, httpBack, CommentBean.class);
             }
 
             @Override

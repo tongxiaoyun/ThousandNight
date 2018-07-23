@@ -8,14 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dm490">
 
-        <com.tencent.rtmp.ui.TXCloudVideoView
-            android:id="@+id/video_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true" />
-
-
         <ImageView
+            android:id="@+id/iv_cover"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
@@ -146,6 +140,7 @@
 
 
             <TextView
+                android:id="@+id/tv_couse_detial_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dm020"
@@ -158,12 +153,14 @@
                 android:textSize="@dimen/dm030" />
 
             <TextView
+                android:id="@+id/tv_couse_detial_introduce"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dm020"
                 android:layout_marginRight="@dimen/dm020"
                 android:layout_marginTop="@dimen/dm020"
                 android:ellipsize="end"
+                android:maxLines="3"
                 android:lineSpacingExtra="@dimen/dm010"
                 android:text="现代舞（英语：Modern dance），是20世纪初在西方兴起的一种与古典芭蕾相对立的舞蹈派别。其主要美学观点是反对古典芭蕾的因循守旧、脱离现实生活和单纯追求技巧的形式主义倾向。"
                 android:textColor="@color/gray666"
@@ -188,6 +185,7 @@
                     android:textSize="@dimen/dm026" />
 
                 <TextView
+                    android:id="@+id/tv_couse_detial_price"
                     android:layout_width="@dimen/dm000"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -198,6 +196,7 @@
                     android:textSize="@dimen/dm024" />
 
                 <TextView
+                    android:id="@+id/tv_couse_detial_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
@@ -232,6 +231,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_course_detial_grade"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/dm005"
@@ -246,6 +246,7 @@
                             android:textSize="@dimen/dm024" />
 
                         <TextView
+                            android:id="@+id/tv_course_detial_name2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dm020"
@@ -264,6 +265,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_course_detial_episode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="共20集"
@@ -272,6 +274,7 @@
 
 
                         <TextView
+                            android:id="@+id/tv_course_detial_episode_watchAmount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dm040"
@@ -299,6 +302,7 @@
                             android:textSize="@dimen/dm026" />
 
                         <TextView
+                            android:id="@+id/tv_course_detial_episode_coursePrice"
                             android:layout_width="@dimen/dm000"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
